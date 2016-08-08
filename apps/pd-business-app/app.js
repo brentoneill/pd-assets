@@ -15,7 +15,7 @@ angular.module('pdBusinessApp', [
         'pdSelect',
         'pdConfirm',
         'pdTiles',
-        'pdInterface',
+        'pdLoading',
         'pdResourceGrid',
         'pdImageCrop',
         'pdActivityCard'

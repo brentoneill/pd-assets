@@ -63,7 +63,7 @@ angular.module('pdApp', [
         window.PD_BASE_PATH = '/marketplace/api/v4';
         // add an http interceptor to handle $api requests
         $httpProvider.interceptors.push(function ($q, $log) {
-            var hostname = location.host.replace(/\:3001/, ':5001');
+            var hostname = location.host.replace(/\:3000/, ':5001');
 
             var BASE_URL = location.protocol + '//' + hostname + window.PD_BASE_PATH;
 

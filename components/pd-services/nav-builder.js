@@ -27,7 +27,7 @@ angular.module('pdServices')
                         title: Session.currentApp.features.pokit.title || 'Saved',
                         ui_sref: 'app.consumer.pokit',
                         id: 'tab-saved',
-                        enabled: Session.currentApp.layouts.header.indexOf('saved'.toLowerCase()) !== -1
+                        enabled: Session.currentApp.layouts.header.indexOf('pokit'.toLowerCase()) !== -1
                     },
                     {
                         title: Session.currentApp.features.activities.title || 'activity',
@@ -104,7 +104,7 @@ angular.module('pdServices')
                             title: Session.currentApp.features.pokit.title || 'Saved',
                             ui_sref: 'app.consumer.pokit',
                             label: Session.currentUser.pokits && Session.currentUser.pokits.length,
-                            enabled: Session.currentApp.layouts.drawer.indexOf('saved'.toLowerCase()) !== -1
+                            enabled: Session.currentApp.layouts.drawer.indexOf('pokit'.toLowerCase()) !== -1
                         }, {
                             title: Session.currentApp.features.activities.title || 'activity',
                             ui_sref: 'app.consumer.activity.list',
