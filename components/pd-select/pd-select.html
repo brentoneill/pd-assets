@@ -1,0 +1,29 @@
+<div class="pd-select" id="pd-select-{{inputId}}">
+    <div class="pd-input-container">
+        <div class="selected" ng-repeat="s in selected track by $index">
+            <div class="selected-val">
+                {{ s.label }}
+            </div>
+            <div class="delete"
+                 ng-if="deleteBtn"
+                 ng-mousedown="removeOption(s)">x
+            </div>
+        </div>
+        <div class="input-block">
+            <input class="pd-input"
+                   ng-model="query"
+                   ng-change="setInputSize();loadOptions()"/>
+        </div>
+    </div>
+    <div class="pd-placeholder" ng-show="showPlaceholder"><p>{{ placeholder }}</p></div>
+    <div class="pd-dropdown" ng-show="showDropdown">
+        <div class="dropdown-item"
+             ng-class="{ active: $index === $parent.activePos }"
+             ng-mousedown="itemClick(option.value)"
+             ng-repeat="option in ( filteredOptions = ( options | filter:query | filter:filterOptions )) track by $index"
+             ng-mouseenter="setActiveOnHover($index)">
+            {{ option.label }}
+        </div>
+        <div class="dropdown-item empty" ng-show="filteredOptions.length <= 0">No more</div>
+    </div>
+</div>

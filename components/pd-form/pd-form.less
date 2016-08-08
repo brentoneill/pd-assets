@@ -1,0 +1,161 @@
+/*------------------------------------*\
+  #PD-FORM
+
+    - Styles for all pdForm modules and other form related styles
+
+\*------------------------------------*/
+
+
+.pd-password-rules {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 1em 1em 0;
+    font-size: 10px;
+    line-height: 1.2;
+    color: @gray-dark;
+    background: white;
+    border: 1px solid @panel-inner-border;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+    .fa-check {
+        color: @brand-success;
+    }
+}
+
+.pd-password-rules-container {
+    .clearfix();
+
+    position: relative;
+    overflow-y: visible;
+}
+
+select + .input-valid-wrapper {
+    right: 12px;
+}
+
+.input-group + .input-valid-wrapper {
+	right: 20px;
+}
+
+.input-valid-wrapper {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    z-index: 1000;
+    .fa-check {
+        color: @brand-success;
+    }
+    .fa-close {
+        color: @brand-danger;
+    }
+}
+
+
+span[ng-message="pdAvailableLoading"] {
+    color: @text-color !important;
+}
+
+.help-block {
+    margin-bottom: 0;
+}
+
+.form-group .help-block span {
+    display: none;
+}
+
+.form-group.has-error .help-block span {
+    display: block;
+}
+
+// Styles to override algolia input-bg
+.ap-input {
+    border-radius: @border-radius-base;
+}
+
+
+// Styles for pd-spinner-button
+.pd-spinner {
+    position: relative;
+    margin: 25% auto;
+    font-size: 10px;
+    text-indent: -9999em;
+    border-top: .75em solid fade(@brand-primary, .2);
+    border-right: .75em solid fade(@brand-primary, .2);
+    border-bottom: .75em solid fade(@brand-primary, .2);
+    border-left: .75em solid @brand-primary;
+    -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-animation: load8 .9s infinite linear;
+            animation: load8 .9s infinite linear;
+}
+
+.pd-spinner,
+.pd-spinner:after {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+
+.pd-spinner-button {
+    .pd-spinner {
+        width: 2em;
+        height: 2em;
+        margin: 0 auto;
+        border-color: fade(@white, .2);
+        border-width: .3618em;
+        border-left-color: @white;
+        &:after {
+            width: 2em;
+            height: 2em;
+        }
+    }
+}
+
+.form-group,
+.input-group {
+    position: relative;
+    .pd-spinner {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        z-index: 1000;
+        width: 1.8em;
+        height: 1.8em;
+        margin-top: 0;
+        border-width: .3618em;
+    }
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: @padding-large-vertical;
+    p {
+        margin-top: @padding-large-vertical;
+    }
+    .btn-primary {
+        min-width: 100px;
+    }
+}
+
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}

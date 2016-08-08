@@ -1,0 +1,14 @@
+<ol class="pd-workflow-nav-steps nav-steps horizontal row">
+    <li ng-repeat="formStep in steps"
+        ng-class="{
+            'col-xs-3' : steps.length > 3,
+            'col-xs-4': steps.length === 3,
+            'col-xs-6': steps.length === 2,
+            'col-xs-12': steps.length === 1,
+            'active':step >= $index}">
+        <span ng-class="{ 'text-center': hideNumbers }">
+            <i ng-if="!hideNumbers">{{ $index + 1 }}</i>
+            <b ng-if="!hideStepNames" class="hidden-xs">{{ formStep.name }}</b>
+        </span>
+    </li>
+</ol>

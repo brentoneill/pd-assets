@@ -1,0 +1,169 @@
+/*------------------------------------*\
+  #PD-SELECT
+
+    - Styles for all components in the pd-select module
+
+\*------------------------------------*/
+
+
+.pd-select {
+    cursor: text;
+    position: relative;
+    &.focus {
+        .pd-input-container {
+            border-color: @black;
+        }
+    }
+}
+
+.pd-input-container {
+    padding: 5px;
+    padding-left: 12px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: @border-radius-base;
+    background-color: white;
+    .transition(~"border-color ease-in-out .15s");
+}
+
+.pd-placeholder {
+    position: absolute;
+    top: 4px;
+    left: 12px;
+    color: @gray-light;
+}
+
+.has-icon {
+    .pd-input-container {
+        padding-left: 30px;
+    }
+}
+
+.pd-input-container > * {
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.pd-input-container .selected {
+    border-radius: 4px;
+    overflow: auto;
+}
+
+.multiple-select .pd-input-container .selected {
+    border: 1px solid #ddd;
+}
+
+.pd-input-container .selected.active {
+    background-color: #eee;
+}
+
+.multiple-select .pd-input-container .selected .selected-val,
+.multiple-select .pd-input-container .selected .delete {
+    padding: 4px 8px;
+}
+
+.pd-input-container .selected .selected-val {
+    float: left;
+}
+
+.pd-input-container .selected:last-child {
+    float: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.pd-input-container .selected .delete {
+    border-left: 1px solid #ddd;
+    float: right;
+    cursor: pointer;
+}
+
+.pd-input-container .selected + .selected {
+    margin-right: 4px;
+}
+
+.pd-input-container .input-block {
+    overflow: hidden;
+}
+
+.pd-input-container .input-block > input {
+    background-color: transparent;
+    border: 0;
+}
+
+.multiple-select .input-block > input {
+    padding: 4px 8px;
+}
+
+.pd-input-container .input-block > input:focus {
+    outline: none;
+}
+
+.pd-input-container + .pd-placeholder p {
+    display: inline-block;
+    vertical-align: -webkit-baseline-middle;
+    margin: 0;
+    letter-spacing: normal;
+}
+
+.pd-dropdown {
+    border: 1px solid @black;
+    border-radius: @border-radius-base;
+    border-top: 0;
+    position: absolute;
+    background: #fff;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-x: hidden;
+    .box-shadow(0 1px 1px rgba(0,0,0,.15));
+}
+
+.pd-dropdown .dropdown-item {
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.pd-dropdown .dropdown-item.active {
+    background-color: @gray-lightest;
+}
+
+.pd-dropdown .dropdown-item.empty {
+    font-style: italic;
+    color: #ccc;
+}
+
+.pd-dropdown-icon {
+    position: absolute;
+    top: 10px;
+}
+
+.pd-dropdown-icon-right {
+    right: 12px;
+}
+
+.pd-dropdown-icon-left {
+    left: 12px;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.selectize-control.single .selectize-input, .selectize-control.single .selectize-input input {
+    cursor: pointer;
+}
+
+.has-error {
+    .pd-input-container {
+        border-color:@brand-danger;
+    }
+    .focus {
+        .pd-input-container {
+            border-color: darken(@brand-danger, 10%);
+            @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@brand-danger, 20%);
+            .box-shadow(@shadow);
+        }
+    }
+}

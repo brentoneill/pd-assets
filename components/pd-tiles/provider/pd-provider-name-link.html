@@ -1,0 +1,6 @@
+<h4 class="pd-provider-name pd-provider-name-link">
+    <a href="#" ui-sref="app.consumer.providers.detail({ uuid: provider._uuid })">
+        <span ng-if="::provider.prefix">{{ ::provider.prefix }}.&nbsp;</span>
+        {{ ::provider.first_name | titlecase }} {{ ::provider.last_name | titlecase }}
+    </a>
+</h4>

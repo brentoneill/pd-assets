@@ -1,0 +1,124 @@
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: @white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.content {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.content-700 {
+    min-height: 700px;
+}
+
+#app-container,
+#home-loading {
+    transition: opacity .5s ease-out;
+}
+
+// Top level app container
+#app-container {
+    position: relative;
+}
+
+// Loading screen
+#home-loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background-color: @large-loader-bg-color;
+    background-image: url('@{large-loader-path}');
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1;
+}
+
+#plmp-app-canvas {
+    min-height: 800px;
+    background-color: @body-bg;
+    > .ui-view-container {
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+}
+
+#admin-app-nav,
+#plmp-app-canvas {
+    padding-bottom: @padding-large-vertical * 4;
+    margin-top: @navbar-height;
+    background-color: @body-bg;
+    // CSS performance related thingy. Article explaining below:
+    // https://benfrain.com/easy-css-fix-fixed-positioning-android-2-2-2-3
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+#admin-app-nav {
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+}
+
+// Right side canvas area of admin layout
+#admin-app-canvas {
+    min-height: 800px;
+    padding: @padding-large-vertical * 4 @padding-large-horizontal * 2;
+    margin-top: @navbar-height + @header-tabs-height;
+    margin-left: @admin-leftnav-width;
+    background-color: @body-bg;
+}
+
+// Left side nav of admin layout
+#admin-app-nav {
+    position: fixed;
+    top: @header-tabs-height;
+    left: 0;
+    width: @admin-leftnav-width;
+    padding-top: @padding-large-vertical * 4;
+    padding-right: @padding-large-horizontal;
+    padding-left: @padding-large-horizontal * 2;
+}
+
+.section-bottom {
+    margin-bottom: -@padding-large-horizontal * 4;
+}
+
+.section {
+    padding-top: @padding-large-vertical * 4;
+    padding-bottom: @padding-large-vertical * 4;
+}
+
+hr {
+    border-top-color: #dcdbd8;
+}
+
+h1.page-header {
+    margin: 0 0 20px;
+    border: none;
+
+    a.text-link-small {
+        display: inline-block;
+        margin-left: 1em;
+    }
+}
+
+@media (max-width: @screen-xs) {
+    .paging-ctrl {
+        position: relative;
+        margin-top: @font-size-base + 10;
+        .result-count {
+            position: absolute;
+            margin-top: -@font-size-base - 10;
+        }
+    }
+}

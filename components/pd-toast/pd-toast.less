@@ -1,0 +1,66 @@
+/*------------------------------------*\
+  #PD-TOAST
+
+    - Styles for all components in the pd-toast module
+
+\*------------------------------------*/
+
+
+// Some vars for good measure
+@toast-height: 40px;
+@toast-transition-type: ease-out;
+@toast-transition-time: .2s;
+@toast-text-color: @white;
+
+.pd-toast-container {
+    position: fixed;
+    top: @navbar-height;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: @zindex-navbar-fixed - 10;
+}
+
+.pd-toast {
+    position: relative;
+    height: auto;
+    text-align: center;
+    transition: transform @toast-transition-time @toast-transition-type;
+    margin-bottom: 0;
+
+    &.alert-success {
+
+    }
+    &.alert-success {
+
+    }
+    &.alert-success {
+
+    }
+}
+
+
+// Animation related  classes
+.pd-toast.ng-enter {
+  // opacity: 0 !important
+  transform: translateY(-@toast-height);
+  transition: opacity @toast-transition-time @toast-transition-type,
+              transform @toast-transition-time @toast-transition-type;
+}
+
+.pd-toast.ng-enter.ng-enter-active {
+  // opacity: 1 !important;
+  transform: translateY(0);
+}
+
+.pd-toast.ng-leave {
+  // opacity: 1;
+  transform: translateY(0);
+  transition: opacity @toast-transition-time @toast-transition-type,
+              transform @toast-transition-time @toast-transition-type;
+}
+
+.pd-toast.ng-leave.ng-leave-active {
+  // opacity: 0 !important;
+  transform: translateY(-@toast-height);
+}

@@ -1,0 +1,47 @@
+/*------------------------------------*\
+  #IMAGE
+
+    - Custom .img classes
+
+\*------------------------------------*/
+
+
+/**
+ *  Basic profile image class used across site for Business, Consumer, Provider,
+ *  and Location images
+ */
+.img-profile {
+    display: inline-block;
+    width: 106px;
+    height: 106px;
+    overflow: hidden;
+    background-color: @white;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: 3px solid #fff;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+       -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+}
+
+
+// Defaults for img-profile. Used when that entity does not have an uploaded img
+.img-profile-default {
+    &.img-profile-provider {
+        background-image: url('@{default-provider-img}');
+    }
+    &.img-profile-consumer {
+        background-image: url('@{default-consumer-img}');
+    }
+    &.img-profile-business {
+        background-image: url('@{default-business-img}');
+    }
+}
+
+
+// Makes the profile image small, for minified tile views
+.img-profile-small {
+    width: 80px;
+    height: 80px;
+}

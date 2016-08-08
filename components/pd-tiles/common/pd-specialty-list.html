@@ -1,0 +1,5 @@
+<p class="pd-specialty-list" ng-if="entity.specialties.length > 0">
+    <small class="text-bold" ng-repeat="specialty in entity.specialties track by $index">
+        <span class="pd-specialty">{{::specialty.name}}<span ng-if="!$last">,&nbsp;</span></span>
+    </small>
+</p>

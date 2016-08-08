@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  #LIST
+
+    - Special styles for different lists
+
+\*------------------------------------*/
+
+// Used in various tiles - pd-provider-tile, pd-business-tile
+.list-social-links {
+    a {
+        color: @gray-lighter;
+        &:hover,
+        &:active {
+            color: @gray-light;
+        }
+    }
+}
+
+@media (min-width: 840px) {
+    .dl-horizontal dt {
+        float: left;
+        width: 160px;
+        overflow: hidden;
+        clear: left;
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .dl-horizontal dd {
+        margin-left: 180px;
+    }
+}

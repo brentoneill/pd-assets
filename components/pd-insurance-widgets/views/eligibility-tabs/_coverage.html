@@ -1,0 +1,61 @@
+<div class="tabs-coverage">
+    <h4 class="text-primary">Details</h4>
+        <dl class="row coverage-detail">
+            <dt class="col-xs-4">Coverage Active?</dt>
+            <dd class="col-xs-8"><span ng-if="data.insurance.coverage.active == true">Yes</span><span
+                                class="text-danger" ng-if="data.insurance.coverage.active == false">No</span></dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.level">
+            <dt class="col-xs-4">Coverage Level</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.level | removeUnderscores }}</dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.group_description">
+            <dt class="col-xs-4">Group Description</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.group_description }}</dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.group_number">
+            <dt class="col-xs-4">Group Number</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.group_number }}</dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.eligibility_begin_date">
+            <dt class="col-xs-4">Eligibility Begin Date</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.eligibility_begin_date }}</dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.plan_begin_date">
+            <dt class="col-xs-4">Plan Begin Date</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.plan_begin_date }}</dd>
+        </dl>
+        <dl class="row coverage-detail">
+            <dt class="col-xs-4">Plan End Date</dt>
+            <dd class="col-xs-8">
+                <span ng-if="data.insurance.coverage.plan_end_date">{{ data.insurance.coverage.plan_end_date }}</span>
+                <span ng-if="!data.insurance.coverage.plan_end_date">n/a</span>
+            </dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.plan_description">
+            <dt class="col-xs-4">Plan Description</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.plan_description }}</dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.plan_number">
+            <dt class="col-xs-4">Plan Number</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.plan_number }}</dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.service_date">
+            <dt class="col-xs-4">Service Date</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.service_date }}</dd>
+        </dl>
+        <dl class="row coverage-detail"
+            ng-if="data.insurance.coverage.correlation_id">
+            <dt class="col-xs-4">Correlation ID</dt>
+            <dd class="col-xs-8">{{ data.insurance.coverage.correlation_id }}</dd>
+        </dl>
+    </div>    
+</div>

@@ -1,0 +1,39 @@
+{
+  "name": "pd-assets",
+  "description": "PokitDok's internal UI framework including Angular Components, Styles, and Vendor libraries",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.0",
+    "angular": "~1.4.8",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "lodash": "~4.0.0",
+    "font-awesome": "~4.5.0",
+    "angular-loading-bar": "~0.8.0",
+    "angular-animate": "~1.5.6",
+    "angular-ui-mask": "~1.6.8",
+    "angular-bootstrap": "^1.1.2",
+    "async": "~1.5.2",
+    "angular-uuid4": "~0.3.1",
+    "ngstorage": "~0.3.10",
+    "angular-mocks": "~1.4.9",
+    "moment": "~2.11.1",
+    "angular-messages": "^1.5.0",
+    "faker": "https://github.com/Marak/faker.js.git#^3.0.1",
+    "angular-vertilize": "^1.0.1",
+    "angular-markdown-directive": "^0.3.1",
+    "angular-sanitize": "^1.5.0",
+    "ng-file-upload": "^12.0.3",
+    "cropit": "0.1.9",
+    "ngSticky": "^1.8.10",
+    "angular-strap": "^2.3.8",
+    "downloadjs": "^1.4.2",
+    "ui-router.grant": "angular-ui-router-grant#^0.1.5",
+    "angular-tablesort": "^1.1.2",
+    "angular-bootstrap-colorpicker": "^3.0.25"
+  },
+  "resolutions": {
+    "angular": "~1.4.8",
+    "angular-animate": "~1.4.8"
+  }
+}

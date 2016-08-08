@@ -1,0 +1,87 @@
+/*------------------------------------*\
+  #BOOTSTRAP OVERRIDES
+
+    - various boostrap overrides
+
+\*------------------------------------*/
+
+// Overriding to allow space for the hamburger menu
+@media (min-width: @screen-sm ) {
+    .navbar-right {
+        margin-right: 30px;
+    }
+    .navbar {
+        border-radius: 0;
+    }
+    .dl-horizontal dd {
+        margin-left: 80px;
+    }
+}
+
+
+
+
+// Changing width and align of horizontal definition list at larger screen sizes
+@media (min-width: @screen-xs ) {
+    .dl-horizontal dt {
+        width: 80px;
+        text-align: left;
+    }
+}
+
+// Force a word wrap in both paragraphs and definition lists
+dd,
+p {
+    word-wrap: break-word;
+}
+
+
+
+
+// Change some basic styling on the boostrap breadcrumb CSS component
+.breadcrumb {
+    padding-left: 0;
+    background-color: transparent;
+    li + li:before {
+        color: @gray;
+        content: '>';
+    }
+}
+
+
+
+
+// Change the panel-default Bootstrap heading text, bg, and border color
+.panel-default {
+    .panel-heading {
+        color: @text-color;
+        background-color: #f5f5f5;
+        border-color: #ddd;
+    }
+}
+
+
+
+
+// Adds some padding to the bootstrap timepicker element
+.timepicker {
+    padding: @padding-base-vertical @padding-base-horizontal;
+}
+
+
+
+
+// Make pager buttons have uppercase text
+.pager {
+    li > a {
+        text-transform: uppercase;
+    }
+}
+
+
+
+
+// Change the color of the input group addons - used in the signup flow
+.input-group-addon {
+    background-color: @gray-lightest;
+}

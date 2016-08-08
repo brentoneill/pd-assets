@@ -1,0 +1,180 @@
+@ngdoc overview
+@name icons
+@description
+
+<h1 class="page-header" id="icons">pd-Icons</h1>
+<p>Here at PokitDok we have created our very own suite of easy to use pd-icons. </p>
+
+<!--Start of panel-->
+<div class="panel panel-default">
+    <div class="panel-body">
+    Simply exchange the icon name with "pd-icon-name-here" to display the desired icon.
+    <pre class="margin-left">
+<i class="pokit-icon pd-icon-name-here"></i>
+    </pre>
+      <!--Start of hover table-->
+      <table class="table table-bordered tr-hover">
+       <tr>
+        <td><i class="pokit-icon pd-activity"></i>pd-activity</td>
+        <td><i class="pokit-icon pd-add-prices"></i>pd-add-prices</td>
+        <td><i class="pokit-icon pd-adjust"></i>pd-adjust</td>
+        <td><i class="pokit-icon pd-ar-down"></i>pd-ar-down</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-ar-up"></i>pd-ar-up</td>
+        <td><i class="pokit-icon pd-arrow-left"></i>pd-arrow-left</td>
+        <td><i class="pokit-icon pd-arrow-right"></i>pd-arrow-right</td>
+        <td><i class="pokit-icon pd-brackets-bubble"></i>pd-brackets-bubble</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-business"></i>pd-business</td>
+        <td><i class="pokit-icon pd-caduceus"></i>pd-caduceus</td>
+        <td><i class="pokit-icon pd-business"></i>pd-business</td>
+        <td><i class="pokit-icon pd-caduceus"></i>pd-caduceus</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-calendar"></i>pd-calendar</td>
+        <td><i class="pokit-icon pd-check"></i>pd-check</td>
+        <td><i class="pokit-icon pd-doc-card"></i>pd-doc-card</td>
+        <td><i class="pokit-icon pd-dollar"></i>pd-dollar</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-dollar-inv"></i>pd-dollar-inv</td>
+        <td><i class="pokit-icon pd-down"></i>pd-down</td>
+        <td><i class="pokit-icon pd-down-tri"></i>pd-down-tri</td>
+        <td><i class="pokit-icon pd-edit-pencil"></i>pd-edit-pencil</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-eligibility"></i>pd-eligibility</td>
+        <td><i class="pokit-icon pd-eye"></i>pd-eye</td>
+        <td><i class="pokit-icon pd-eye-cross"></i>pd-eye-cross</td>
+        <td><i class="pokit-icon pd-face-happy"></i>pd-face-happy</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-face-neutral"></i>pd-face-neutral</td>
+        <td><i class="pokit-icon pd-face-sad"></i>pd-face-sad</td>
+        <td><i class="pokit-icon pd-get-quotes"></i>pd-get-quotes</td>
+        <td><i class="pokit-icon pd-prov-search"></i>pd-prov-search</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-save-for-later"></i>pd-save-for-later</td>
+        <td><i class="pokit-icon pd-signup-free"></i>pd-signup-free</td>
+        <td><i class="pokit-icon pd-knob"></i>pd-knob</td>
+        <td><i class="pokit-icon pd-magnify-search"></i>pd-magnify-search</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-md-user2"></i>pd-md-user2</td>
+        <td><i class="pokit-icon pd-md-user2-sm"></i>pd-md-user2-sm</td>
+        <td><i class="pokit-icon pd-more-arrow"></i>pd-more-arrow</td>
+        <td><i class="pokit-icon pd-next-arrow"></i>pd-next-arrow</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-nobrackets-bubble"></i>pd-nobrackets-bubble</td>
+        <td><i class="pokit-icon pd-pd-dollar-inv"></i>pd-pd-dollar-inv</td>
+        <td><i style="position:relative; left:-175px; top:-1px;" class="pokit-icon pd-pd-download"></i>pd-pd-download</td>
+        <td><i class="pokit-icon pd-pd-location"></i>pd-pd-location</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-pd-mail"></i>pd-pd-mail</td>
+        <td><i class="pokit-icon pd-phone"></i>pd-phone</td>
+        <td><i class="pokit-icon pd-play"></i>pd-play</td>
+        <td><i class="pokit-icon pd-plus"></i>pd-plus</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-plus-inv"></i>pd-plus-inv</td>
+        <td><i class="pokit-icon pd-pokit"></i>pd-pokit</td>
+        <td><i class="pokit-icon pd-pokit-filled"></i>pd-pokit-filled</td>
+        <td><i class="pokit-icon pd-profile"></i>pd-question</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-question"></i>pd-question</td>
+        <td><i class="pokit-icon pd-question-inv"></i>pd-question-inv</td>
+        <td><i class="pokit-icon pd-quote"></i>pd-quote</td>
+        <td><i class="pokit-icon pd-quote-round"></i>pd-quote-round</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-respond-quotes"></i>pd-respond-quotes</td>
+        <td><i class="pokit-icon pd-round-check"></i>pd-round-check</td>
+        <td><i class="pokit-icon pd-round-neutral"></i>pd-round-neutral</td>
+        <td><i class="pokit-icon pd-round-x"></i>pd-round-x</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-sandbox"></i>pd-sandbox</td>
+        <td><i class="pokit-icon pd-search"></i>pd-search</td>
+        <td><i class="pokit-icon pd-search-home"></i>pd-search-home</td>
+        <td><i class="pokit-icon pd-share"></i>pd-share</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-social-fb"></i>pd-social-fb</td>
+        <td><i class="pokit-icon pd-social-fb-inv"></i>pd-social-fb-inv</td>
+        <td><i class="pokit-icon pd-social-gogl"></i>pd-social-gogl</td>
+        <td><i class="pokit-icon pd-social-gogl-inv"></i>pd-social-gogl-inv</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-round-empty-1"></i>pd-round-empty-1</td>
+        <td><i class="pokit-icon pd-social-lnkd-inv"></i>pd-social-linkd-inv</td>
+        <td><i class="pokit-icon pd-social-tw"></i>pd-social-tw</td>
+        <td><i class="pokit-icon pd-user"></i>pd-user</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-user-sm"></i>pd-user-sm</td>
+        <td><i class="pokit-icon pd-worry-free"></i>pd-worry-free</td>
+        <td><i class="pokit-icon pd-x-thin"></i>pd-x-thin</td>
+        <td><i class="pokit-icon pd-get-quotes"></i>pd-get-quotes</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-round-neutral"></i>pd-round-neutral</td>
+        <td><i style="position:relative; top:-25px;" class="pokit-icon pd-md-user1-sm"></i><i style="visibility:hidden; font-size:20px;">ayyyy</i>pd-md-user1-sm</td>
+        <td><i class="pokit-icon pd-pokit6"></i>pd-pokit6</td>
+        <td><i class="pokit-icon pd-pokit5"></i>pd-pokit5</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-reply"></i>pd-reply</td>
+        <td><i class="pokit-icon pd-dashboard"></i>pd-dashboard</td>
+        <td><i class="pokit-icon pd-settings"></i>pd-settings</td>
+        <td><i class="pokit-icon pd-pokit7"></i>pd-pokit7</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-time2"></i>pd-time2</td>
+        <td><i class="pokit-icon pd-calendar2"></i>pd-calendar2</td>
+        <td><i class="pokit-icon pd-play-1"></i>pd-play-1</td>
+        <td><i class="pokit-icon pd-rarr"></i>pd-rarr</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-larr"></i>pd-larr</td>
+        <td><i class="pokit-icon pd-at"></i>pd-at</td>
+        <td><i class="pokit-icon pd-businessman"></i>pd-businessman</td>
+        <td><i class="pokit-icon pd-cart"></i>pd-cart</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-doctor-bottom"></i>pd-doctor-bottom</td>
+        <td><i class="pokit-icon pd-doctor-top"></i>pd-doctor-top</td>
+        <td><i class="pokit-icon pd-expand-down"></i>pd-expand-down</td>
+        <td><i class="pokit-icon pd-heart"></i>pd-heart</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-newtab"></i>pd-newtab</td>
+        <td><i class="pokit-icon pd-scuba"></i>pd-scuba</td>
+        <td><i class="pokit-icon pd-userman"></i>pd-userman</td>
+        <td><i class="pokit-icon pd-command"></i>pd-command</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-fwd-back"></i>pd-fwd-back</td>
+        <td><i class="pokit-icon pd-proserv"></i>pd-proserv</td>
+        <td><i class="pokit-icon pd-up"></i>pd-up</td>
+        <td><i class="pokit-icon pd-tracking"></i>pd-tracking</td>
+       </tr>
+       <tr>
+        <td><i class="pokit-icon pd-social-tw-inv"></i>pd-social-tw-inv</td>
+        <td><i class="pokit-icon pd-hco"></i>pd-hco</td>
+        <td><i class="pokit-icon pd-time2"></i>pd-time2</td>
+        <td><i style="position:relative; top: -17px; right:-10px;" class="pokit-icon icon-consumer"></i>icon-consumer</td>
+       </tr>
+       <tr>
+        <td><i style="position:relative; top: -17px; right:-10px;" class="pokit-icon icon-business"></i>icon-business</td>
+        <td><i class="pokit-icon icon-edit"></i>icon-edit</td>
+        <td><i class="pokit-icon icon-settings"></i>icon-settings</td>
+       </tr>
+      </table>
+    </div>
+</div>

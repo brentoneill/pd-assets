@@ -1,0 +1,35 @@
+<div class="pd-consumer-tile {{consumerTileClasses}}">
+    <div class="media">
+        <div class="media-left">
+            <div class="media-object">
+                <pd-profile-img entity="consumer"></pd-profile-img>
+            </div>
+        </div>
+        <div class="media-body">
+            <div class="row">
+                <div ng-class="{ 'col-xs-12': hideDob, 'col-xs-8': !hideDob }">
+                    <h4 class="media-heading">{{ ::consumer.first_name }} {{ ::consumer.last_name }}</h4>
+                </div>
+                <div class="col-xs-4" ng-if="!hideDob">
+                    <p class="pull-right" ng-class="{ 'mrl': !hideInsurance }">{{ ::consumer.date_of_birth }}</p>
+                </div>
+            </div>
+            <p ng-if="!hideGender"><small class="text-muted block">Gender: {{ ::consumer.gender | titlecase }}</small></p>
+            <p ng-if="!hidePhoneNumber">
+                <i class="fa fa-fw fa-phone text-muted v-align-middle" aria-hidden="true"></i>
+                <a class="text-link-small" ng-href="tel:{{::consumer.phone}}">
+                    {{ consumer.phone | telephone }}
+                </a>
+            </p>
+            <p ng-if="!hideEmail">
+                <i class="fa fa-fw fa-envelope text-muted v-align-middle" aria-hidden="true"></i>
+                <a class="text-link-small" ng-href="mailto:{{::consumer.email}}">
+                    {{ consumer.email }}
+                </a>
+            </p>
+            <div class="alert alert-info" ng-if="!hideInsurance">
+                <pd-insurance-info insurance="::consumer.insurance"></pd-insurance-info>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+/*------------------------------------*\
+  #FOOTER
+
+    - Styles related to the footer component
+
+\*------------------------------------*/
+
+
+footer {
+    min-height: 200px;
+    padding-top: @padding-large-vertical * 3;
+    padding-bottom: @padding-large-vertical * 3;
+    // CSS performance related thingy. Article explaining below:
+    // https://benfrain.com/easy-css-fix-fixed-positioning-android-2-2-2-3
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+    .row {
+        min-height: 140px;
+    }
+
+    .list-social-links {
+        font-size: @font-size-small;
+    }
+
+    .footer-nav {
+        li {
+            padding: @padding-base-vertical;
+            text-transform: capitalize;
+        }
+    }
+
+    .footer-copy.list-inline {
+        li {
+            padding: 0;
+        }
+    }
+}
+
+/* make sure footer sticks to bottom of body with .pd-body class */
+.pd-body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto -200px;
+    overflow-y: scroll;
+    background-color: @color-footer-bg;
+
+    .footer {
+        height: 200px;
+    }
+}
+
+
+
+
+// Style rules for larger screen sizes SM and up
+@media ( min-width: @screen-sm-min ) {
+    .footer-social, .footer-nav p, .footer-nav .list-inline {
+        text-align: right;
+    }
+    footer {
+        .row {
+            display: table;
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+
+            *[class*='col-'] {
+                display: table-cell;
+                float: none;
+                height: 100%;
+                vertical-align: bottom;
+            }
+        }
+    }
+}
+
+
+
+
+// Style rules for smaller screen sizes, XS and below
+@media ( max-width: @screen-xs-max ) {
+    footer {
+        *[class*='col-'] {
+            margin-top: @padding-large-vertical * 3;
+            text-align: center;
+        }
+    }
+    .footer-social, .footer-copy {
+        li {
+            display: inline-block;
+        }
+    }
+    .pd-body {
+        .footer {
+            height: auto;
+        }
+    }
+}

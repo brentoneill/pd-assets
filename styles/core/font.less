@@ -1,0 +1,45 @@
+/*------------------------------------*\
+  #FONT
+
+    - Font delcarations and typography considerations
+
+\*------------------------------------*/
+
+
+body {
+    letter-spacing: .5px;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: normal;
+
+    src: url('https://plmp-assets-prod.s3.amazonaws.com/_default_assets/fonts/Montserrat-Regular.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('https://plmp-assets-prod.s3.amazonaws.com/_default_assets/fonts/Montserrat-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@font-face {
+    font-family: 'Muli';
+    font-weight: normal;
+    font-stretch: semi-expanded;
+
+    src: url('https://plmp-assets-prod.s3.amazonaws.com/_default_assets/fonts/Muli-Regular.woff') format('woff'),
+    url('https://plmp-assets-prod.s3.amazonaws.com/_default_assets/fonts/Muli-Regular.ttf') format('truetype');
+}
+
+.text-secondary {
+    color: @brand-secondary;
+}
+
+b,
+strong {
+    font-family: @font-family-secondary;
+    letter-spacing: normal;
+}
+
+.text-hover {
+    transition: all .2s ease-out;
+    &:hover {
+        background-color: @gray-lightest;
+    }
+}

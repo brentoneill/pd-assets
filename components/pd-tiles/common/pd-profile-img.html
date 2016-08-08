@@ -1,0 +1,21 @@
+<div class="pd-profile-img">
+    <pd-spinner class="animate-show-fade" ng-show="location && !entity.googleMapsImageUrl"></pd-spinner>
+    <div ng-if="!entity.profile_image && entity._type"
+          ng-class="{
+              'img-profile-business': entity._type === 'Business',
+              'img-profile-consumer': entity._type === 'User',
+              'img-profile-provider': entity._type === 'Provider',
+              'img-circle': entity._type === 'User'
+          }"
+          class="img-profile img-profile-default {{imageClasses}}"></div>
+    <img ng-if="entity.profile_image"
+         class="img-profile {{imageClasses}}"
+         ng-class="{'img-circle': entity._type === 'User'}"
+         ng-src="{{ entity.profile_image.md }}"
+         alt="{{ entity.first_name + ' ' + entity.last_name }}"/>
+    <img ng-if="location"
+         ng-show="entity.googleMapsImageUrl"
+         class="img-profile {{imageClasses}} animate-show-fade"
+         ng-src="{{ entity.googleMapsImageUrl }}"
+         alt="{{ entity.address_ln1 + ' ' + entity.city + ', ' + entity.state + ' ' + entity.zipcode}}"/>
+</div>

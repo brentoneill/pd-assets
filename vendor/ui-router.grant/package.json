@@ -1,0 +1,47 @@
+{
+  "name": "ui-router.grant",
+  "version": "0.1.5",
+  "description": "Protect your ui-router routes with the easy to use grant module.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryandrewjohnson/ui-router.grant"
+  },
+  "author": "Ryan Johnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryandrewjohnson/ui-router.grant/issues"
+  },
+  "scripts": {
+    "test": "grunt karma:unit_single"
+  },
+  "browser": "dist/angular-ui-router-grant.js",
+  "homepage": "https://github.com/ryandrewjohnson/ui-router.grant",
+  "keywords": [
+    "angularjs",
+    "ui-router",
+    "permissions"
+  ],
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-karma": "^0.10.1",
+    "karma": "^0.12.31",
+    "karma-chai-plugins": "^0.2.4",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-coverage": "^0.2.7",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^0.3.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon-chai": "^0.3.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2"
+  },
+  "dependencies": {
+    "angular-ui-router": "^0.2.13"
+  }
+}

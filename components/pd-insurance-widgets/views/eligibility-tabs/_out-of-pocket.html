@@ -1,0 +1,74 @@
+<div class="col-xs-12 col-sm-6" id="outOfPocketInfo">
+    <h4>Maximum Out-Of-Pocket</h4>
+    <p class="row-header"><b>Individual Coverage</b></p>
+
+    <div ng-if="data.insurance.summary.out_of_pocket.individual.in_network.limit.amount > 0">
+        <pie-chart chart-data='{{ data.insurance.summary.out_of_pocket.individual.in_network }}' type='individual'></pie-chart>
+        <p>
+            {{ ((data.insurance.summary.out_of_pocket.individual.in_network.applied.amount / data.insurance.summary.out_of_pocket.individual.in_network.limit.amount) * 100) | number:0 }}%
+            toward In Network Max OOP</p>
+    </div>
+
+    <p>In Network</p>
+    <dl class="dl-horizontal">
+        <dt>Total Deductible</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.individual.in_network.limit.amount | number:2 }}</dd>
+
+        <dt>Spent Y-T-D</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.individual.in_network.applied.amount | number:2 }}</dd>
+
+        <dt>Remaining</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.individual.in_network.remaining.amount | number:2 }}</dd>
+    </dl>
+
+    <p>Out Of Network</p>
+    <dl class="dl-horizontal">
+        <dt>Total Deductible</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.individual.out_of_network.limit.amount | number:2 }}</dd>
+
+        <dt>Spent Y-T-D</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.individual.out_of_network.applied.amount | number:2 }}</dd>
+
+        <dt>Remaining</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.individual.out_of_network.remaining.amount | number:2 }}</dd>
+    </dl>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6" ng-if="data.insurance.summary.out_of_pocket.family.in_network.limit.amount" style="margin-bottom: 3em;">
+<div>
+    <h4>{{ data.insurance.summary.out_of_pocket.family && !data.insurance.summary.out_of_pocket.individual ? "Maximum Out-Of-Pocket" : "&nbsp;" }}</h4>
+</div>
+<div>
+    <p class="row-header"><b>Family Coverage</b></p>
+
+    <div ng-if="data.insurance.summary.out_of_pocket.family.in_network.limit.amount > 0">
+        <pie-chart chart-data='{{ data.insurance.summary.out_of_pocket.family.in_network }}' type='family'></pie-chart>
+        <p>
+            {{ ((data.insurance.summary.out_of_pocket.family.in_network.applied.amount / data.insurance.summary.out_of_pocket.family.in_network.limit.amount) * 100) | number:0 }}%
+            toward In Network Max OOP</p>
+    </div>
+
+    <p>In Network</p>
+    <dl class="dl-horizontal">
+        <dt>Total Deductible</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.family.in_network.limit.amount | number:2 }}</dd>
+
+        <dt>Spent Y-T-D</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.family.in_network.applied.amount | number:2 }}</dd>
+
+        <dt>Remaining</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.family.in_network.remaining.amount | number:2 }}</dd>
+    </dl>
+
+    <p>Out Of Network</p>
+    <dl class="dl-horizontal">
+        <dt>Total Deductible</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.family.out_of_network.limit.amount | number:2 }}</dd>
+
+        <dt>Spent Y-T-D</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.family.out_of_network.applied.amount | number:2 }}</dd>
+
+        <dt>Remaining</dt>
+        <dd>${{ data.insurance.summary.out_of_pocket.family.out_of_network.remaining.amount | number:2 }}</dd>
+    </dl>
+</div>

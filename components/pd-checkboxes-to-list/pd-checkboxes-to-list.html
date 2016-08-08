@@ -1,0 +1,18 @@
+<div>
+    <div class="form-group mbn" ng-repeat="option in options">
+        <p class="control-label mbn">
+            <input type="checkbox"
+                   name="checkbox_option_{{ option.id }}_{{ nameSuffix }}"
+                   ng-model="option.val"
+                   ng-change="editPermission(option.val, option.id)"
+                   class="custom-checkbox"
+                   id="checkbox_option_{{ option.id }}_{{ nameSuffix }}"/>
+            <label class="custom-checkbox-label" for="checkbox_option_{{ option.id }}_{{ nameSuffix }}">
+                {{ option.title }}<br/>
+                <small>
+                    {{ option.description }}
+                </small>
+            </label>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="tile-description">
+
+    <!-- Description for a provider -->
+    <div ng-if="provider">
+        <!-- Location and years in practice info -->
+        <p ng-if="provider.locations.length > 0 || provider.years_in_practice">
+            {{ ::provider.first_name }} {{ ::provider.last_name }}
+            <span ng-show="provider.locations.length > 0"> currently practices in {{ ::provider.locations[0].city }}, {{ provider.locations[0].state }}</span>
+            <span ng-show="provider.years_in_practice"> and has been in practice for {{ ::provider.years_in_practice }}.</span>
+        </p>
+
+        <!-- Specialties and medical school info -->
+        <p ng-if="provider.medical_school">{{ provider.medical_school }}
+                <span ng-if="provider.gender">{{ ::provider.gender === 'male' ? 'He' : 'She' }}</span>
+                <span ng-if="!provider.gender">{{ ::provider.first_name}} {{ ::provider.last_name }}</span> graduated from
+                {{ ::provider.medical_school.name }} in {{ ::provider.medical_school.graduation_date | formatDate:'YYYY' }}.
+        </p>
+
+        <!-- Certifications and residency descriptions -->
+        <p ng-if="provider.certifications || provider.residencies">
+            <span ng-if="provider.gender">{{ ::provider.gender === 'male' ? 'He' : 'She' }}</span>
+            <span ng-if="!provider.gender">{{ ::provider.first_name}} {{ ::provider.last_name }}</span>
+            <span ng-if="provider.residencies">
+                completed medical residency training most recently at {{ ::provider.residencies[0].name }}
+                <span ng-if="provider.residencies[0].end_date"> in {{ ::provider.residencies[0].end_date | formatDate:'YYYY' }}</span><span ng-if="!provider.certifications">.</span><span ng-if="provider.certifications">, and is Board Certified in
+                    <span ng-repeat="certification in ::provider.certifications track by $index">
+                        {{ ::certification }}<span ng-show="$index + 1 < provider.certifications.length">,&nbsp;</span><span ng-show="$index + 1 >= provider.certifications.length">.</span>
+                    </span>
+                </span>
+            </span>
+        </p>
+
+    </div><!-- End provider description -->
+
+
+    <!-- Description for a business -->
+    <div ng-if="business">
+        <div ng-if="business.description">
+            <p>{{ ::business.description }}
+        </div>
+    </div>
+    <!-- End business description -->
+</div>

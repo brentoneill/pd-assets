@@ -1,0 +1,69 @@
+<div class="col-xs-12 col-sm-6" ng-if="data.insurance.summary.deductible.individual.in_network.limit.amount" id="deductibleInfo">
+    <h4>Deductible</h4>
+    <p class="row-header"><b>Individual Coverage</b></p>
+
+    <div ng-if="data.insurance.summary.deductible.individual.in_network.limit.amount > 0">
+        <p>
+            {{ ((data.insurance.summary.deductible.individual.in_network.applied.amount / data.insurance.summary.deductible.individual.in_network.limit.amount) * 100) | number:0 }}%
+            toward In Network Deductible</p>
+    </div>
+    <p>In Network</p>
+    <dl class="dl-horizontal">
+        <dt>Total Deductible</dt>
+        <dd>${{ data.insurance.summary.deductible.individual.in_network.limit.amount | number:2 }}</dd>
+
+        <dt>Spent Y-T-D</dt>
+        <dd>${{ data.insurance.summary.deductible.individual.in_network.applied.amount | number:2 }}</dd>
+
+        <dt>Remaining</dt>
+        <dd>${{ data.insurance.summary.deductible.individual.in_network.remaining.amount | number:2 }}</dd>
+    </dl>
+
+    <p>Out Of Network</p>
+    <dl class="dl-horizontal">
+        <dt>Total Deductible</dt>
+        <dd>${{ data.insurance.summary.deductible.individual.out_of_network.limit.amount | number:2 }}</dd>
+
+        <dt>Spent Y-T-D</dt>
+        <dd>${{ data.insurance.summary.deductible.individual.out_of_network.applied.amount | number:2 }}</dd>
+
+        <dt>Remaining</dt>
+        <dd>${{ data.insurance.summary.deductible.individual.out_of_network.remaining.amount | number:2 }}</dd>
+    </dl>
+</div>
+<div class="col-xs-12 col-sm-6" ng-if="data.insurance.summary.deductible.family.in_network.limit.amount" style="margin-bottom: 3em;">
+    <h4>{{ data.insurance.summary.deductible.family && !data.insurance.summary.deductible.individual ? "Deductible" : "&nbsp;" }}</h4>
+    <div>
+        <p class="row-header"><b>Family Coverage</b></p>
+
+        <div ng-if="data.insurance.summary.deductible.family.in_network.limit.amount > 0">
+            <p>
+                {{ ((data.insurance.summary.deductible.family.in_network.applied.amount / data.insurance.summary.deductible.family.in_network.limit.amount) * 100) | number:0 }}%
+                toward In Network Deductible</p>
+        </div>
+
+        <p>In Network</p>
+        <dl class="dl-horizontal">
+            <dt>Total Deductible</dt>
+            <dd>${{ data.insurance.summary.deductible.family.in_network.limit.amount | number:2 }}</dd>
+
+            <dt>Spent Y-T-D</dt>
+            <dd>${{ data.insurance.summary.deductible.family.in_network.applied.amount | number:2 }}</dd>
+
+            <dt>Remaining</dt>
+            <dd>${{ data.insurance.summary.deductible.family.in_network.remaining.amount | number:2 }}</dd>
+        </dl>
+
+        <p>Out Of Network</p>
+        <dl class="dl-horizontal">
+            <dt>Total Deductible</dt>
+            <dd>${{ data.insurance.summary.deductible.family.out_of_network.limit.amount | number:2 }}</dd>
+
+            <dt>Spent Y-T-D</dt>
+            <dd>${{ data.insurance.summary.deductible.family.out_of_network.applied.amount | number:2 }}</dd>
+
+            <dt>Remaining</dt>
+            <dd>${{ data.insurance.summary.deductible.family.out_of_network.remaining.amount | number:2 }}</dd>
+        </dl>
+    </div>
+</div>

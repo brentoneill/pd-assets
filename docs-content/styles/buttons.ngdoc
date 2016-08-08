@@ -1,0 +1,270 @@
+@ngdoc overview
+@name buttons
+@description
+
+<h1 class="page-header anchor" id="buttons">Buttons</h1>
+
+<p class="h-title anchor" id="buttons-options"><font size="4">Options</font></p>
+
+<p>Use any of the available button classes to quickly create a styled button.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+      <button type="button" class="btn btn-default">Default</button>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-white">White</button>
+      <button type="button" class="btn btn-link">Link</button>
+
+<hr/>
+<!--Code Examples-->
+<h4>Code</h4>
+<pre class="margin-left">
+<!-- Standard button -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn btn-primary">Primary</button>
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn btn-success">Success</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn btn-info">Info</button>
+
+<!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn btn-warning">Warning</button>
+
+<!-- Indicates a dangerous or potentially negative action -->
+<button type="button" class="btn btn-danger">Danger</button>
+
+<!-- A white button to blend with navs and a special hover state-->
+<button type="button" class="btn btn-white">White</button>
+
+<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+<button type="button" class="btn btn-link">Link</button>
+</pre>
+    </div>
+</div>
+<!--End of First Panel-->
+
+<!--BUTTON SIZES-->
+<p class="h-title anchor" id="buttons-sizes"><font size="5">Sizes</font></p>
+<p>Fancy larger or smaller buttons? Add <code>.btn-lg</code>, <code>.btn-sm</code>,
+  or <code>.btn-xs</code> for additional sizes.
+</p>
+
+<!--Button size examples-->
+<div class="panel panel-default">
+  <div class="panel-body">
+<p>
+  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+  <button type="button" class="btn btn-default btn-lg">Large button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary">Default button</button>
+  <button type="button" class="btn btn-default">Default button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-default btn-sm">Small button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+</p>
+<hr/>
+<!--CODE EXAMPLES FOR BUTTON SIZES-->
+<h3>Code</h3>
+
+<div hljs class="hljs" language="html">
+<pre class="margin-left">
+<p>
+  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+  <button type="button" class="btn btn-default btn-lg">Large button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary">Default button</button>
+  <button type="button" class="btn btn-default">Default button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-default btn-sm">Small button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+</p>
+</pre>
+</div>
+  </div>
+</div>
+<!--End of Panel for Buttons sizes-->
+
+<!--Block Level Buttons-->
+<p>
+  <font size="3">Create block level buttons—those that span the full width of a parent— by adding <code>.
+    btn-block</code>.</font>
+</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+    <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
+    <hr/>
+<!--Block Level Buttons CODE EXAMPLES-->
+<h3>Code</h3>
+<pre class="margin-left">
+<button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+<button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
+</pre>
+  </div>
+</div>
+<!--END OF BLOCK LEVEL PANEL-->
+
+<!--Active State Paragraphs-->
+<blockquote><font size="4">
+  <p class="h-title anchor" id="buttons-active">Active state</font></p>
+
+  <p><font size = "3">Buttons will appear pressed (with a darker background, darker border, and inset
+    shadow) when active. For <code>&lt;button&gt;</code> elements, this is done via <code>:active</code>.
+    For <code>&lt;a&gt;</code> elements, it's done with <code>.active</code>. However, you may use
+    <code>.active</code> on <code>&lt;button&gt;</code>s should you need to replicate the active state
+    progammatically.</font>
+  </p>
+  <br>
+  <!--Button Element Paragraph-->
+  <h3><font size="4">Button element</font></h3>
+  <p>No need to add <code>:active</code> as it's a pseudo-class, but if you need to force the same appearance, go
+      ahead and add <code>.active</code>.
+  </p>
+</blockquote>
+
+
+<!--Primary Button Examples-->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <button type="button" class="btn btn-primary btn-lg active">Primary button</button>
+        <button type="button" class="btn btn-default btn-lg active">Button</button>
+        <hr/>
+<!--Code examples for primary button elements-->
+<h3>Code</h3>
+<pre class="margin-left">
+<button type="button" class="btn btn-primary btn-lg active">Primary button</button>
+<button type="button" class="btn btn-default btn-lg active">Button</button>
+</pre>
+
+  </div>
+</div>
+<!--End of Primary Buttons Panel-->
+
+<!--Anchor Element-->
+<h3><font size="4">Anchor element</font></h3>
+
+<p>Add the <code>.active</code> class to <code>&lt;a&gt;</code> buttons.</p>
+
+<!--Primary Link Button-->
+<div class="panel panel-default">
+  <div class="panel-body">
+<a href="#" class="btn btn-primary btn-lg active" role="button">Primary link</a>
+<a href="#" class="btn btn-default btn-lg active" role="button">Link</a>
+<hr/>
+
+<!--CODE EXAMPLE OF PRIMARY LINK BUTTON-->
+<h4>Code</h4>
+<pre class="margin-left">
+<a href="#" class="btn btn-primary btn-lg active" role="button">Primary link</a>
+<a href="#" class="btn btn-default btn-lg active" role="button">Link</a>
+</pre>
+  </div>
+</div>
+<!--Disabled State Block Quote-->
+<blockquote>
+  <p class="h-title anchor" id="buttons-disabled">Disabled state</p>
+  <p>Make buttons look unclickable by fading them back 50%.</p>
+  <h2>Button element</h2>
+  <p>Add the <code>disabled</code> attribute to <code>&lt;button&gt;</code> buttons.</p>
+</blockquote>
+
+<!--Start of new panel-->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <button type="button" class="btn btn-primary btn-lg" disabled="disabled">Primary button</button>
+    <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
+    <hr/>
+
+<!--Code example of disabled buttons-->
+    <h3>Code</h3>
+    <pre class="margin-left">
+<button type="button" class="btn btn-lg btn-primary" disabled="disabled">Primary button</button>
+<button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
+    </pre>
+<!--Text Broswer Compatibility and Anchor elements-->
+      <h3><font size="4">Cross-browser compatibility</font></h3>
+      <p>If you add the <code>disabled</code> attribute to a <code>&lt;button&gt;</code>, Internet Explorer 9 and
+      below will render text gray with a nasty text-shadow that we cannot fix.</p>
+      <h3><font size="4">Anchor element</h3>
+      <p>Add the <code>.disabled</code> class to <code>&lt;a&gt;</code> buttons.</p>
+
+<!--Link Buttons-->
+<a href="#" class="btn btn-primary btn-lg disabled" role="button">Primary link</a>
+<a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
+<hr/>
+<h3>Code</h3>
+
+<!--Code Examples of Link Buttons-->
+<pre class="margin-left">
+<a href="#" class="btn btn-primary btn-lg disabled" role="button">Primary link</a>
+<a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
+</pre>
+  </div>
+</div>
+<!--END OF PANEl-->
+
+<!--Link functionality block quotes section-->
+<blockquote>
+    <h3><font size="4">Link functionality not impacted</font></h3>
+
+    <p>This class will only change the <code>&lt;a&gt;</code>'s appearance, not its functionality. Use custom JavaScript
+        to disable links here.</p>
+
+    <h3><font size="4">Context-specific usage</font></h3>
+
+    <p>While button classes can be used on <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements, only <code>
+        &lt;button&gt;</code> elements are supported within our nav and navbar components.</p>
+</blockquote>
+
+<!--Final Panel-->
+<div class="panel panel-default">
+  <div class="panel-body">
+<!--Button Tags-->
+    <p>Use the button classes on an <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or <code>&lt;input&gt;</code>
+    element.</p>
+    <a class="btn btn-default" href="#" role="button">Link</a>
+    <button class="btn btn-default" type="submit">Button</button>
+    <input class="btn btn-default" type="button" value="Input">
+    <input class="btn btn-default" type="submit" value="Submit">
+
+<!--Button Tags CODE EXAMPLES-->
+    <h3><font size="4">Code</font></h3>
+    <pre class="margin-left">
+<a class="btn btn-default" href="#" role="button">Link</a>
+<button class="btn btn-default" type="submit">Button</button>
+<input class="btn btn-default" type="button" value="Input">
+<input class="btn btn-default" type="submit" value="Submit">
+    </pre>
+    <!--Broswer Rending Paragraph-->
+    <h2>Cross-browser rendering</h2>
+    <p>
+      <font size="3">As a best practice, <strong>we highly recommend using the <code>&lt;button&gt;</code>
+        element whenever possible</strong> to ensure matching cross-browser rendering. Among other things,
+        there's <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697451"> a Firefox bug</a> that
+        prevents us from setting the <code>line-height</code> of <code>&lt;input&gt;</code>
+        -based buttons, causing them to not exactly match the height of other buttons on Firefox.</font>
+    </p>
+  </div>
+</div>
+<!--Final Panel Closed-->

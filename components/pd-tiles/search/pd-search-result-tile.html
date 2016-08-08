@@ -1,0 +1,43 @@
+<div class="pd-search-result-tile relative clearfix">
+    <div class="row row-grid">
+        <div class="col-md-5">
+            <div class="media">
+                <div class="media-left">
+                    <div class="media-object" ng-class="{ mrl : hideProviderImages }">
+                        <a href="#" pd-save-position ui-sref="app.consumer.providers.detail({ uuid: provider._uuid })">
+                            <pd-profile-img entity="provider"></pd-profile-img>
+                        </a>
+                    </div>
+                </div>
+                <div class="media-body ">
+                    <pd-provider-name-link pd-save-position></pd-provider-name-link>
+                    <pd-specialty-list ng-if="provider.specialties.length"></pd-specialty-list>
+                    <pd-address location="location"
+                                pd-save-position
+                                business-uuid="provider.affiliations[0]._uuid"
+                                hide-directions-link="true"
+                                hide-google-maps-link="true"
+                                hide-phone-number="true"
+                                address-classes="small">
+                    </pd-address>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" ng-if="!hideSchedules">
+            <pd-appointment-slots-tile hide-controls="true"
+                                       provider-uuid="provider._uuid"
+                                       search-params="searchParams"
+                                       watch-model="false"
+                                       pd-save-position
+                                       disable-appt-links="disableApptLinks"
+                                       on-select="onAppointmentSelect">
+            </pd-appointment-slots-tile>
+        </div>
+        <div class="pd-pokit-btn-wrapper absolute top right">
+             <pd-pokit-btn pokited="{{ ::provider.pokited }}"
+                           uuid="{{ ::provider._uuid }}"
+                           type="{{ ::provider._type }}">
+             </pd-pokit-btn>
+        </div>
+    </div>
+</div>

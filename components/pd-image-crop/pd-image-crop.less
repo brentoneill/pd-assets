@@ -1,0 +1,126 @@
+@dropdown-size: 140px;
+
+.consumer-img {
+    width: 128px;
+    height: 128px;
+    background-size: 90%;
+}
+
+.img-upload-container {
+    position: relative;
+    text-align: center;
+
+    .edit-image-overlay {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: inherit;
+        text-align: left;
+    }
+}
+
+.edit-image-inner {
+    position: relative;
+    width: @dropdown-size;
+    margin: 0 auto;
+}
+
+.image-edit-details {
+    position: absolute;
+    bottom: -68px;
+    z-index: 999;
+    width: @dropdown-size;
+    background: @white;
+    border: 1px solid @gray-lightest;
+    border-radius: 10px;
+
+    &:before {
+        position: absolute;
+        top: -12px;
+        left: 41%;
+        z-index: 99;
+        content: "";
+        border: solid;
+        border-color: @white transparent;
+        border-width: 0 12px 12px 12px;
+    }
+
+    &:after {
+        position: absolute;
+        top: -13px;
+        left: 41.5%;
+        z-index: 98;
+        content: "";
+        border: solid;
+        border-color: @gray-lighter transparent;
+        border-width: 0 12px 12px 12px;
+    }
+
+    a {
+        display: block;
+        margin: 6px;
+        font-weight: lighter;
+    }
+}
+
+.cropit-image-background {
+    opacity: .2;
+}
+
+.cropit-image-preview-container {
+    position: relative;
+    margin: 32px auto;
+}
+
+.img-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.cropit-image-background-container {
+    min-height: 100px;
+}
+
+.cropit-image-preview {
+    min-height: 100px;
+    &.circle {
+        cursor: move;
+        border-radius: 100%;
+    }
+}
+
+.cropit-image-zoom-input {
+    margin-top: 40px;
+}
+
+.image-preview {
+    width: 100%;
+    min-width: 170px;
+    padding: 20px 14px;
+    background: white;
+}
+
+
+
+.img-upload-container.slideshow .add-slideshow-image {
+    .btn-dashed;
+
+    width: 100%;
+    height: 133px;
+    padding-top: 45px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: @brand-primary;
+    text-align: center;
+    cursor: pointer;
+    border: 1px dotted red;
+    border-color: @brand-primary;
+}

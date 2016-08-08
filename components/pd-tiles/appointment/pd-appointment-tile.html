@@ -1,0 +1,51 @@
+<div class="pd-appointment-tile">
+    <div class="panel panel-default">
+        <div pd-loader="{ promise: appointmentLoaderPromise, backdrop: true, templateUrl: 'pd-loader/pd-loader-spinner.html', delay: 100, minDuration: 250, afterDelay: 250 }"></div>
+        <div class="panel-heading">
+            <div class="row vertical-align">
+                <div class="col-md-6">
+                    <h4><i class="fa fa-fw fa-calendar"></i> {{ ::appointment.startDateDisplay }} at {{ ::appointment.startTimeDisplay }}</h4>
+                </div>
+                <div class="col-md-6 text-right" ng-if="detailView">
+                    <pd-cal-export
+                        start-date="{{formatted.start}}"
+                        end-date="{{formatted.end}}"
+                        title="{{formatted.title}}"
+                        location="{{formatted.location}}"
+                        class-name="btn btn-sm btn-default dropdown-toggle"
+                        description="{{formatted.description}}"
+                        btn-text="Add to calendar">
+                    </pd-cal-export>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-9 col-xs-12">
+                    <pd-provider-tile hide-gender="true" provider="appointment.provider"></pd-provider-tile>
+                </div>
+                <div class="col-sm-3 col-xs-12 text-center">
+                    <a class="btn btn-block btn-default btn-sm" ui-sref="app.consumer.reschedule.find({ uuid: appointment._uuid })">
+                        Reschedule
+                    </a>
+                    <button class="btn btn-default btn-block btn-sm"
+                            ng-click="openCancelModal(appointment)">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+            <hr />
+            <pd-appointment-info appointment="appointment"
+                                 hide-insurance="true">
+            </pd-appointment-info>
+            <hr/>
+            <div class="text-center text-muted small">
+                        For questions, please contact your provider directly by calling:
+                        <a ng-href="tel:{{::location.phone}}"
+                           class="text-link-small">
+                            {{ location.phone | telephone }}
+                        </a>
+            </div>
+        </div> <!-- /.panel-body -->
+    </div><!-- /.panel -->
+</div>

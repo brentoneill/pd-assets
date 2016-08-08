@@ -1,0 +1,444 @@
+/*------------------------------------*\
+  #UTILITIES
+
+    - A collection of simple, one rule utility classes
+    - Use box model utilties sparingly
+
+\*------------------------------------*/
+
+
+/* Box model utilities */
+// Padding
+//// Large padding
+.pll, .phl, .pal {
+    padding-left: @padding-large-horizontal !important;
+}
+
+.prl, .phl, .pal {
+    padding-right: @padding-large-horizontal !important;
+}
+
+.ptl, .pvl, .pal {
+    padding-top: @padding-large-horizontal !important;
+}
+
+.pbl, .pvl, .pal {
+    padding-bottom: @padding-large-horizontal !important;
+}
+
+//// Medium Padding
+.plm, .phm, .pam {
+    padding-left: @padding-base-horizontal !important;
+}
+
+.ptm, .pvm, .pam {
+    padding-top: @padding-base-horizontal !important;
+}
+
+.pbm, .pvm, .pam {
+    padding-bottom: @padding-base-horizontal !important;
+}
+
+.prm, .phm, .pam {
+    padding-right: @padding-base-horizontal !important;
+}
+
+//// Small padding
+.pts, .pvs, .pas {
+    padding-top: @padding-xs-horizontal !important;
+}
+
+.pbs, .pvs, .pas {
+    padding-bottom: @padding-xs-horizontal !important;
+}
+
+.pls, .phs, .pas {
+    padding-left: @padding-xs-horizontal !important;
+}
+
+.prs, .phs, .pas {
+    padding-right: @padding-xs-horizontal !important;
+}
+
+//// NO padding
+.ptn, .pvn, .pan {
+    padding-top: 0 !important;
+}
+
+.pbn, .pvn, .pan {
+    padding-bottom: 0 !important;
+}
+
+.pln, .phn, .pan {
+    padding-left: 0 !important;
+}
+
+.prn, .phn, .pan {
+    padding-right: 0 !important;
+}
+
+
+// Margin
+//// Large Margin
+
+.mtl, .mvl, .mal {
+    margin-top: @padding-large-horizontal !important;
+}
+
+.mbl, .mvl, .mal {
+    margin-bottom: @padding-large-horizontal !important;
+}
+
+.mll, .mhl, .mal {
+    margin-left: @padding-large-horizontal !important;
+}
+
+.mrl, .mhl, .mal {
+    margin-right: @padding-large-horizontal !important;
+}
+
+//// Medium margin
+.mtm, .mvm, .mam {
+    margin-top: @padding-base-horizontal !important;
+}
+
+.mbm, .mvm, .mam {
+    margin-bottom: @padding-base-horizontal !important;
+}
+
+.mlm, .mhm, .mam {
+    margin-left: @padding-base-horizontal !important;
+}
+
+.mrm, .mhm, .mam {
+    margin-right: @padding-base-horizontal !important;
+}
+
+//// Small margin
+.mts, .mvs, .mas {
+    margin-top: @padding-xs-horizontal !important;
+}
+
+.mbs, .mvs, .mas {
+    margin-bottom: @padding-xs-horizontal !important;
+}
+
+.mls, .mhs, .mas {
+    margin-left: @padding-xs-horizontal !important;
+}
+
+.mrs, .mhs, .mas {
+    margin-right: @padding-xs-horizontal !important;
+}
+
+//// NO Margin
+.mhn, .mln, .man {
+    margin-left: 0 !important;
+}
+
+.mhn, .mrn, .man {
+    margin-right: 0 !important;
+}
+
+.mvn, .mtn, .man {
+    margin-top: 0 !important;
+}
+
+.mvn, .mbn, .man {
+    margin-bottom: 0 !important;
+}
+
+/* flexbox grid alignment
+** IE9 and under will need fixes
+*/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .row.vertical-align {
+        display: flex;
+
+        align-items: center;
+    }
+}
+/* bootstrap column grid stacking fix on mobile
+*/
+.row.row-grid [class*="col-"] + [class*="col-"] {
+    margin-top: @form-group-margin-bottom;
+}
+.row-grid + .row-grid {
+    margin-top: @form-group-margin-bottom;
+}
+@media (min-width: 1200px) {
+    .row.row-grid [class*="col-lg-"] + [class*="col-lg-"] {
+        margin-top: 0;
+    }
+}
+@media (min-width: 992px) {
+    .row.row-grid [class*="col-md-"] + [class*="col-md-"] {
+        margin-top: 0;
+    }
+}
+@media (min-width: 768px) {
+    .row.row-grid [class*="col-sm-"] + [class*="col-sm-"] {
+        margin-top: 0;
+    }
+}
+
+/* Other Utilities */
+
+// Border utiltiies
+.brn {
+    border-radius: 0 !important;
+}
+
+// Remove border on a certain side
+.border-none {
+    border: 0 !important;
+}
+
+.border-tn {
+    border-top: 0 !important;
+}
+
+.border-bn {
+    border-bottom: 0 !important;
+}
+
+.border-rn {
+    border-right: 0 !important;
+}
+
+.border-ln {
+    border-left: 0 !important;
+}
+
+// No borders on top and bottom edges
+.border-vn {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+// No borders on left and right edges
+.border-hn {
+    border-right: 0 !important;
+    border-left: 0 !important;
+}
+
+
+// Display type utilities
+.inline {
+    display: inline !important;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.clear-all {
+    clear: both;
+}
+
+// Vertical align utilities
+.v-align-sub {
+    vertical-align: sub !important;
+}
+
+.v-align-super {
+    vertical-align: super !important;
+}
+
+.v-align-middle {
+    vertical-align: middle !important;
+}
+
+
+// Position utilities
+.relative {
+    position: relative !important;
+}
+
+.absolute {
+    position: absolute !important;
+
+    &.bottom {
+        bottom: 0 !important;
+    }
+
+    &.top {
+        top: 0 !important;
+    }
+
+    &.right {
+        right: 0 !important;
+    }
+
+    &.left {
+        left: 0 !important;
+    }
+}
+
+// Text related utilities
+.text-bold {
+    font-weight: bold !important;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-xsmall {
+    font-size: @font-size-xsmall;
+}
+
+.text-small {
+    font-size: @font-size-small;
+}
+
+.text-large {
+    font-size: @font-size-large;
+}
+
+.text-title {
+    font-size: @font-size-medium;
+}
+
+.text-base {
+    font-size: @font-size-base;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.fw-normal {
+    font-weight: normal !important;
+}
+
+.no-wrap {
+    white-space: nowrap !important;
+}
+
+
+// Background color utilities
+.bg-gray {
+    background-color: @gray !important;
+}
+
+.bg-white {
+    background-color: @white !important;
+}
+
+.bg-gray-dark {
+    background-color: @gray-dark !important;
+}
+
+.bg-gray-darker {
+    background-color: @gray-darker !important;
+}
+
+.bg-gray-light {
+    background-color: @gray-light !important;
+}
+
+.bg-gray-lighter {
+    background-color: @gray-lighter !important;
+}
+
+.bg-gray-lightest {
+    background-color: @gray-lightest !important;
+}
+
+// Text color utilities
+.text-gray {
+    color: @gray !important;
+}
+
+.text-gray-light {
+    color: @gray-light !important;
+}
+
+.text-gray-lighter {
+    color: @gray-lighter !important;
+}
+
+.text-gray-lightest {
+    color: @gray-lightest !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    small.text-color,
+    .small.text-color {
+        color: @text-color;
+    }
+}
+
+// Other utiltiies
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.pointer-events-none {
+    pointer-events: none !important;
+}
+
+/* use this class for a vertical line divider between links */
+.v-divider {
+    display: inlineblock;
+    padding-right: 1em;
+    padding-left: 1em;
+    line-height: 1;
+}
+
+/* use this to divide content blocks instead of double <br> or empty <p> tags */
+hr.h-divider {
+    border: none;
+}
+
+// prevents user from selecting text within an element
+.no-select {
+    -webkit-user-select: none !important;   /* Chrome/Safari/Opera */
+       -moz-user-select: none !important;      /* Firefox */
+        -ms-user-select: none !important;       /* Internet Explorer/Edge */
+
+    -webkit-touch-callout: none !important; /* iOS Safari */
+     -khtml-user-select: none !important;    /* Konqueror */
+}
+
+.blurred {
+    opacity: .5;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.no-scroll-y {
+    overflow-y: hidden;
+}
+
+.no-scroll-x {
+    overflow-x: hidden;
+}
+
+[class^="col-"].half-pad {
+    padding-left: @grid-gutter-width / 4;
+    padding-right: @grid-gutter-width / 4;
+    &:first-child {
+        padding-left: @grid-gutter-width / 2;
+    }
+    &:last-child {
+        padding-right: @grid-gutter-width / 2;
+    }
+}

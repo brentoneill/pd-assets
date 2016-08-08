@@ -1,0 +1,256 @@
+@ngdoc overview
+@name other
+@description
+
+<h2>Other Components</h2>
+<p>This page will cover the following:</p>
+<ul>
+  <li>Pagination</li>
+  <li>Breadcrumbs</li>
+  <li>Alerts</li>
+  <li>Media Objects</li>
+  <li>Panels</li>
+</ul>
+<p>
+  For more information on these componenets visit the Bootstrap documentation
+  <a href="http://getbootstrap.com/components/#pagination">here</a>.
+</p>
+
+<!--Pagination Examples-->
+<h2>Pagination</h2>
+  <p>Boostrap provides an easily implementable multi-page pagination component shown below.
+  </p>
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+<!--Code Example-->
+<h3>Code</h3>
+<pre class="margin-left">
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</pre>
+<h3>Other useful pagination variations: </h3>
+  <ul>
+    <li>Disabled and Active States</li>
+    <li>Control Button Size</li>
+  </ul>
+
+<!--Disabled and Active Pagination-->
+<h3>Disabled and Active States
+<nav>
+    <ul class="pagination pagination-sm">
+      <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+      <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+      <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+      <li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+</nav>
+
+<!--Code Example of Disabled and Active Pagination-->
+<h4>Code</h4>
+<pre class="margin-left">
+  <nav>
+    <ul class="pagination">
+      <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+      <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+      ...
+    </ul>
+  </nav>
+</pre>
+
+<!--Pagination Size -->
+<h3>Change the Size of the Pagination</h3>
+<h4>Large Pagination</h4>
+<nav>
+  <ul class="pagination pagination-lg">
+    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+</nav>
+
+<!--Small Pagination-->
+<h4>Small Pagination</h4>
+<nav>
+  <ul class="pagination pagination-sm">
+    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+</nav>
+
+<!--Code Example for Large and Small Pagination Buttons-->
+<h4>Code-replace "pagination-lg" with "pagination-sm" for smaller pagination</h4>
+<pre class="margin-left">
+  <nav>
+    <ul class="pagination pagination-lg">
+      <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+      <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+      <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+      ...
+  </nav>
+</pre>
+
+<!--Breadcrumbs-->
+<h2>Breadcrumbs</h2>
+<p>Indicate the current page's location within the navigational hierarchy.</p>
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+
+<!--Code Example for Breadcrumbs-->
+<h4>Code</h4>
+<pre class="margin-left">
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+  </ol>
+</pre>
+
+<!--Alerts-->
+<h2>Alerts</h2>
+<p>Provide contextual feedback to the user.</p>
+<div class="alert alert-success" role="alert">Success!</div>
+<div class="alert alert-info" role="alert">Info!</div>
+<div class="alert alert-warning" role="alert">WARNING</div>
+<div class="alert alert-danger" role="alert">DANGER</div>
+
+<!--Code Example for Alerts-->
+<h4>Code</h4>
+<pre class="margin-left">
+<div class="alert alert-success" role="alert">...</div>
+<div class="alert alert-info" role="alert">...</div>
+<div class="alert alert-warning" role="alert">...</div>
+<div class="alert alert-danger" role="alert">...</div>
+</pre>
+
+<!--Media Objects-->
+<h2>Media Objects</h2>
+<p>Media Objects allow for the user to build various componenets that have an image on one side
+and text on the other side.</p>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0i
+      VVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLz
+      IwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0i
+      bm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNTUwYzY5YWRhNyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1NTBjNjlhZGE3Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><b><font size="4">Media heading</font></b></h4>
+    Media text here.
+  </div>
+</div>
+
+<!--Code Examples-->
+<h4>Code</h4>
+<pre class="margin-left">
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="desired image link here" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><b><font size="4">Media heading</font></b></h4>
+    Media message here.
+  </div>
+</div>
+</pre>
+
+<!--PANELS-->
+<h2>Panels</h2>
+<p>Sometimes having an object surrounded by a box can give your webpage the extra touch of style it needs.
+Boostrap makes this easy with panel classes.</p>
+
+<!--Default Panel Examples-->
+<h4>Default Panel</h4>
+<div class="panel panel-default">
+  <div class="panel-body">
+    Basic Example of a default panel.
+  </div>
+</div>
+<!--Code Examples for default panel-->
+<h4>Code</h4>
+<pre class="margin-left">
+<div class="panel panel-default">
+  <div class="panel-body">
+    Basic Example of a default panel.
+  </div>
+</div>
+</pre>
+
+<!--Panel with Heading-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <h3 class="panel-title">Panel Heading</h3>
+  </div>
+  <div class="panel-body">
+    Panel body content
+  </div>
+</div>
+
+<!--Code Example for Panel with Heading-->
+<h4>Code</h4>
+<pre class="margin-left">
+<div class="panel panel-default">
+<div class="panel-heading">
+  <h3 class="panel-title">Panel Heading</h3>
+</div>
+<div class="panel-body">
+  Panel body content
+</div>
+</div>
+</pre>

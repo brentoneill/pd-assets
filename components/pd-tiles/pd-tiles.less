@@ -1,0 +1,418 @@
+/*------------------------------------*\
+  #PD-TILES
+
+    - Styles for all components in the pd-tiles module
+    - Currently tile for: Business, Provider, Consumer, Appointment, Location,
+      Search Results, and common items
+
+\*------------------------------------*/
+
+
+address.pd-address {
+     margin-bottom: 0;
+}
+
+/*
+.pd-location-tile,
+.pd-provider-tile {
+    margin-bottom: @padding-large-vertical;
+}
+*/
+
+// Styles for provider tile
+.pd-provider-tile {
+    min-height: 100px;
+    position: relative;
+    ul.list-inline {
+        text-align: center;
+        padding-left: 5px;
+    }
+    .pd-pokit-btn-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: @zindex-navbar;
+        a&:hover {
+            text-decoration: none;
+        }
+    }
+    .pd-social-links {
+        margin-bottom: 0;
+    }
+}
+// Styles for appointment times tile
+.pd-appointment-slots-tile {
+    width: 100%;
+    padding-left: 1px;
+    padding-right: 1px;
+    min-height: 120px;
+    position: relative;
+    .pd-spinner {
+        margin-top: 40px;
+    }
+    .schedule {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+.pd-insurance-info {
+    p {
+        span {
+            display: inline-block;
+            min-width: 110px;
+        }
+    }
+}
+
+.pd-schedule-control-tile {
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-bottom: @padding-base-vertical;
+    ul {
+        margin: 0;
+    }
+}
+
+.schedule-controls {
+    li {
+        position: absolute;
+        font-size: small;
+        min-width: 80px;
+        top: @padding-small-vertical;
+        .no-select;
+        a {
+            padding: @padding-small-vertical @padding-small-horizontal;
+        }
+    }
+    .btn-prev {
+        left: 0;
+    }
+    .btn-next {
+        right: 0;
+    }
+}
+.schedule .pager {
+    margin: 0;
+}
+.page-schedule, .page-reschedule {
+    h2 {
+        margin-top: 0;
+    }
+}
+.schedule-columns-wrapper {
+    display: block;
+    width: 100%;
+    min-width: 300px;
+    margin: 0 auto;
+}
+.schedule-column {
+    width: 20%;
+    display: inline-block;
+    float: left;
+    .no-select;
+
+    &:last-child {
+        p { margin-right: 0; }
+    }
+
+    h5 { border-bottom: thin solid @gray-lightest; }
+    p {
+        margin: 0 auto;
+        a.schedule-time,
+        span.schedule-time {
+            border: 1px solid @brand-primary;
+            border-radius: @border-radius-base / 2;
+            display: block;
+            background-color: @white;
+            text-align: center;
+            padding: @padding-small-vertical 0;
+            text-transform: lowercase;
+            transition: all 0.15s ease-out;
+            font-size: @font-size-small;
+            margin: -1px -1px;
+        }
+        a.schedule-time {
+            &:focus,
+            &:active,
+            &:hover {
+                text-decoration: none;
+                background-color: @brand-primary;
+                color: @white;
+            }
+        }
+    }
+}
+
+//media elements
+.pd-location-tile {
+    .media-body > p {
+        margin-top: 0;
+    }
+}
+.pd-consumer-tile {
+    .media-heading {
+        margin-bottom: .5em;
+    }
+    .media-body > p {
+        margin: 0 0 5px;
+    }
+}
+.page-provider-detail, .page-business-detail, .search-result {
+    .media-left {
+        min-width: 120px;
+    }
+    .pd-location-tile {
+        margin-top: 1em;
+    }
+}
+// make sure all media box & card detail data are aligned
+.panel-activity,
+.pd-appointment-tile,
+.panel-appointment,
+.panel-activity-history,
+.pd-workflow-hud,
+.page-pokit .list-container {
+    .panel-heading {
+        padding: 10px 20px;
+        h4 {
+            margin: 0;
+        }
+    }
+    .panel-body {
+        padding: 20px;
+    }
+    .media-left, .activity-detail td.tag {
+        min-width: 100px;
+    }
+}
+.page-reschedule {
+    form .media-left {
+        min-width: 120px;
+    }
+}
+.page-appointment-detail, .page-pokit .list-container {
+    .media-left, .activity-detail td.tag {
+        min-width: 120px;
+    }
+}
+
+// Styles for locations tile
+.pd-locations-tile {
+    h5 {
+        margin-bottom: .2em;
+    }
+    address {
+        margin-bottom: @padding-small-vertical;
+    }
+    .media-object {
+        padding: @padding-large-vertical;
+    }
+    .location {
+        margin-bottom: @padding-large-vertical * 2;
+    }
+}
+.pd-business-tile {
+    position: relative;
+    .business-description {
+        margin-top: @padding-large-vertical;
+        line-height: @line-height-small;
+    }
+}
+
+.pd-mini-provider-tile,
+.pd-mini-location-tile {
+    margin-bottom: @padding-base-vertical;
+    // toggled on/off inside directive from directive attrs
+    &.clickable {
+        cursor: pointer;
+        transition: background-color 0.3s ease-in;
+        &:hover {
+            background-color: @gray-lightest;
+        }
+    }
+    .media-body {
+        padding-bottom: 0;
+    }
+}
+
+.pd-mini-location-tile {
+    .img-map {
+        max-width: 160px;
+    }
+    address {
+        margin-top: @padding-small-vertical;
+        margin-bottom: 0;
+    }
+}
+
+.pd-mini-location-tile,
+.pd-mini-provider-tile {
+    .h5 { margin-top: @padding-small-vertical; }
+    span.text-small { font-size: @font-size-small; }
+    address { margin-bottom: @padding-small-vertical; }
+}
+
+.pd-search-result-tile {
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+    .pd-pokit-wrapper {
+        position: absolute;
+        top: @padding-large-vertical;
+        right: 0;
+    }
+    .search-result {
+        .tile-appttimes {
+            min-height: 100px;
+        }
+    }
+
+    .pd-appointment-slots-tile {
+        min-height: 100px;
+    }
+
+}
+.search-result {
+    &.panel {
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+}
+.search-bar {
+    background-color: @body-bg;
+    width: 100% !important;
+    &.affixed {
+        border-bottom: thin solid @gray-lighter;
+        border-top: thin solid @gray-lighter;
+        .box-shadow(0 1px 1px rgba(0, 0, 0, .15));
+    }
+}
+
+.pd-specialty-list {
+    color: @gray-dark;
+    line-height: 1;
+}
+
+.pd-provider-name {
+    margin-top: .1em;
+    margin-bottom: .2em;
+}
+
+.pd-social-links {
+    text-align: left;
+    li {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    i.fa { font-size: 1.5em; }
+}
+
+.pd-profile-img {
+    margin-bottom: @padding-base-vertical;
+}
+
+.list-container .panel {
+    margin-top: @line-height-computed;
+    margin-bottom: @line-height-computed;
+}
+
+.list-container .panel, .pd-workflow-hud.panel {
+    .panel-heading {
+        h4 {
+           margin: 0;
+        }
+    }
+}
+
+@media (max-width: @screen-md) {
+    .results-text {
+        text-align: center;
+    }
+    .pd-pokit-wrapper {
+        top: 0;
+    }
+}
+@media (max-width: @screen-sm) {
+    .tile-locations {
+        .location-map {
+            text-align: center;
+        }
+    }
+}
+@media (max-width: @screen-xs-max) {
+    .pd-appointment-slots-tile .schedule, .pd-schedule-control-tile {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .schedule .schedule-controls {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        li {
+            top: -20px;
+        }
+        .btn-next {
+            right: -5px;
+        }
+        .btn-prev {
+            left: -5px;
+        }
+    }
+    .page-provider-detail .pd-schedule-control-tile, .page-reschedule .pd-schedule-control-tile {
+        padding-top: 2.5em;
+    }
+    .search-bar .schedule-controls {
+        li {
+            top: 0px;
+        }
+        .btn-next {
+            right: -5px;
+        }
+        .btn-prev {
+            left: -5px;
+        }
+    }
+    .schedule-columns-wrapper {
+        min-width: none;
+    }
+    .tile-search-result {
+        padding-top: @padding-large-horizontal * 2;
+        .pd-pokit-wrapper {
+            top: @padding-small-vertical;
+            right: 0;
+        }
+    }
+
+    .panel-activity, .panel-list-item {
+        .panel-heading {
+            h4 {
+                font-size: @font-size-base;
+            }
+        }
+    }
+
+    .pd-search-result-tile {
+        padding-top: 20px;
+        .pd-pokit-btn-wrapper.absolute.right {
+            top: -10px !important;
+        }
+    }
+
+    .pd-provider-tile  {
+        padding-top: 20px;
+        .pd-pokit-btn-wrapper {
+            top: -10px !important;
+            right: -10px !important;
+        }
+    }
+}
+
+.panel-activity {
+    .pd-appointment-info {
+        .row {
+            dd {
+                padding-left: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@ngdoc overview
+@name grids
+@description
+
+<h1 class="page-header anchor">Grids</h1>
+
+<p>Bootstrap offers a grid system that makes it easy to layout information in an organized, visually appealing way with ease. </p>
+
+<div>
+<h3>Column Size</h3>
+<p>Below shows 3 columns of equal size.
+  <div class = "row">
+    <div class = "col-md-4">column 1</div>
+    <div class = "col-md-4">column 2</div>
+    <div class = "col-md-4">column 3</div>
+  </div>
+  <p>Below the outer columns are of equal size and the middle column is larger
+  <div class = "row">
+    <div class = "col-md-3">column 1</div>
+    <div class = "col-md-6">column 2</div>
+    <div class = "col-md-3">column 3</div>
+  </div>
+</div>

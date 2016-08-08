@@ -1,0 +1,50 @@
+/*------------------------------------*\
+  #PD-FACEBOOK
+
+    - Styles for pdFacebook module
+
+\*------------------------------------*/
+
+
+.btn-facebook {
+    background-color: #3b5999;
+    color: #fff !important;
+    font-size: @font-size-large;
+    line-height: 25px;
+    /*  min-height: 50px; */
+    padding-left: 50px;
+    text-transform: none !important;
+    text-align: center;
+    max-height: 49px;
+    /*  max-width: 360px; */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    font-family: @font-family-base;
+}
+
+#facebook-wide {
+    background: #3b5999 url(/static/pd-assets/images/btn-fb.png) no-repeat center center;
+}
+
+#facebook-narrow {
+    background: #3b5999 /* url(/static/pd-assets/images/FB-f-Logo__blue_29.png) */ no-repeat 5px 8px;
+
+    &:before {
+        font-family: 'FontAwesome';
+        content: "\f09a";
+        font-weight: normal;
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        font-size: 28px;
+        color: #fff;
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        padding: 9px 11px 11px 6px;
+        border-right: 2px inset rgba(255, 255, 255, .3);
+    }
+}

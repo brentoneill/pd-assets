@@ -1,0 +1,48 @@
+/*------------------------------------*\
+  #LINK
+
+    - Anchor tag related styles
+
+\*------------------------------------*/
+
+// Set up some defaults
+a {
+    font-family: @font-family-secondary;
+    cursor: pointer;
+}
+
+.text-link {
+    font-family: @font-family-secondary;
+    color: @gray-light;
+    &:active,
+    &:hover {
+        color: @gray;
+        text-decoration: underline;
+    }
+}
+
+.text-link-small {
+    font-family: @font-family-base;
+}
+
+.text-link-icon-hover {
+    .clearfix();
+    i {
+        .transition(~"opacity ease-in-out .15s");
+        float: right;
+        opacity: 0;
+    }
+    &:hover {
+        i {
+            opacity: 1;
+        }
+    }
+}
+
+.page-manage-locations .text-link-icon-hover {
+    i {
+        display: inline;
+        float: none;
+        font-size: 1em;
+    }
+}

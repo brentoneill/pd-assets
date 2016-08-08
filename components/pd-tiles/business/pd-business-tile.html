@@ -1,0 +1,31 @@
+<div class="pd-business-tile">
+    <div class="row">
+        <div class="col-sm-8" ng-class="{ 'col-xs-12': hideButtons }">
+            <div class="media-left">
+                <pd-profile-img entity="business"></pd-profile-img>
+                <pd-social-links></pd-social-links>
+            </div>
+            <div class="media-body">
+                <pd-specialty-list></pd-specialty-list>
+                <p>
+                    <a target="_blank"
+                       ng-href="{{::business.website_url}}"
+                       ng-if="business.website_url">
+                       {{::business.website_url}}
+                    </a>
+                </p>
+                <pd-description-tile></pd-description-tile>
+            </div>
+        </div>
+        <div ng-if="!hideButtons" class="col-sm-4">
+            <button class="btn btn-success btn-block"
+                    ng-click="scheduleAppointment()">
+                Schedule Appointment
+            </button>
+            <button class="btn btn-success btn-block"
+                    ng-click="getAQuote()">
+                Get a quote
+            </button>
+        </div>
+    </div>
+</div>

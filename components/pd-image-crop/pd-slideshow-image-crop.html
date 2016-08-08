@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12 img-upload-container slideshow"
+         ng-hide="editing || !image.slideshow[number] && !image.slideshow[number - 1] && number != 0">
+        <div ng-hide="!image.slideshow[number]"
+             class="pokit-icon pd-x-thin"
+             ng-click="removePhoto(image.slideshow[number])"
+             title="Remove this image"></div>
+
+        <div id="edit-pencil"
+             ng-hide="!image.slideshow[number]"
+             class="pokit-icon pd-edit-pencil image-edit"
+             ng-click="openFileSelect()"
+             title="Edit this image"></div>
+
+        <div class="add-slideshow-image" ng-hide="image.slideshow[number]">
+            <i class="pokit-icon pd-plus"></i>
+        </div>
+
+        <input id="slideshow-input-{{ number }}"
+               class="cropit-image-input file-select pull-left"
+               type="file"
+               ngf-select="onFileSelect($files)"
+               name="slideshow-image-{{ number }}"
+               ng-model="file"
+               data-multiple="false"
+               ng-hide="true"
+               accept="image/*">
+
+        <div class="pull-left"
+             ng-hide="!image.slideshow[number]"
+             ng-class="{'img-profile': image.slideshow_image_url || !editing, 'default': image.slideshow_image_url && !editing, 'cropit-image-preview': editing, 'provider': image._type == 'Provider', 'procedure': image._type == 'Service', 'business default': page == 'business'}"
+             style="background-size: 100% 100%"
+             ng-style="{'background-image': image.slideshow[number].slideshow_image_url && 'url(' + image.slideshow[number].slideshow_image_url + ')' || image.slideshow[number].medium_image_url && 'url(' + image.slideshow[number].medium_image_url + ')'}">
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="editing">
+    <div class="img-edit-container slideshow">
+        <div class="col-sm-12">
+            <div class="inner-container">
+                <p>Edit:</p>
+
+                <div class="cropit-image-preview-container">
+                    <div class="cropit-image-preview"></div>
+                </div>
+
+                <input type="range" class="cropit-image-zoom-input"/>
+                <p>Zoom level</p>
+            </div>
+        </div>
+        <div class="col-sm-12 text-center" ng-show="editing">
+            <a class="btn btn-default" ng-click="editing=false">Cancel</a>
+            <a class="btn btn-primary img-upload-btn"
+               ng-class="{'disabled': !slideshowImg, 'uploading': uploading == true}"
+               ng-click="uploadPhoto()"
+               ng-disabled="uploading == true">
+               <i class="dark-loader loader-s"></i> Select Image
+            </a>
+        </div>
+    </div>
+</div>

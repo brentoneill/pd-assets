@@ -1,0 +1,54 @@
+/*------------------------------------*\
+  #PANEL
+
+    - Overrides and additions to the Bootstrap .panel class
+
+\*------------------------------------*/
+
+
+.panel {
+    margin-bottom: 2em;
+}
+
+.panel-default {
+    border-radius: @border-radius-base;
+    .panel-heading {
+        border-top-left-radius: @border-radius-base;
+        border-top-right-radius: @border-radius-base;
+    }
+}
+
+.panel-tabs {
+    border-top-color: transparent;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.panel-body {
+    padding: @padding-large-horizontal * 1.5;
+}
+
+// half padding for certain panels
+.panel-body-hpad {
+    padding: @padding-large-horizontal;
+}
+
+.panel-transparent {
+    opacity: .8;
+}
+
+[sticky].panel-heading {
+    border-right: 1px solid @gray-lighter;
+    border-left: 1px solid @gray-lighter;
+}
+
+[sticky].sticky.search-bar {
+    padding-top: 6px;
+    border-bottom: 1px solid @gray-lighter;
+}
+
+@media(max-width:@screen-sm) {
+    .panel-body {
+        padding: @padding-large-horizontal;
+    }
+}

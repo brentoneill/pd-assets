@@ -1,0 +1,56 @@
+<header>
+  <nav class="navbar navbar-default admin-navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- Header nav title -->
+            <a class="navbar-brand"
+               ui-sref="{{ config.ui_sref }}">
+                {{ config.title }}
+            </a>
+        </div> <!-- /.navbar-header -->
+        <ul class="nav navbar-nav" ng-if="user.organizations.length > 1">
+            <li uib-dropdown is-open="status.isopen">
+                <a type="button" uib-dropdown-toggle>
+                    Change Organization <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                    <li ng-repeat="org in user.organizations">
+                        <a ui-sref="app.admin.organization-management.dashboard({uuid: org._uuid})">
+                            {{ org.name }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul><!-- /.navbar-nav -->
+
+        <div class="collapse navbar-collapse">
+            <!-- Tabs that are floated right in shown in all screen sizes except xs -->
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-repeat="tab in config.tabs" ng-if="tab.enabled">
+                    <a href="#"
+                       class="relative"
+                       ui-sref="{{ tab.ui_sref }}"
+                       ng-click="closeDrawer()"
+                       ui-sref-active="active">
+                        <span ng-if="tab.icon" class="label label-default badge admin-label">{{ tab.icon }}</span>
+                        {{ tab.title }}
+                    </a>
+                </li>
+                <li uib-dropdown class="dropdown hidden-xs" ng-if="user && loggedIn">
+                    <a href class="inline-block" uib-dropdown-toggle>
+                        <div class="avatar default" ng-if="!user.profile_image"></div>
+                        <img class="avatar"  ng-if="user.profile_image" ng-src="{{ user.profile_image.sm }}" alt="" />
+                        {{ user.first_name }} {{ user.last_name }}&nbsp;<i class="fa fa-lg fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li ng-repeat="item in config.dropdownItems">
+                            <a href="#" ui-sref="{{ item.ui_sref }}">{{ item.title }}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul> <!-- /.navbar-right collapsing sections -->
+        </div><!-- /.navbar-collapse -->
+        <pd-drawer-nav-toggle class="hidden-sm hidden-lg hidden-md hidden-xl" user="user"></pd-drawer-nav-toggle>
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>

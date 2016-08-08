@@ -1,0 +1,25 @@
+<address class="pd-address">
+    <div ng-if="!hideName || businessUuid">
+        <a ui-sref="app.consumer.businesses.detail({ slug: businessUuid })" ng-if="businessUuid">
+            {{::location.location_name || location.name}}
+        </a>
+        <span ng-if="!businessUuid" class="text-bold">{{::location.location_name || location.name}}</span>
+    </div>
+    <p class="{{ addressClasses }}">
+        {{::location.address_ln1 }}<br/>
+        <span ng-show="location.address_ln2">{{::location.address_ln2 }}<br/></span>
+        {{::location.city }},
+        {{::location.state }}
+        {{::location.zipcode }}
+    </p>
+    <div ng-if="!hidePhoneNumber">
+        <i class="fa fa-fw fa-phone text-muted v-align-middle"></i>
+        <a ng-if="!hidePhoneNumber" class="text-link-small" href="tel:{{::location.phone}}">
+            {{ location.phone | telephone }}
+        </a>
+    </div>
+    <div ng-if="!hideGoogleMapsLink" class="text-small">
+        <i class="fa fa-fw fa-map-o text-muted"></i>&nbsp;
+        <a ng-href="{{ location.googleMapsUrl }}" target="_blank">View Google Map</a>
+    </div>
+</address>

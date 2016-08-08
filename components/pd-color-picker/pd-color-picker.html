@@ -1,0 +1,15 @@
+<div class="pd-color-picker">
+    <input class="form-control mbs" name="current-color" ng-model="currentColor"
+           style="background-color: {{ currentColor }}; color: {{ textColor }}"/>
+    <div class="color-choice"
+         ng-repeat="color in colorChoices"
+         style="background-color: {{ color }};"
+         ng-click="selectColor(color)"></div>
+    <button class="btn btn-default"
+            colorpicker
+            type="button"
+            colorpicker-position="top"
+            ng-model="currentColor">
+        Custom...
+    </button>
+</div>

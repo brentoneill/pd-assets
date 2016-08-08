@@ -1,0 +1,43 @@
+<div class="pd-appointment-info">
+    <table class="appointment-detail">
+        <tbody>
+            <tr ng-if="!hideAppointmentType">
+                <td class="tag text-muted">Type:</td>
+                <td class="detail">{{ ::appointment.platform_appointment.appointment_type | convertAppointmentType }}</td>
+            </tr>
+            <tr ng-if="!hidePatientName">
+                <td class="tag text-muted">Patient:</td>
+                <td class="detail">{{ ::appointment.user.first_name }} {{ ::appointment.user.last_name }}</td>
+            </tr>
+            <tr ng-if="!hideReturningPatient">
+                <td class="tag text-muted">1st Visit:</td>
+                <td>{{ appointment.returning_patient ? 'No' : 'Yes'}}</td>
+            </tr>
+            <tr ng-if="!hideInsurance">
+                <td class="tag text-muted">Insurance:</td>
+                <td class="detail">
+                    <span ng-if="!insurance">None listed</span>
+                    <span ng-if="insurance">{{ ::insurance.trading_partner_name }} <br>
+                    # {{ ::insurance.member_id }}<br></span>
+                </td>
+            </tr>
+            <tr ng-if="!hideComments">
+                <td class="tag text-muted">Reason:</td>
+                <td class="detail" ng-if="limitComments">
+                    {{ appointment.comments || 'N/A' | limitTo: 70 }}
+                    <span class="text-muted" ng-if="appointment.comments.length > 70">...</span>
+                </td>
+                <td class="detail" ng-if="!limitComments">
+                    {{ appointment.comments || 'N/A' }}
+                </td>
+                    <!-- <p pd-read-more
+                       ellipsis="..."
+                       limit="70"
+                       content="{{appointment.comments}}"
+                       more-text="more"
+                       less-text="less">
+                     <p> -->
+            </tr>
+        </tbody>
+    </table>
+</div>

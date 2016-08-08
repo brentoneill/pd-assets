@@ -1,0 +1,186 @@
+@ngdoc overview
+@name tables
+@description
+
+<h1 class="page-header anchor" id="tables">Tables</h1>
+<p>
+  Tables are a quick and easy way to organize data into rows and columns similar to the way
+  Microsoft Excel organizes data. Boostrap<br>
+  offers variations on basic tables that are easy to implement. This page will give a
+  basic overview of tables offered by Bootstrap.
+</p>
+
+<p>
+For more information on Boostrap's tables click <a href="http://getbootstrap.com/css/#tables">here</a>.
+</p>
+<br>
+
+<!--Basic Table Example-->
+<h3>Basic Table</h3>
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Username</th>
+  </tr>
+  <tr>
+    <th scope="row">1</th>
+    <td>John</td>
+    <td>Doe</td>
+    <td>jd100</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Smith</td>
+    <td>jsmith099</td>
+  </tr>
+</table>
+
+  <!--Code example for basic table-->
+<h3>Code</h3>
+<pre class="margin-left">
+  <table class="table">
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>John</td>
+      <td>Doe</td>
+      <td>jd100</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Smith</td>
+      <td>jsmith099</td>
+    </tr>
+  </table>
+  </pre>
+<!--End of code example-->
+
+<!--Ease of Boostrap-->
+<h2>Simplicity</h2>
+<p>Boostrap allows the user to completely change their tables with ease by
+simply changing the class of the table header tag as show below.</p>
+<br>
+
+<!--Striped Tables-->
+<h3>Striped Tables</h3>
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Username</th>
+  </tr>
+  <tr>
+    <th scope="row">1</th>
+    <td>John</td>
+    <td>Doe</td>
+    <td>jd100</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Smith</td>
+    <td>jsmith099</td>
+  </tr>
+</table>
+
+<!--Code example for striped table-->
+<pre class="margin-left">
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Username</th>
+  </tr>
+  <tr>
+    <th scope="row">1</th>
+    <td>John</td>
+    <td>Doe</td>
+    <td>jd100</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Smith</td>
+    <td>jsmith099</td>
+  </tr>
+</table>
+</pre>
+<!--End of Code Example for Striped Table-->
+
+<!--Bordered Table-->
+<h3>Bordered Table</h3>
+<table class="table table-bordered">
+  <tr>
+    <th>#</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Username</th>
+  </tr>
+  <tr>
+    <th scope="row">1</th>
+    <td>John</td>
+    <td>Doe</td>
+    <td>jd100</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Smith</td>
+    <td>jsmith099</td>
+  </tr>
+</table>
+
+<!--Code Example for Bordered Table-->
+<h5>Code<h5>
+<pre class="margin-left">
+<table class="table table-bordered">
+  ....
+</table>
+</pre>
+<!--End of Bordered Table Code Examples-->
+
+<!--Hover Table-->
+<h3>Hover Table</h3>
+<table class="table table-hover">
+  <tr>
+    <th>#</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Username</th>
+  </tr>
+  <tr>
+    <th scope="row">1</th>
+    <td>John</td>
+    <td>Doe</td>
+    <td>jd100</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Smith</td>
+    <td>jsmith099</td>
+  </tr>
+</table>
+
+<!--Code Example for Hover Tables-->
+<h3>Code</h3>
+<pre class="margin-left">
+<table class="table table-hover">
+....
+</table>
+</pre>
+
+<p>Feel free to visit <a href="http://getbootstrap.com/css/#tables">Bootstrap's Table Documentation Page</a>
+to learn more about other useful table types such as condensed tables, responsive <br>tables, and more.
+</p>

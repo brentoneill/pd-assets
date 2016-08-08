@@ -1,0 +1,370 @@
+@ngdoc overview
+@name Resources
+@description
+
+<!--page header-->
+<h1 class="page-header"> <font size ="6"><b>Front End Development Resources </b></font></h1>
+
+<!--Ace Text Editor -->
+<h2>
+  <b>Ace-builds</b>
+</h2>
+<ul>
+  <li>
+    Ace is an embeddable code editor written in JavaScript.
+  </li>
+  <li>External resources for Ace-buildd:
+    <a href="https://github.com/ajaxorg/ace-builds"> Ace Github Repository</a>,
+    <a href="https://ace.c9.io/#nav=api"> API Reference</a>.
+  </li>
+</ul>
+
+<!--AngularJS-->
+<h2>
+ <b>AngularJS</b>
+</h2>
+<ul>
+  <li>AngularJS is a JavaScript framework that adds interactivity
+  to HTML, allowing it to become more dynamic and extremely responsive. It
+  was designed with CRUD(Create, Read, Update, Delete)
+  applications in mind.
+  </li>
+  <li>External resources for AngularJS:
+    <a href="https://docs.angularjs.org/guide/introduction"> Introduction</a>,
+    <a href="https://docs.angularjs.org/tutorial/step_00"> Tutorial</a>,
+    <a href="https://angularjs.org/"> Download</a>,
+    <a href="https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation"> ngdoc Documentation</a>,
+    <a href="https://github.com/angular/angular.js"> Github repository</a>.
+  </li>
+
+<!--AngularJS Style Guides-->
+  <li>
+    AngularJS Style Guides:
+    <a href="https://github.com/johnpapa/angular-styleguide">
+    John Papa Styleguide</a>,
+    <a href="https://github.com/toddmotto/angular-styleguide"> Todd Motto Styleguide </a>.
+  </li>
+
+<!--Performance Optimization Articles-->
+  <li>
+    AngularJS Performance Optimization Articles:
+    <a href="https://www.binpress.com/tutorial/speeding-up-angular-js-with-simple-optimizations/135">
+    Binpress Article by Todd Motto</a>,
+    <a href="http://blog.thoughtram.io/angularjs/2015/01/14/exploring-angular-1.3-speed-up-with-applyAsync.html">
+    Thoughtram Article by Pascal Precht</a>,
+    <a href="http://www.bennadel.com/blog/2556-using-track-by-with-ngrepeat-in-angularjs-1-2.htm">
+    Track-by with ngRepeat in AngularJS 1.2</a>.
+  </li>
+</ul>
+
+<!--AngularJS-UI-ROUTER-->
+<h2>
+  <b>Angular-UI-Router</b>
+</h2>
+<ul>
+  <li>
+    Angular-UI-Router provides a different approach than ngRoute by changing application views based
+    on state of application and not just the route URL. This allows routing to be changed even
+    if the URL is not changing.
+  </li>
+  <li>
+    External resources for AngularJS-UI-Router:
+    <a href="https://scotch.io/tutorials/angular-routing-using-ui-router"> Basic Overview</a>,
+    <a href="https://github.com/angular-ui/ui-router"> Github repository</a>.
+  </li>
+</ul>
+
+<!--Animate and WOW -->
+<h2>
+  <b>Animate.css and WOW.js</b>
+</h2>
+<ul>
+  <li>Animate is a library of CSS animations that can be implemented with ease. WOW reveals
+  animations as the user scrolls down the page.
+  </li>
+  <li>External resources for Animate and WOW:
+    <a href="http://daneden.github.io/animate.css/"> Animate download/demo</a>,
+    <a href="https://github.com/daneden/animate.css"> Animate Github</a>,
+    <a href="http://mynameismatthieu.com/WOW/"> WOW download</a>,
+    <a href="https://github.com/matthieua/WOW"> WOW Github</a>.
+  </li>
+</ul>
+
+<!--Async-->
+<h2>
+  <b>Async.js</b>
+</h2>
+<ul>
+  <li>
+    Async is a utility module which provides straight-forward, powerful functions for
+    working with asynchronous JavaScript. Although originally designed for use with Node.js
+    it can also be used directly in the browser.
+  </li>
+  <li> External Resources:
+    <a href="https://github.com/caolan/async"> Github Repository</a>.
+</ul>
+
+<!--bootStrap description and links-->
+<h2 class="text-left">
+  <b>Bootstrap</b>
+</h2>
+<ul>
+  <li>
+    Bootstrap is a sleek, intuitive, and powerful front-end framework for faster
+    and easier web development, created by Mark Otto and Jacob Thornton, and maintained
+    by the core team with the massive support and involvement of the community.
+  </li>
+  <li>External resources for Bootstrap:
+    <a href="http://getbootstrap.com/css/">Overview</a>,
+    <a href="http://www.tutorialspoint.com/bootstrap/">Beginner Tutorial</a>,
+    <a href="http://getbootstrap.com/getting-started/"> Download</a>,
+    <a href="https://github.com/twbs/bootstrap"> Github</a>.</p>
+  </li>
+</ul>
+
+<!--cropit description and links-->
+<h2>
+  <b>Cropit</b>
+</h2>
+<ul>
+  <li>
+  Cropit is a jQuery plugin for image cropping and zooming. A
+  tutorial and download for cropit can be found
+  <a href="http://js-tutorial.com/cropit-customizable-crop-and-zoom-903">here</a>.</p>
+  </li>
+</ul>
+
+<!--D3 description and links-->
+<h2>
+  <b>D3</b>
+</h2>
+<ul>
+  <li>
+    D3.js is a JavaScript library for manipulating documents based on data. D3
+    helps you bring data to life using HTML, SVG and CSS.  D3’s emphasis on web standards
+    gives you the full capabilities of modern browsers without tying yourself to a proprietary
+    framework, combining powerful visualization components and a data-driven approach to DOM manipulation.</li>
+  <li> External Resources:
+    <a href="https://d3js.org/">D3 Overview</a>,
+    <a href="https://github.com/d3/d3">D3 Github</a>.
+  </li>
+</ul>
+
+<!--Faker-->
+<h2>
+  <b>Faker.js</b>
+</h2>
+<ul>
+  <li>
+    Generates large amounts of fake data.
+  </li>
+  <li>External Resources:
+    <a href="https://github.com/marak/Faker.js/"> Github Repository</a>.
+  </li>
+</ul>
+
+<!--FastClick-->
+<h2>
+  <b>FastClick</b>
+</h2>
+<ul>
+  <li>
+    FastClick is a simple, easy-to-use library for eliminating the 300ms delay
+    between a physical tap and the firing of a `click` event on mobile browsers.
+    The aim is to make your application feel less laggy and more responsive while avoiding
+    any interference with your current logic.
+ </li>
+ <li>
+    External Resources:
+    <a href="https://github.com/ftlabs/fastclick"> Github Repository</a>.
+ </li>
+</ul>
+
+<!--Grid-A-Licious-->
+<h2>
+  <b>Grid-A-Licious</b>
+</h2>
+<ul>
+  <li>
+    Grid-A-Licious is a responsive floating grid layout jQuery plugin.
+  </li>
+  <li>
+    External Resources:
+    <a href="http://suprb.com/apps/gridalicious/"> Overview</a>.
+  </li>
+</ul>
+
+<!--jQuery-->
+<h2>
+  <b>jQuery</b>
+</h2>
+<ul>
+  <li>
+    jQuery is a fast, small, and feature-rich JavaScript library.
+  </li>
+  <li>
+    External Resources:
+    <a href="http://api.jquery.com/"> jQuery Documentation</a>,
+    <a href="https://github.com/jquery/jquery"> Github Repository</a>.
+  </li>
+</ul>
+
+<!--LODASH-->
+<h2>
+  <b>Lodash</b>
+</h2>
+<ul>
+  <li>
+    Lodash makes JavaScript easier by taking the hassle out of working with arrays,
+    numbers, objects, strings, etc. Lodash’s modular methods are great for:
+    <br>-Iterating arrays, objects, and strings
+    <br>-Manipulating and testing values
+    <br>-Creating composite functions
+  </li>
+  <li>
+    <a href="https://github.com/lodash/lodash"> Github Repository</a>,
+    <a href="https://lodash.com/docs"> Documentation</a>.
+  </li>
+</ul>
+
+
+<!--MicroPlugin-->
+<h2>
+  <b>MicroPlugin</b>
+</h2>
+<ul>
+  <li>
+    MicroPlugin is a lightweight drop-in plugin architecture for your JavaScript library.
+    Plugins can declare dependencies to other plugins and can be initialized with options
+    (in a variety of formats). It AMD-compatible and it works identically in Node.js and in a browser.
+  </li>
+  <li>
+    External Resources:
+    <a href="https://github.com/brianreavis/microplugin.js"> Github Repository</a>.
+  </li>
+</ul>
+
+<!--Moment-->
+<h2>
+  <b>Moment</b>
+</h2>
+<ul>
+  <li>
+    A lightweight javascript date library for parsing, validating, manipulating, and formatting dates.
+  </li>
+  <li>
+    External Resources:
+    <a href="http://momentjs.com/"> Download</a>,
+    <a href="https://github.com/moment/moment/blob/develop/README.md"> Github Repo</a>,
+    <a href="http://momentjs.com/docs/"> Documentation</a>.
+  </li>
+</ul>
+
+<!--Ng-File-Upload-->
+<h2>
+  <b>Ng-File-Upload</b>
+</h2>
+<ul>
+  <li>
+    Lightweight Angular directive to upload files.
+  </li>
+  <li>
+    External Resources:
+    <a href="https://github.com/danialfarid/ng-file-upload/blob/master/README.md"> Github</a>.
+  </li>
+</ul>
+
+<!--ngStorage-->
+<h2>
+   <b>ngStorage</b>
+</h2>
+<ul>
+  <li>
+    An AngularJS module that makes Web Storage working in the Angular Way.
+    Contains two services: $localStorage and $sessionStorage.
+  </li>
+  <li>
+    External Resources:
+    <a href="https://github.com/gsklee/ngStorage"> Github</a>.
+    </li>
+</ul>
+
+<!--NVD3-->
+<h2>
+  <b>NVD3</b>
+</h2>
+<ul>
+  <li>
+    A reusable D3 charting library.
+  </li>
+  <li>
+    External Resources:
+    <a href="http://nvd3.org/">Overview/Download</a>,
+    <a href="https://github.com/novus/nvd3"> Github</a>.
+  </li>
+</ul>
+
+<!--Placeholders-->
+<h2>
+  <b>Placeholders.js</b>
+</h2>
+<ul>
+  <li>
+    Placeholders.js is a polyfill (or shim, or whatever you like to call it) for the
+    HTML5 placeholder attribute, as defined in the HTML5 specification. Placeholder attributes
+    are valid on input elements of various types and textarea elements.
+  </li>
+  <li>
+    External Resources:
+    <a href="https://github.com/jamesallardice/Placeholders.js">Github</a>,
+    <a href="https://jamesallardice.github.io/Placeholders.js/"> Download</a>.
+  </li>
+</ul>
+
+<!--responsiveCarousel-->
+<h2>
+   <b>responsiveCarousel</b>
+</h2>
+<ul>
+  <li>
+    A jQuery-based script for responsive carousels that work with mouse, touch, and keyboard.
+  </li>
+  <li>
+    External Resources:
+    <a href="https://github.com/filamentgroup/responsive-carousel">Github</a>,
+    <a href="http://basilio.github.io/responsiveCarousel/"> Download</a>.
+  </li>
+</ul>
+
+<!--selectize-->
+<h2>
+  <b>Selectize</b>
+</h2>
+<ul>
+  <li>
+    Selectize is an extensible jQuery-based custom select UI control. It's useful
+    for tagging, contact lists, country selectors, and so on. It clocks in at around ~7kb (gzipped).
+    The goal is to provide a solid and usable experience with a clean and powerful API.
+  </li>
+  <li>
+    External Resources:
+    <a href="https://github.com/selectize/selectize.js">Github</a>,
+    <a href="https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md"> Documentation</a>.
+  </li>
+</ul>
+
+<!--selectize-->
+<h2>
+   <b>Sifter</b>
+</h2>
+<ul>
+  <li>
+    Sifter is a client and server-side library (via UMD) for textually searching arrays and
+    hashes of objects by property – or multiple properties. It's designed specifically for autocomplete.
+    The process is three-step: score, filter, sort.
+  </li>
+  <li>
+    External Resources:
+    <a href="https://github.com/brianreavis/sifter.js">Github</a>.
+  </li>
+</ul>

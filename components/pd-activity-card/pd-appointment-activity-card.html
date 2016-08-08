@@ -1,0 +1,61 @@
+<div class="panel panel-default panel-activity">
+    <div pd-loader="{ promise: activityLoaderPromise, backdrop: true, templateUrl: 'pd-loader/pd-loader-spinner.html', delay: 100, minDuration: 250, afterDelay: 250 }"></div>
+    <pd-card-header status="activity.status" type="appointment" business-mode="businessMode"></pd-card-header>
+    <div class="panel-body">
+
+        <div ng-if="businessMode">
+            <pd-consumer-tile consumer="activity.user"
+                              hide-insurance="true"
+                              hide-gender="true">
+            </pd-consumer-tile>
+            <hr />
+            <p class="h4 text-center"><small>with:</small>
+                {{ activity.provider.first_name }} {{ activity.provider.last_name }}</p>
+        </div>
+        <!-- /business side activity card above fold -->
+
+        <div ng-if="!businessMode">
+            <pd-provider-tile
+                    hide-phone="true"
+                    hide-gender="true"
+                    hide-google-maps-link="true"
+                    provider="activity.provider"></pd-provider-tile>
+            <hr />
+            <div class="action-buttons text-center">
+                    <button class="btn btn-default btn-sm"
+                            ng-click="openCancelModal(activity)">
+                        Cancel
+                    </button>
+                    <a class="btn btn-default btn-sm" ui-sref="app.consumer.reschedule.find({ uuid: activity._uuid })">
+                        Reschedule
+                    </a>
+                    <pd-cal-export
+                        start-date="{{formatted.start}}"
+                        end-date="{{formatted.end}}"
+                        title="{{formatted.title}}"
+                        location="{{formatted.location}}"
+                        class-name="btn btn-sm btn-default dropdown-toggle"
+                        description="{{formatted.description}}"
+                        btn-text="Add to calendar">
+                    </pd-cal-export>
+            </div>
+        </div>
+        <!-- /consumer side activity card above fold -->
+
+        <div uib-collapse="!showDetails">
+            <hr/>
+            <pd-appointment-info appointment="activity"
+                                 limit-comments="true"
+                                 hide-patient-name="!businessMode">
+            </pd-appointment-info>
+        </div>
+        <!-- /uib-collapse -->
+
+    </div>
+    <div class="text-center card-expander" ng-class="{ 'expanded': showDetails }">
+        <button class="btn btn-link btn-block" ng-click="showDetails = !showDetails">
+            <i class="fa fa-lg fa-chevron-down" ng-if="!showDetails"></i>
+            <i class="fa fa-lg fa-chevron-up" ng-if="showDetails"></i>
+        </button>
+    </div>
+</div>

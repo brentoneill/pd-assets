@@ -1,0 +1,31 @@
+/*------------------------------------*\
+  #LOADING BAR
+
+    - Overrides to the angular-loading-bar.css from the angular-loading-bar
+      angular module
+
+\*------------------------------------*/
+
+#loading-bar .bar {
+    z-index: 9998;
+    background-color: @brand-success;
+}
+
+#loading-bar-spinner {
+    display: none;
+}
+
+// Spinner (top-left) color
+#loading-bar-spinner .spinner-icon {
+    display: none;
+    border-top-color: @brand-success;
+    border-left-color: @brand-success;
+}
+
+// Fancy blur effect on loading bar
+#loading-bar .peg {
+    -webkit-box-shadow: @brand-success 1px 0 6px 1px;
+       -moz-box-shadow: @brand-success 1px 0 6px 1px;
+            box-shadow: @brand-success 1px 0 6px 1px;
+        -ms-box-shadow: @brand-success 1px 0 6px 1px;
+}

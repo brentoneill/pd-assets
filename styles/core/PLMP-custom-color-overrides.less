@@ -1,0 +1,113 @@
+/*------------------------------------*\
+  #PLMP CUSTOM COLOR OVERRIDRS
+
+    - Color overrides for PLMP based on app specific color variables
+
+\*------------------------------------*/
+// TODO: map all the variables in the app specific custom variables
+
+
+
+
+// panel color overrides
+.panel {
+    color: @color-panel-text;
+    background-color: @color-panel-bg;
+    // TODO: do we really want to allow changing the color of links inside a panel!?
+}
+
+
+
+
+// header color overrides
+.navbar-default .navbar-nav > li > a {
+    color: @color-header-link;
+
+    &:focus,
+    &:active,
+    &:hover {
+        color: darken(@color-header-link, 15%);
+    }
+}
+
+.drawer-toggle div {
+    background-color: @color-header-link;
+}
+
+.navbar-default {
+    color: @color-header-text;
+    background-color: @color-header-bg;
+}
+
+ul.navbar-tabs {
+    li {
+        &.active {
+            border-color: @color-header-link;
+        }
+        &:hover {
+            border-color: lighten(@color-header-link, 15%);
+            &.active {
+                border-color: @color-header-link;
+            }
+        }
+    }
+    a {
+        color: @color-header-link;
+        &:active,
+        &:focus,
+        &:hover {
+            color: darken(@color-header-link, 15%);
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+
+
+// drawer color overrides
+.drawer-wrapper {
+    color: @color-drawer-text;
+    background-color: @color-drawer-bg;
+    ul > li.active {
+        background-color: lighten(@color-drawer-link, 40%);
+    }
+    .text-link {
+        color: @color-drawer-link;
+    }
+}
+
+.drawer-link {
+    font-family: @font-family-secondary;
+    color: @color-drawer-link;
+
+    &:hover {
+        background-color: lighten(@color-drawer-link, 40%);
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: @color-drawer-link;
+        text-decoration: none;
+    }
+}
+
+
+
+
+
+// footer color overrides
+footer {
+    color: @color-footer-text;
+    background-color: @color-footer-bg;
+    .text-link {
+        color: @color-footer-link;
+        &:focus,
+        &:active,
+        &:hover {
+            color: @gray-lighter;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<div class="pd-eligibility-tabs">
+    <div pd-loader="{ promise: eligibilityLoaderPromise,
+                      message: 'Loading insurance eligibility info...',
+                      backdrop: true, templateUrl: 'pd-loader/pd-loader-spinner.html',
+                      delay: 100,
+                      minDuration: 250,
+                      afterDelay: 250 }">
+    </div>
+    <uib-tabset active="activeEligibilityTab" class="pd-tabset" ng-if="loadingEligibility || data.insurance">
+        <uib-tab heading="Coverage" id="coverageTab">
+            <div class="panel panel-default panel-tabs">
+                <div class="panel-body">
+                    <ng-include src=" 'pd-insurance-widgets/views/eligibility-tabs/_coverage.html'"></ng-include>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab heading="Out-Of-Pocket"  id="outOfPocketTab">
+            <div class="panel panel-default panel-tabs">
+                <div class="panel-body">
+                    <ng-include src=" 'pd-insurance-widgets/views/eligibility-tabs/_deductible.html'"></ng-include>
+                    <ng-include src=" 'pd-insurance-widgets/views/eligibility-tabs/_out-of-pocket.html'"></ng-include>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab heading="Coinsurance" id="coinsuranceTab">
+            <div class="panel panel-default panel-tabs">
+                <div class="panel-body">
+                    <ng-include src=" 'pd-insurance-widgets/views/eligibility-tabs/_coinsurance.html'"></ng-include>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab heading="Copay" id="copayTab">
+            <div class="panel panel-default panel-tabs">
+                <div class="panel-body">
+                    <ng-include src=" 'pd-insurance-widgets/views/eligibility-tabs/_copay.html'"></ng-include>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab heading="Limitations" id="limitationsTab">
+            <div class="panel panel-default panel-tabs">
+                <div class="panel-body">
+                    <ng-include src=" 'pd-insurance-widgets/views/eligibility-tabs/_limitations.html'"></ng-include>
+                </div>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

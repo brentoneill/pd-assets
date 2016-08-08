@@ -1,0 +1,43 @@
+/*------------------------------------*\
+  #PD-ACTIVITY-CARD
+
+    - Styles for the color picker
+
+\*------------------------------------*/
+
+
+.pd-color-picker {
+    margin-bottom: 14px;
+}
+
+.color-choice {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 4px;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 10px;
+    }
+}
+
+// for angular-bootstrap-colorpicker
+.colorpicker .dropdown-menu {
+    padding: 8px;
+    box-shadow: none;
+}
+.colorpicker-position-top .dropdown-menu::before,
+.colorpicker-position-top .dropdown-menu::after {
+    left: 14px;
+}
+
+.current-color {
+    display: block;
+    width: 100%;
+    margin-bottom: @padding-large-vertical;
+}

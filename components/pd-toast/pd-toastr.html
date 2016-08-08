@@ -1,0 +1,8 @@
+<p class="text-center alert alert-{{::options.type}} pd-toast" id="toast-{{::toastId}}">
+    <i ng-if="options.type == 'warning'" class="fa fa-exclamation-triangle" title="Warning!"></i>
+    <i ng-if="options.type == 'success'" class="fa fa-check" title="Success!"></i>
+    <i ng-if="options.type == 'danger'" class="fa fa-times" title="Error!"></i>
+    <b ng-if="options.title">{{::options.title}}!</b>
+    <span class="{{::messageClass}}" ng-class="{ 'mts': !options.title }" ng-if="options.message">
+    {{::options.message}}</span>
+</p>

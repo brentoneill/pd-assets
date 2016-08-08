@@ -1,0 +1,21 @@
+<div class="panel-heading" ng-class="headerClass">
+    <div class="row">
+        <div class="col-xs-9">
+            <h4 class="text-left">
+                <i class="fa fa-calendar"></i>
+                <span ng-if="activity._type === 'Appointment' ">{{ activity.startDateDisplay }} at {{ activity.startTimeDisplay }}</span>
+            </h4>
+        </div>
+        <div class="col-xs-3 text-right">
+            <h4><small>
+                <a href="#"
+                   ng-if="activity.businessMode && activity._type === 'Appointment'"
+                   ui-sref="app.business.dashboard.detail({ uuid: activity._uuid })">Details</a>
+                <a href="#"
+                   ng-if="!activity.businessMode && activity._type === 'Appointment'"
+                   ui-sref="app.consumer.settings.appointments.detail({ uuid: activity._uuid })">Details</a>
+                </small>
+            </h4>
+        </div>
+    </div>
+</div>

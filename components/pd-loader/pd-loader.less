@@ -1,0 +1,75 @@
+/*------------------------------------*\
+  #PD-INSURANCE-WIDGETS`
+
+    - Styles for all components in the pd-loader module
+
+\*------------------------------------*/
+
+
+
+.pd-loader-master {
+    .cg-busy {
+        z-index: 10000;
+    }
+}
+
+.cg-busy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    .pd-loader-master {
+        background-image: url('@{large-loader-path}');
+        background-repeat: no-repeat;
+        background-position: center 25vh;
+    }
+}
+
+.cg-busy-animation.ng-hide-add,
+.cg-busy-animation.ng-hide-remove {
+    display: block !important;
+    -webkit-transition: all .3s ease;
+       -moz-transition: all .3s ease;
+         -o-transition: all .3s ease;
+            transition: all .3s ease;
+}
+.cg-busy-animation.ng-hide-remove {
+    opacity: 0;
+}
+.cg-busy-animation.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
+.cg-busy-animation.ng-hide-add {
+    opacity: 1;
+}
+.cg-busy-animation.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+}
+
+
+// Backdrop styles and animations
+.cg-busy-backdrop {
+    min-height: 100px;
+    background-color: white;
+    opacity: .9;
+}
+
+.cg-busy-backdrop-animation.ng-hide-add,
+.cg-busy-backdrop-animation.ng-hide-remove {
+    display: block !important;
+    -webkit-transition: opacity .3s ease;
+       -moz-transition: opacity .3s ease;
+         -o-transition: opacity .3s ease;
+            transition: opacity .3s ease;
+}
+
+.cg-busy-backdrop-animation.ng-hide {
+    opacity: 0;
+}
+
+/* All styles below are for the default template. */
+.cg-busy-default-wrapper {
+    text-align: center;
+}

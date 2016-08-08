@@ -1,0 +1,31 @@
+<div ng-repeat="(coverageLevel, coverageGroup) in copay" class="tabs-copay">
+    <div ng-repeat="(networkLevel, networkGroup) in coverageGroup">
+        <h4>{{ coverageLevel | removeUnderscores | titlecase }} Coverage, {{ networkLevel | removeUnderscores | titlecase }}</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td style="width: 120px;" class="text-bold">Copayment</td>
+                    <td class="text-bold">Service Types</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(copayAmount, copayGroup) in networkGroup">
+                    <td>${{ copayAmount | number }}</td>
+                    <td>
+                        <ul style="padding-left: 15px; margin: 0;">
+                            <li ng-repeat="copay in copayGroup">
+                                {{ copay.service_types.join(", ") | removeUnderscores | titlecase }}
+                                <small class="text-muted" ng-if="copay.messages">
+                                    <br/>
+                                    <span ng-repeat="m in copay.messages">
+                                        {{ $last ? m.message : m.message + "; " }}
+                                    </span>
+                                </small>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

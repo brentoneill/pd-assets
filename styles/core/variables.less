@@ -1,0 +1,300 @@
+/*------------------------------------*\
+  #VARIAVLES
+
+    - This file overrides bootstrap variable definitions (if needed)
+    - Plus our own core variables for components
+
+\*------------------------------------*/
+
+
+// Variables
+// --------------------------------------------------
+
+@default-asset-path:      "https://s3.amazonaws.com/plmp-assets-prod/_default_assets/" ;
+
+//== Default images
+//
+//## Images that populate the app content by default.
+@default-consumer-img:   "https://plmp-assets-prod.s3.amazonaws.com/_default_assets/images/icon-consumer.png";
+@default-provider-img:   "https://plmp-assets-prod.s3.amazonaws.com/_default_assets/images/icon-doctor.png";
+@default-business-img:   "https://plmp-assets-prod.s3.amazonaws.com/_default_assets/images/icon-business.png";
+@landing-hero-img:       "https://plmp-assets-prod.s3.amazonaws.com/_default_assets/images/hero-home.jpg";
+
+//== Loader
+//
+//## Variables needed for image displayed while page is loading content.
+@large-loader-path:      "https://plmp-assets-prod.s3.amazonaws.com/_default_assets/images/loader.gif";
+@large-loader-bg-color:  #FFF;
+
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+@icon-font-path:          "https://s3.amazonaws.com/plmp-assets-prod/_default_assets/fonts/";
+
+//== Fonts
+//
+//## Paths and names of app fonts.
+//** Load fonts from this directory.
+@fa-font-path:           "https://plmp-assets-prod.s3.amazonaws.com/_default_assets/fonts";
+@font-path-header:       'https://plmp-assets-prod.s3.amazonaws.com/_default_assets/fonts/Montserrat-Regular.woff';
+@font-name-header:       'Montserrat';
+@font-path-body:         'https://plmp-assets-prod.s3.amazonaws.com/_default_assets/fonts/Muli-Regular.woff';
+@font-name-body:         'Muli';
+@font-path-body-light:   'https://plmp-assets-prod.s3.amazonaws.com/_default_assets/fonts/Muli-Regular.woff';
+@font-name-body-light:   'Muli';
+
+
+//== Admin
+//
+//## Some admin UI variables.
+@header-tabs-height:     40px;          //header nav tab and brand logo max height
+@admin-leftnav-width:    280px;
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+@white:                  #fff;
+@black:                  #000;
+
+
+
+@gray-darker:            #4D4F51;   //#3d434b;
+@gray-dark:              #686868;
+@gray:                   #8b8e93;
+@gray-base:              @gray;
+@gray-light:             @gray;     //#b2b2b1;   //#DCDBD8;
+@gray-lighter:           #C4CACE;
+@gray-lightest:          #F2F2F1;
+
+
+@brand-primary:         #337AB1; // #337ab7
+@brand-secondary:       #89dbd2;
+@brand-info:            #00aca1;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg:               @gray-lightest;
+@text-color:            @black;
+@text-muted:            @gray;
+
+
+//== Custom PLMP variables
+//
+//## Applied in the bootstrap-overrides.less in the core less folder
+
+// panel colors
+@color-panel-bg:         @white;
+@color-panel-text:       @text-color;
+@color-panel-link:       @link-color;
+
+// header nav colors
+@color-header-bg:        @white;
+@color-header-text:      @white;
+@color-header-link:      @text-color;
+
+// drawer nav colors
+@color-drawer-bg:        @white;
+@color-drawer-text:      @text-color;
+@color-drawer-link:      @link-color;
+
+// footer colors
+@color-footer-bg:        @gray-darker;
+@color-footer-text:      @gray-lighter;
+@color-footer-link:      @white;
+
+@text-selection-bg:      @brand-secondary;
+@text-selection-color:   @white;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+@font-family-sans-serif:  "Muli", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+@font-family-secondary:   "Montserrat", Helvetica, Arial, sans-serif;
+
+
+@font-size-medium:        ceil((@font-size-base * 1.15)); // ~16px
+@font-size-xsmall:        ceil((@font-size-base * 0.75)); // ~11px
+
+@font-size-h1:            floor((@font-size-base * 2.4)); // ~33px
+@font-size-h2:            floor((@font-size-base * 1.8)); // ~25px
+@font-size-h3:            ceil((@font-size-base * 1.5)); // ~21px
+@font-size-h5:            @font-size-base;
+
+
+//** By default, this inherits from the `<body>`.
+@headings-font-family:    @font-family-secondary;
+@headings-color:          @text-color; //@gray-darker;
+
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+@border-radius-base:        0;
+@border-radius-large:       0px;
+@border-radius-small:       0px;
+@border-radius-xs:          0px;
+
+
+//== Tables
+//
+//##
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+@btn-default-color:                @gray-dark;
+@btn-secondary-color:              #fff;
+@btn-secondary-bg:                 @brand-secondary;
+@btn-secondary-border:             darken(@btn-secondary-bg, 5%);
+
+//== Forms
+//
+//##
+@input-color:                    @gray-dark;
+//** Default `.form-control` height
+@input-height-base:              3.5rem;
+//** Large `.form-control` height
+@input-height-large:             5rem;
+//** Small `.form-control` height
+@input-height-small:             3rem;
+
+
+// Basics of a navbar
+@navbar-height:                    55px;
+
+
+//=== Inverted navbar
+
+// Inverted navbar links
+
+
+// Inverted navbar brand label
+
+
+// Inverted navbar toggle
+
+
+//== Navs
+//
+//##
+
+//=== Shared nav styles
+
+//== Tabs
+@nav-tabs-border-color:                     #ddd;
+
+@nav-tabs-link-hover-border-color:          #ddd;
+
+@nav-tabs-active-link-hover-bg:             @white;
+@nav-tabs-active-link-hover-color:          @white;
+@nav-tabs-active-link-hover-border-color:   #ddd;
+
+//== Pills
+
+
+//== Pagination
+//
+//##
+
+
+//== Pager
+//
+//##
+@pager-border-radius:                  0;
+
+//== Jumbotron
+//
+//##
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+
+
+//== Popovers
+//
+//##
+
+//** Popover body background color
+
+
+//== Labels
+//
+//##
+
+//** Default label background color
+
+//** Secondary label background color
+@label-secondary-bg:            @brand-secondary;
+
+
+//== Modals
+//
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+//== Progress bars
+//
+
+//== List group
+//
+
+//== Panels
+//
+
+
+//== Thumbnails
+//
+
+
+//== Wells
+//
+
+
+//== Badges
+//
+
+
+//== Breadcrumbs
+//
+
+//== Carousel
+//
+
+
+//== Close
+//
+
+//== Code
+//
+
+
+//== Type
+//

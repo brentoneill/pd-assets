@@ -1,0 +1,15 @@
+<nav class="pd-workflow-buttons clearfix">
+    <a class="btn btn-pager pull-left"
+        ng-if="!hidePrevButton"
+        ng-disabled="prevButtonDisabled"
+        ng-click="prevClick()">
+        {{:: prevButtonText}}
+    </a>
+    <button class="btn btn-pager pull-right"
+        ng-if="!hideNextButton"
+        type="submit"
+        ng-disabled="nextButtonDisabled"
+        ng-click="nextClick()">
+        {{:: nextButtonText }}
+    </button>
+</nav>

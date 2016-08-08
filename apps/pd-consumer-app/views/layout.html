@@ -1,0 +1,30 @@
+<div class="site-wrapper" id="site-wrapper">
+
+    <!-- Header w/ navigation -->
+    <pd-header-nav user="currentUser"
+                   app="currentApp"
+                   config="headerConfig">
+    </pd-header-nav>
+
+    <!-- App canvas -->
+    <div id="plmp-app-canvas" class="relative">
+        <div pd-loader="{ promise: mainLoaderPromise, backdrop: true, templateUrl: 'pd-loader/pd-loader.html', delay: 100, minDuration: 100 }"></div>
+        <div class="ui-view-container">
+            <div ui-view></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <ng-include src="'pd-app/views/footer.html'"></ng-include>
+
+</div>
+
+<!-- Slide out drawer menu that shows on small screen sizes -->
+<nav class="drawer-wrapper" id="drawer-wrapper">
+    <pd-drawer-nav-menu
+            app="currentApp"
+            user="currentUser"
+            drawer-config="drawerConfig"
+            footer-config="footerConfig">
+    </pd-drawer-nav-menu>
+</nav>

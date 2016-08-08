@@ -1,0 +1,18 @@
+<nav class="pd-schedule-control-tile">
+    <ul class="pager schedule-controls">
+        <li class="previous btn-prev" ng-show="dateOffset > 0">
+            <a ng-click="previousWeekClicked()"><span aria-hidden="true">&larr;</span>
+            <span class="hidden-xs">PREV</span></a></li>
+        <div class="schedule-columns-wrapper">
+            <span class="schedule-column" ng-repeat="day in weekdays track by $index">
+                <span class="h5 schedule-header text-center">
+                    {{ day.displayDay }}<br>
+                    {{ day.displayDate }}
+                </span>
+            </span><!-- / .schedule-columns -->
+        </div><!-- / .schedule-columns-wrapper -->
+        <li class="next btn-next">
+            <a ng-click="nextWeekClicked()"><span class="hidden-xs">NEXT</span>
+            <span aria-hidden="true">&rarr;</span></a></li>
+    </ul><!-- /.schedule-controls -->
+</nav>

@@ -1,0 +1,21 @@
+/*------------------------------------*\
+  #LABEL
+
+    - .label class related styles
+
+\*------------------------------------*/
+
+
+.label {
+    border-radius: @border-radius-base;
+}
+
+// Creates a label with secondary colors using a Bootstrap mixin
+.label-secondary {
+    .label-variant(@label-secondary-bg);
+}
+
+/* plmp label must be not bold */
+label {
+    font-weight: normal;
+}

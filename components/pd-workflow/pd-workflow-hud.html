@@ -1,0 +1,62 @@
+<div class="panel panel-default pd-workflow-hud" id="pd-workflow-hud">
+    <div class="panel-heading">
+        <h4>{{ hudData.platformAppointment.start_date | formatDate : 'dddd M/D' }}
+            at {{ hudData.platformAppointment.start_date | formatDate : 'hh:mma'}}</h4>
+    </div>
+    <div class="panel-body panel-body-hpad relative">
+
+        <!-- Provider and business info -->
+        <div ng-if="hudData.location" class="relative">
+            <pd-provider-tile
+                    provider="hudData.provider"
+                    hide-social-links="true"
+                    hide-gender="true"
+                    hide-phone="true"
+                    hide-address="true">
+            </pd-provider-tile>
+            <pd-location-tile location="hudData.location"
+                              hide-google-maps-link="true"
+                              hide-directions-link="true">
+            </pd-location-tile>
+        </div>
+
+        <div class="text-small" ng-show="step > 0">
+            <hr/>
+            <table class="activity-detail">
+                 <tbody>
+                    <tr>
+                        <td class="tag text-muted">Type:</td>
+                        <td class="detail">{{ hudData.platformAppointment.appointment_type | convertAppointmentType }}</td>
+                    </tr>
+                    <tr ng-if="hudData.patient">
+                        <td class="tag text-muted">Patient:</td>
+                        <td class="detail">{{ hudData.patient.first_name }} {{ hudData.patient.last_name }}</td>
+                    </tr>
+                    <tr ng-if="hudData.patient.insurance">
+                        <td class="tag text-muted">1st Visit:</td>
+                        <td class="detail">{{ hudData.appointment.returning_patient ? 'Yes' : 'No' }}</td>
+                    </tr>
+                    <tr ng-if="hudData.patient.insurance">
+                        <td class="tag text-muted">Insurance:</td>
+                        <td class="detail">{{ hudData.patient.insurance.trading_partner_name }} <br/>
+                            # {{ hudData.patient.insurance.member_id }}
+                        </td>
+                    </tr>
+                    <tr ng-show="hudData.appointment.comments">
+                        <td class="tag text-muted">Reason:</td>
+                        <td class="detail">{{ hudData.appointment.comments || 'N/A' | limitTo: 70}}
+                            <span ng-if="hudData.appointment.comments.length > 70" class="text-muted">...</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="absolute top right prm ptm hidden-md hidden-lg">
+            <button class="btn btn-link" ng-click="closeSlideOut()">
+                <i class="fa fa-fw fa-close"></i>
+            </button>
+        </div>
+
+    </div>
+</div>

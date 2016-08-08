@@ -1,0 +1,142 @@
+/*------------------------------------*\
+  #ANIMATIONS
+
+    - Keyframe animations and ng animate classes
+
+\*------------------------------------*/
+
+
+/* Have to set height explicity on ui-view
+to prevent collapsing during animation*/
+.ui-view-container {
+    position: relative;
+    width: 100%;
+}
+
+
+
+
+
+/**
+ *  .animate-view
+ *
+ *  Animation that is used on views entering and leaving the ui-view
+ *  Gives the element a soft fade in/fade out animation while
+ *  giving it a slight upward motion effect
+ */
+
+[ui-view].animate-view.ng-enter,
+[ui-view].animate-view.ng-leave {
+    position: absolute;
+    right: 0;
+    left: 0;
+    -webkit-transition: all .3s ease-in;
+       -moz-transition: all .3s ease-in;
+         -o-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+}
+
+[ui-view].animate-view.ng-enter {
+    opacity: 0;
+    -webkit-transform: scale3d(.98, .98, .98);
+       -moz-transform: scale3d(.98, .98, .98);
+            transform: scale3d(.98, .98, .98);
+}
+
+[ui-view].animate-view.ng-enter-active {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+       -moz-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+}
+
+[ui-view].animate-view.ng-leave {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+[ui-view].animate-view.ng-leave-active {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+       -moz-transform: translate3d(0, 20px, 0);
+            transform: translate3d(0, 20px, 0);
+}
+
+
+
+
+
+/**
+ *  .animate-show-fade
+ *
+ *  Animation that is used on ng-show/ng-hide elements.
+ *  Gives the element a soft fade in/fade out animation.
+ */
+
+.animate-show-fade {
+    opacity: 1;
+}
+
+.animate-show-fade.ng-hide-add, .animate-show-fade.ng-hide-remove {
+    transition: opacity ease-out .3s;
+}
+
+.animate-show-fade.ng-hide {
+    opacity: 0;
+}
+
+.animate-show-fade.ng-hide-add {
+    position: absolute;
+    right: 0;
+    left: 0;
+    opacity: 0;
+}
+
+
+
+
+
+/**
+ *  .animate-filter-fade
+ *
+ *  Animation that is used on filtered ng-repeat elements
+ *  Gives the element a soft fade in/fade out animation as
+ *  they are added/removed from the DOM
+ */
+
+.animate-filter-fade.ng-enter-active {
+    padding-top: 0;
+    opacity: 1.0 ;
+}
+
+.animate-filter-fade.ng-leave-active {
+    padding-bottom: 0;
+    opacity: 0;
+}
+
+.animate-filter-fade.ng-enter {
+    opacity: .2 ;
+    // padding-top: 10px ;
+    transition: all ease 250ms ;
+}
+
+.animate-filter-fade.ng-leave {
+    opacity: .2;
+    // padding-top: 10px ;
+    transition: all ease 250ms ;
+}
+
+.animate-filter-fade.ng-leave-stagger
+.animate-filter-fade.ng-enter-stagger {
+    -webkit-transition-delay: .1s ;
+            transition-delay: .1s ;
+    -webkit-transition-duration: 0s;
+    /*
+        FROM THE DOCUMENTATION:
+        In case the stagger doesn't work then these two values must be set
+        to 0 to avoid an accidental CSS inheritance.
+    */
+            transition-duration: 0s ;
+}

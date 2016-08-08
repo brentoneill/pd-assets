@@ -1,0 +1,14 @@
+<div class="pd-drawer-nav-toggle">
+    <div class="avatar-wrapper" ng-if="user">
+        <div class="avatar default" ng-if="!user.profile_image"></div>
+        <img class="avatar" ng-if="user.profile_image" ng-src="{{ user.profile_image.sm }}" alt=""/>
+        <span ng-show="user.activities.length" class="label label-warning badge">&nbsp;</span>
+    </div>
+    <div class="drawer-toggle-wrapper">
+        <div class="drawer-toggle">
+          <div class="top"> </div>
+          <div class="middle"> </div>
+          <div class="bottom"> </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="pd-location-tile">
+    <div class="media">
+        <div class="media-left" ng-if="!hideMapImage">
+            <a href="#" class="btn-hover" ng-href="{{ location.googleMapsUrl }}" target="_blank" >
+                <pd-profile-img entity="location" location="true"></pd-profile-img>
+            </a>
+        </div>
+        <div class="media-body">
+            <p ng-if="businessUuid" class="h5">
+                <a ui-sref="app.consumer.businesses.detail({ slug: businessUuid })">
+                    {{::location.location_name || location.name}}
+                </a>
+            </p>
+            <p ng-if="!businessUuid" class="h5">{{::location.location_name || location.name}}</p>
+            <pd-address hide-name="true"
+                        location="location"
+                        hide-directions-link="true"
+                        hide-google-maps-link="true"
+                        address-classes="small">
+            </pd-address>
+            <div ng-if="!hideGoogleMapsLink" class="text-small">
+                <i class="fa fa-fw fa-map-o text-muted"></i>&nbsp;
+                <a ng-href="{{ ::location.gmapUrl }}" target="_blank">View Google Map</a>
+            </div>
+            <div class="text-small" ng-if="!hideDirectionsLink">
+                <i class="fa fa-fw fa-map-marker text-muted"></i>&nbsp;
+                <a ng-href="{{ ::location.directionsUrl }}" target="_blank">Get directions</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+/*------------------------------------*\
+  #ADMIN
+
+    - all styles related to the admin side of PLMP
+
+\*------------------------------------*/
+
+// Dimensions of the triangle that appears in the
+@admin-workflow-nav-triangle-size: 9px;
+
+body {
+    background-color: @body-bg;
+}
+
+//// Admin header nav
+// tabs for admin
+.navbar-brand {
+    padding-left: 6px;
+}
+
+.navbar.admin-navbar {
+    background-color: @gray-dark;
+    color: #fff;
+    a, ul.navbar-nav li a {
+        color: #fff;
+    }
+    li.dropdown ul.dropdown-menu a {
+        color: @text-color;
+    }
+    .navbar-nav > .open > a,
+    .navbar-nav > .open > a:hover,
+    .navbar-nav > .open > a:focus {
+        background: @gray;
+        color: #fff;
+    }
+}
+
+.header-tabs {
+    background-color: white;
+    position: fixed;
+    top: @navbar-height;
+    left: 0;
+    width: 100%;
+    height: @header-tabs-height;
+    z-index: 1;
+
+    .no-app-dropdown {
+        padding-left: 245px;
+    }
+
+    ul.navbar-tabs {
+        margin: 0;
+        height: @navbar-height;
+        li {
+            width: auto;
+            height: @header-tabs-height;
+            a {
+                margin: 0;
+                padding-left: @padding-large-horizontal * 2;
+                padding-right: @padding-large-horizontal * 2;
+                padding-top: @padding-large-vertical;
+            }
+        }
+    }
+}
+
+.admin-tabs .tab-content {
+    background: @nav-tabs-active-link-hover-bg;
+    border: 1px solid @nav-tabs-border-color;
+    border-top: 0;
+    padding: @padding-large-vertical @padding-large-horizontal;
+    margin-bottom: 2em;
+}
+
+.label.admin-label {
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+
+
+// Admin workflow
+ol.admin-workflow-nav {
+    padding-left: 0;
+    list-style-position: inside;
+    & li {
+        padding: @padding-large-vertical;
+        a {
+            color: @text-color;
+            font-family: @font-family-base;
+        }
+        &:last-child:not(.active) {
+            padding-bottom: 0
+        }
+        &.active {
+            background: @gray-lighter;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                right: -@admin-workflow-nav-triangle-size;
+                top: (@font-size-base + @padding-large-vertical) / 2;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: @admin-workflow-nav-triangle-size 0 @admin-workflow-nav-triangle-size @admin-workflow-nav-triangle-size;
+                border-color: transparent transparent transparent @gray-lighter;
+            }
+        }
+    }
+    & ol {
+        padding-top: @padding-large-vertical;
+        padding-left: @padding-small-horizontal;
+    }
+}
+
+.admin-workflow-nav.h3-justify {
+    margin-top: @font-size-h3 + (@line-height-computed / 2);
+}

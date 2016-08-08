@@ -1,0 +1,10 @@
+<span class="pokit-btn cursor-pointer">
+    <div ng-show="!pokited" class="pokit-check-box"></div>
+    <div ng-show="pokited" class="pokit-checked"></div>
+    <span class="pokit-btn-text text-bold" uib-popover="{{ pokited ? 'Already saved' : 'Save for future use'}}"
+           popover-placement="bottom"
+           popover-trigger="mouseenter"
+          ng-class="{ 'icon-pokited': pokited }">
+          {{ pokited ? 'Saved' : 'Save' }}
+    </span>
+</span>

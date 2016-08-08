@@ -1,0 +1,42 @@
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top" id="pdHeaderNav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- Header nav logo -->
+            <a class="navbar-brand navbar-brand-img" ui-sref="app.consumer.home">
+                <img class="logo hidden-xs" ng-src="{{ app.theme.logo.og || '/assets/images/logo.png' }}" alt="{{ app.name }}"/>
+                <img class="logo hidden-sm hidden-md hidden-lg hidden-xl" ng-src="{{ app.theme.mobile_logo.og || '/assets/images/logo-thumb.png'}}" alt="{{ app.name }}"/>
+            </a>
+        </div>
+        <div class="navbar-right text-right">
+             <!-- Tabs that are floated right in shown in all screen sizes -->
+            <ul class="nav navbar-nav" ng-if="!hideNav">
+                <li ng-repeat="tab in config.tabs" ng-if="tab.enabled" class="tab">
+                    <a href="#"
+                       class="relative" id="{{ tab.id }}"
+                       ng-class="{'btn-outline': tab.id=='tab-signup'}"
+                       ng-click="closeDrawer()"
+                       ui-sref="{{ tab.ui_sref }}"
+                       ui-sref-active="active">
+                        {{ tab.title }}
+                        <span ng-if="tab.label" class="label badge badge-warning badge-notification">{{ tab.label }}</span>
+                    </a>
+                </li>
+                <li uib-dropdown class="tab dropdown" ng-if="user && loggedIn" id="userMenu">
+                    <a href class="inline-block" uib-dropdown-toggle>
+                        <div class="avatar default" ng-if="!user.profile_image"></div>
+                        <img class="avatar"  ng-if="user.profile_image" ng-src="{{ user.profile_image.sm }}" alt="" />
+                            <span class="hidden-xs">{{ user.first_name }} {{ user.last_name }}</span>
+                        <i class="fa fa-lg fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li ng-repeat="item in config.dropdownItems">
+                            <a href="#" ui-sref="{{ item.ui_sref }}">{{ item.title }}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div> <!-- /.navbar-header -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>

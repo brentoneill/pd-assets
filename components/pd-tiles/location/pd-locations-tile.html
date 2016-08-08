@@ -1,0 +1,22 @@
+<div class="tile-locations clearfix">
+
+    <h4>Locations</h4>
+
+    <p class="btn-hover">
+        <a ng-href="{{ locations[0].gmapUrl }}" target="_blank">
+            <img class="img img-thumbnail img-responsive"
+                 alt=" {{ provider.first_name + ' ' + provider.last_name || business.name }}'s locations"
+                 ng-src="{{ largeMapImgUrl }}" />
+        </a>
+    </p>
+
+
+    <div ng-repeat="location in ::locations track by $index">
+        <pd-location-tile business-uuid="location.businessUuid"
+                          location="location"
+                          hide-map-image="true"
+                          hide-directions-link="true">
+        </pd-location-tile>
+    </div>
+
+</div>

@@ -1,0 +1,28 @@
+<footer class="container-fluid footer" id="footer">
+    <div class="row">
+        <div ng-if="footerConfig.footerNav" class="col-sm-6 footer-nav">
+            <ul class="list-unstyled">
+                <li ng-repeat="link in ::footerConfig.footerNav track by $index" ng-if="link.enabled">
+                    <a class="text-link" href="#" ui-sref="{{ ::link.ui_sref }}">{{ ::link.title }}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-6 clearfix footer-nav">
+            <ul class="list-inline footer-social">
+                <li ng-repeat="link in ::footerConfig.socialLinks track by $index">
+                    <a class="text-link list-social-links" href="{{ ::link.href }}" target="_blank">
+                        <i class="fa fa-fw fa-2x fa-{{::link.icon}}"></i></a>
+                </li>
+            </ul>
+            <ul class="list-inline footer-copy clearfix" ng-if="footerConfig.footerLinks" >
+                <li ng-repeat="link in ::footerConfig.footerLinks track by $index">
+                    <a href="#" ui-sref="{{ ::link.ui_sref }}" class="text-link inline-block">
+                        {{ ::link.title }}
+                    </a>
+                    <span class="v-divider" ng-if="$index == 0">|</span>
+                </li>
+            </ul>
+            <p><small>{{ '©2016 ' + currentApp.name + '. All rights reserved.' }}</small></p>
+        </div>
+    </div>
+</footer>

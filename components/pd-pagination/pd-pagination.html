@@ -1,0 +1,13 @@
+<nav class="pd-pagination">
+    <ul class="pagination">
+        <li>
+            <a ng-click="changePage(paging.currentPage - 1)">&laquo;</a>
+        </li>
+        <li ng-repeat="page in paging.pages" ng-class="{'active': paging.currentPage === page}">
+            <a ng-click="changePage()">{{page + 1}}</a>
+        </li>
+        <li>
+            <a ng-click="changePage(paging.currentPage + 1)">&raquo;</a>
+        </li>
+    </ul>
+</nav>

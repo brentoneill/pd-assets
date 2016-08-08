@@ -1,0 +1,162 @@
+/*------------------------------------*\
+  #BUTTONS
+
+    - styling for button elements, with some bootstrap overrides
+
+\*------------------------------------*/
+
+// Variables to create .btn-pager class
+// TODO: make them reference bootstrap variables
+@pager-hover-bg: #c4cace;
+@pager-hover-color: #225176;
+
+
+
+
+
+// Overrides to the base button class provided by Bootstrap
+.btn {
+    font-family: @font-family-secondary;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-transition: all .15s ease-out;
+            transition: all .15s ease-out;
+
+    &.extra-padding {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    // Remove Browser default to outline buttons when focused/active
+    &:focus, &:active {
+        outline: none !important;
+    }
+
+    &:active, &.active {
+        box-shadow: none;
+    }
+}
+
+
+
+
+// More Bootstrap button overrides
+.btn-lg {
+    border-radius: @border-radius-base;
+}
+
+.btn-default {
+    border-color: @gray-dark;
+}
+
+// Force a square button
+.btn-square {
+    border-radius: 0 !important;
+}
+
+// Force a button with no border
+.btn-no-border {
+    border: 0 !important;
+}
+
+
+
+
+
+// A pager button that mimics the style of the Bootstrap pager CSS component
+.btn-pager {
+    padding: 5px 14px;
+    font-family: @font-family-base;
+    color: @link-color;
+    background-color: @pager-bg;
+    border: 1px solid @pager-border;
+    &:hover,
+    &:focus {
+        color: @pager-hover-color;
+        text-decoration: none;
+        background-color: @pager-hover-bg;
+    }
+}
+
+
+
+
+/**
+ *  Creates a .btn-secondary using a Bootstrap mixin. Secondary colors are
+ *  defined in pd-assets/styles/core/variables.less
+ */
+.btn-secondary {
+    .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+
+
+
+
+// Creates a button with less padding and smaller font. Used in panel-headings
+.btn-small {
+    padding: @padding-small-vertical @padding-small-horizontal;
+    font-size: @font-size-xsmall;
+}
+
+
+
+
+/**
+ *  Creates a button with a dashed-border. Typically used to promote a user
+ *  taking a positive action, like adding something to a list
+ */
+.btn-dashed {
+    font-weight: normal;
+    line-height: 35px;
+    color: @brand-primary;
+    text-transform: none;
+    background: none;
+    border: 2px dashed @brand-primary;
+    &.btn-dashed-muted {
+        color: @gray;
+        border-color: @gray;
+    }
+    &.larger-font {
+        padding-top: 10px;
+        font-size: 1.8rem;
+        border-width: 3px;
+    }
+    &:active,
+    &:focus,
+    &:hover {
+        color: inherit;
+        border-color: inherit;
+    }
+}
+
+
+
+
+.btn-hover:hover,
+a.icon:hover,
+.icon-custom:hover {
+    filter: alpha(opacity=70);
+    opacity: .7;
+}
+
+
+
+
+
+.btn-inside-input {
+    height: 35px;
+    background-color: @input-bg;
+    color: @input-color-placeholder;
+    border-top: 1px solid @input-border;
+    border-bottom: 1px solid @input-border;
+}
+
+
+
+
+.input-group-btn {
+    .btn {
+        height: 35px;
+    }
+}

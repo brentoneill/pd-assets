@@ -1,0 +1,139 @@
+/*------------------------------------*\
+  #LANDING
+
+    - Styles relating to the PLMP landing page
+
+\*------------------------------------*/
+
+
+/*** landing-header is a shared module for:
+** 1) #homePage logged out with login form
+** 2) #homePage logged in with search form
+** 3) #search (optional hero tile)
+***/
+
+.landing-header {
+    min-height: @navbar-height * 7;
+    padding-top: @padding-large-vertical * 4;
+    padding-bottom: 40px;
+    // negates nav margin
+    margin-top: -@padding-large-vertical * 4;
+    background-image: url(@landing-hero-img);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    .content {
+        padding: @padding-large-horizontal @padding-large-horizontal * 2;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, .5);
+
+        p {
+            color: @white;
+        }
+
+        p a {
+            color: lighten(@link-color, 25%);
+        }
+
+        form {
+            .has-error .help-block {
+                color: lighten(@state-danger-text, 15%);
+            }
+        }
+    }
+}
+
+.landing-title, .landing-header h1, .landing-header h3 {
+    position: relative;
+    padding-bottom: 15px;
+    color: @white;
+}
+
+.landing-description {
+    font-family: @font-family-base;
+    font-size: @font-size-h4;
+    line-height: 1.5em;
+    color: @white;
+}
+
+.feature-title {
+    margin-bottom: @padding-large-vertical * 2;
+}
+
+.feature-description {
+    font-family: @font-family-sans-serif;
+    font-size: @font-size-h4 * .85;
+    line-height: 1.5em;
+}
+
+.page-search .landing-header {
+    min-height: @navbar-height * 5;
+    margin-bottom: @padding-large-vertical * 4;
+
+    .content {
+        padding-bottom: 2em;
+        margin-top: 1.5em;
+    }
+}
+
+.page-support .landing-header {
+    min-height: @navbar-height * 6;
+    .content {
+        padding-bottom: 4em;
+        margin-top: 2em;
+    }
+}
+
+.section-feature {
+    background-color: @white;
+
+    .row {
+        padding-top: @form-group-margin-bottom * 2;
+        padding-bottom: @form-group-margin-bottom * 2;
+        border-top: 1px solid @gray-lighter;
+
+        &:first-child {
+            border-top: none;
+        }
+        &.odd {
+            .feature-box-text {
+                float: right;
+            }
+        }
+    }
+
+    .feature-box-text {
+        max-width: 400px;
+    }
+
+    img {
+        display: inline-block;
+        max-width: 400px;
+        max-height: 400px;
+    }
+}
+
+.section-bottom {
+    .btn-block {
+        max-width: 300px;
+        margin: 1em auto 0 auto;
+    }
+}
+
+
+
+@media ( max-width: @screen-xs-max ) {
+    .section-feature {
+        .feature-box-text {
+            float: none;
+            max-width: none;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: none;
+            margin: 1em auto;
+        }
+    }
+}

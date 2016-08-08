@@ -1,0 +1,144 @@
+<!-- if no results -->
+<div class="row" ng-if="!items.length && !searchInProgress">
+    <div class="col-xs-12">
+        <h5>No items found.</h5>
+    </div>
+</div>
+<!-- if has results -->
+<div ng-if="items.length" class="list-container">
+
+    <!-- Sort buttons? -->
+    <div class="row vertical-align" ng-if="!hideGridControls || !hideSortControls">
+        <div class="col-xs-12 col-sm-4" ng-if="!hideGridControls">
+            <p>
+                <a class="btn btn-default"
+                    ng-click="switchToList()"
+                    ng-class=" { 'active' : showList }"
+                    ng-show="items.length > 0">
+                    <i class="fa fa-list"></i>
+                </a>
+                <a class="btn btn-default"
+                    ng-click="switchToGrid()"
+                    ng-class=" { 'active' : showGrid }"
+                    ng-show="items.length > 0">
+                    <i class="fa fa-th-large"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Search/query box -->
+    <div class="form-group" ng-show="!hideQuery || total > pageLimit">
+        <div class="input-group">
+            <input type="text"
+                   ng-enter="load()"
+                   ng-model="query"
+                   placeholder="Search your appointment history"
+                   class="form-control has-icon"/>
+            <span class="input-group-btn search-actions">
+                <button class="btn btn-inside-input" ng-click="reset();">
+                    <i class="fa fa-fw fa-close"></i>
+                </button>
+                <button class="btn btn-primary" ng-click="load();">Search</button>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 col-sm-offset-6 text-right mtm prn">
+            Sort by:
+        </div>
+        <div class="col-xs-8 col-sm-4">
+            <div class="dropdown-container">
+                <pd-select ng-model="params.sort"
+                           options="sorts"
+                           placeholder="Sort by..."
+                           id="sort"
+                           label-key="label"
+                           value-key="value"
+                           on-change="sort(sortIndex)"
+                           name="sort">
+                </pd-select>
+                <i class="pd-dropdown-icon pd-dropdown-icon-right fa fa-angle-down"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- List/Grid controls and page size control (limit) -->
+    <!-- <div class="row form-group">
+        <div class="col-sm-6" ng-show="items.length > 0">
+            <div class="dropdown-container text-right pull-right">
+                <label>Page size:</label>
+                <pd-select ng-model="params.limit"
+                           on-change="load()"
+                           options="pageSizes">
+                </pd-select>
+            </div>
+        </div>
+    </div>  -->
+    <!-- /list/grid & page size control -->
+
+    <!-- Paging controls -->
+    <div class="row paging-ctrl form-group" ng-if="topPaging">
+        <div class="col-sm-4 col-xs-6 text-left">
+            <a class="btn btn-default btn-small"
+               ng-disabled="params.offset <= 0"
+               ng-click="page(-1)">
+               Previous
+           </a>
+        </div>
+        <div class="col-sm-4 col-xs-12 text-center result-count">
+            <p>{{ params.offset + 1 }} - {{ pageLimit }} of {{ total }} items</p>
+        </div>
+        <div class="col-sm-4 col-xs-6 text-right">
+            <a class="btn btn-default btn-small"
+                ng-disabled="pageLimit >= total"
+                ng-click="page(1)">
+                Next
+            </a>
+        </div>
+    </div><!-- /paging controls -->
+
+    <!-- Search results panel (list) -->
+    <div ng-class="{ 'panel': panelView, 'panel-default': panelView}" ng-show="items.length > 0 && showList">
+        <h3 ng-show="total > pageLimit">Search results:</h3>
+        <div ng-class="{ 'panel-body': panelView}">
+            <ng-include src="rowTemplateUrl" ng-repeat="item in items"></ng-include>
+        </div>
+    </div> <!-- /results list-->
+
+    <!--Search results (grid) -->
+    <div class="row" ng-show="items.length > 0 && showGrid">
+        <div class="col-xs-12" ng-repeat="item in items">
+            <ng-include src="gridTemplateUrl"></ng-include>
+        </div>
+    </div>
+
+    <!-- if no results -->
+    <div class="row" ng-show="items.length <= 0 && !searchInProgress">
+        <div class="col-xs-12">
+            <h5>Sorry, we could not find any {{ resourceType }} that match your search.</h5>
+        </div>
+    </div>
+
+    <!-- Paging controls -->
+    <div class="row vertical-align paging-ctrl form-group" ng-if="!hideBottomPaging">
+        <div class="col-sm-4 col-xs-6 text-left">
+            <a class="btn btn-pager btn-small"
+               ng-disabled="params.offset <= 0"
+               ng-click="page(-1)">
+               Previous
+           </a>
+        </div>
+        <div class="col-sm-4 col-xs-12 text-center result-count">
+            <span>{{ params.offset + 1 }} - {{ pageLimit }} of {{ total }} items</span>
+        </div>
+        <div class="col-sm-4 col-xs-6 text-right">
+            <a class="btn btn-pager btn-small"
+                ng-disabled="pageLimit >= total"
+                ng-click="page(1)">
+                Next
+            </a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,42 @@
+<div class="pd-provider-tile relative">
+    <div class="pd-pokit-btn-wrapper" ng-if="completeView || showPokit">
+        <pd-pokit-btn pokited="{{ ::provider.pokited }}"
+                      uuid="{{ ::provider._uuid }}"
+                      type="{{ ::provider._type }}">
+        </pd-pokit-btn>
+    </div>
+    <div ng-class="{ 'row-fluid': !completeView, 'row': completeView }">
+        <div ng-class="{ 'col-sm-12': completeView, 'col-sm-8': miniView }">
+            <div class="media">
+                <div class="media-left">
+                    <div class="media-object">
+                        <pd-profile-img entity="provider"></pd-profile-img>
+                    </div>
+                    <pd-social-links ng-if="!hideSocialLinks" entity="provider"></pd-social-links>
+                </div>
+                <div class="media-body">
+                    <pd-provider-name-link ng-if="!completeView"></pd-provider-name-link>
+                    <pd-provider-name ng-if="completeView"></pd-provider-name>
+                    <pd-specialty-list ng-if="!hideSpecialties"></pd-specialty-list>
+                    <small ng-if="!hideGender || completeView" class="text-muted block">{{ ::provider.gender | titlecase }}</small>
+                    <pd-address ng-if="!hideAddress"
+                                location="location"
+                                hide-phone-number="hidePhone"
+                                hide-google-maps-link="hideGoogleMapsLink"
+                                business-uuid="provider.affiliations[0]._uuid"
+                                address-classes="small">
+                    </pd-address>
+                    <a class="text-small"
+                        ng-if="::provider.website_url && completeView"
+                        ng-href="{{::provider.website_url}}">
+                        {{ ::provider.website_url }}
+                    </a>
+                    <pd-description-tile ng-if="completeView"
+                                         provider="::provider"
+                                         locations="::provider.locations">
+                    </pd-description-tile>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="panel panel-default mtl">
+    <div class="panel-body">
+        <div class="row" ng-show="fileData.path">
+            <div class="col-xs-12">
+                <p>
+                    <span class="text-bold">
+                        Current custom font
+                    </span><br/>
+                    <small>
+                        You can choose a custom font to use on your site. File must be a .ttf or .otf file
+                        type.
+                    </small>
+                </p>
+                <hr/>
+            </div>
+            <div class="col-xs-6 col-xs-12">
+                <p>{{ fileData.name || 'No file selected.' }}</p>
+            </div>
+            <div class="col-xs-6 col-xs-12 text-right">
+                <a ng-click="fileData = {}"
+                   class="btn btn-default">
+                    Delete
+                </a>
+            </div>
+        </div>
+
+        <div class="row" ng-show="!fileData.path">
+            <div class="col-xs-12">
+                <p>
+                    <span class="text-bold">
+                        Upload custom font
+                    </span><br/>
+                    <small>
+                        You can choose a custom font to use on your site. File must be a .ttf or .otf file
+                        type.
+                    </small>
+                </p>
+                <hr/>
+            </div>
+            <div class="col-xs-6 col-xs-12">
+                <p>{{ fileData.name || 'No file selected.' }}</p>
+            </div>
+            <div class="col-xs-6 col-xs-12 text-right">
+                <button type="button"
+                        ngf-select="onFileSelect($files)"
+                        ng-model="fileData"
+                        ngf-accept="'.ttf,.otf'"
+                        name="primary_font"
+                        class="btn btn-default">
+                    Choose file
+                </button>
+            </div>
+            <div class="col-xs-12 text-center">
+                <hr/>
+                <a class="btn btn-primary" ng-click="uploadFile()">Upload</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,456 @@
+@ngdoc overview
+@name typography
+@description
+
+<h1 class="page-header  anchor" id="typography">Typography</h1>
+
+<p>The typographic scale is based on two Less variables in <strong>variables.less</strong>:
+    <code>@font-size-base</code>
+    and <code>@line-height-base</code>. The first is the base font-size used throughout and the
+    second is the base line-height. We use those variables and some simple math to create the margins,
+    paddings, and line-heights of all our type and more. Customize them and Bootstrap adapts.</p>
+
+<p><a href="http://getbootstrap.com/css/">Bootstrap</a> sets basic global display, typography, and link styles.
+    Specifically:</p>
+<ul>
+    <li>Set <code>@body-bg</code> on the <code>body</code></li>
+    <li>Use the <code>@font-family-base</code>, <code>@font-size-base</code>, and <code>@line-height-base</code>
+        attributes as our typographic base
+    </li>
+    <li>Set the global link color via <code>@link-color</code> and apply link underlines only on
+        <code>:hover</code>
+    </li>
+</ul>
+<p>These styles can be found within <code>scaffolding.less</code>.</p>
+
+<p>Other than the standard default <a href="http://getbootstrap.com/css/#type">Bootstrap Typography</a> tags/classes,
+    Pokitdok uses <code>/pd-assets/styles/styles.less</code> to establish brand-specific styles. A few examples of these
+    custom global styling classes:</p>
+<ul>
+    <li><code>.font-secondary</code> - by default all body text are of font family: Muli or @font-family-primary;
+            This class will use Montserrat or @font-family-secondary</li>
+    <li><code>.color-primary</code> - by default all text are of default color which is @text-color;
+            This class will use secondary branding color: purple. </li>
+    <li><code>.color-tertiary</code> - by default all text are of default color which is @text-color;
+            This class will use tertiary branding color: light purple. </li>
+    <li><code>.note</code> - smallest text font (12px), matching line-height.</li>
+    <li><code>.section</code> - horizontal blocks used on home page mostly, with large padding.</li>
+    <li><code>.wrapper-justify</code> - make justified columns</li>
+</ul>
+<p>As a rule, all commonly used styles should be defined as a global class to be added here.</p>
+
+
+<p class="h-title  anchor" id="type-body-copy">Body Copy</p>
+
+<p>Pokitdok uses 2 custom fonts. <code>@font-family-primary</code> - "Muli"  and
+<code>@font-family-secondary</code> - "Montserrat". Default body text uses the primary font. Headings mostly use
+the secondary font except <code>&lt;h2&gt; </code>tags.</p>
+
+<p>Pokitdok default <code>font-size</code> is <strong>15px</strong>, with a
+    <code>line-height</code> of <strong>1.7</strong>. This is applied to the <code>
+        &lt;body&gt;</code>
+    and all paragraphs. In addition, <code>&lt;p&gt;</code> (paragraphs) receive top and bottom margin of 1em.</p>
+
+<ul>Here are some special classes to achieve different designs on text content. Mostly using on headings:
+   <li><code>.font-secondary</code> (For any non header body text needing the secondary font)</li>
+   <li><code>.font-light</code> (for any larger size text .h1 throught .h6 that needs ultra thin weight: 200. Not
+            for header tags though)</li>
+</ul>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p>This is a normal paragraph.</p>
+        <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et
+            magnis
+            dis
+            parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies
+            vehicula.</p>
+
+        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            Donec
+            ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi
+            erat
+            porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus
+            auctor
+            fringilla.</p>
+
+        <hr/>
+        <p class="h3 font-secondary">Text using the secondary font family</p>
+        <hr/>
+        <div>
+        <h3 class="text-info">text using the provider brand color</h3>
+        </div>
+        <hr/>
+        <p class="h3">Normal Weight H3 Size Text</p>
+        <hr/>
+        <p class="h3 font-light">Thin H3 Size Text</p>
+        <hr/>
+<!--Code Example-->
+        <h3>Code</h3>
+<pre class="margin-left">
+ <div hljs class="hljs" language="html">
+<p>...</p>
+
+<p class="h3 font-secondary">Text using the secondary font family</p>
+
+<div class="bg-gray-dark">
+<h3 class="text-info">text using the provider brand color</h3>
+</div>
+
+<p class="h3">Normal Weight H3 Size Text</p>
+
+<p class="h3 font-light">Thin H3 Size Text</p>
+ </div>
+ </pre>
+
+    </div>
+</div>
+<h3 class="h-subtitle">Lead body copy</h3>
+
+<p>Make a paragraph stand out by adding <code>.lead</code>.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis
+            mollis, est non commodo luctus.</p>
+        <hr/>
+<!--Code Example-->
+<h3>Code</h3>
+<pre class="margin-left">
+<div hljs class="hljs" language="html">
+  <p class="lead">...</p>
+</div>
+</pre>
+    </div>
+</div>
+
+<h3 class="h-subtitle">Built with Less</h3>
+
+<p>The typographic scale is based on two Less variables in <strong>variables.less</strong>: <code>@font-size-base</code>
+    and <code>@line-height-base</code>. The first is the base font-size used throughout and the second is the base
+    line-height. We use those variables and some simple math to create the margins, paddings, and line-heights of all
+    our type and more. Customize them and Bootstrap adapts.</p>
+
+
+
+<p class="h-title  anchor" id="type-headings">Headings</p>
+
+<p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> are available. In addition to heading tags,
+    <code>.h1</code> through <code>.h6</code> classes are also available, for when you want the font size
+    (ONLY the font size) of a heading but still want your text to be displayed inline.</p>
+
+<p>NOTE "Muli" has no bold weight, and "Montserrat" has no thin weight. Pokitdok heading tags mostly
+    use the secondary font family: - "Montserrat" with a couple of exceptions below:</p>
+
+<p>Some special heading class include:
+    <ul>
+        <li><code>h1.page-header</code> (secondary font, for page title, should usually be applied to &lt;h1&gt; tags)</li>
+        <li><code>h1.banner</code> (primary font, for largest banner, should usually be applied to &lt;h1&gt; tags)</li>
+        <li><code>&lt;h2&gt;</code> (primary font, uppercase, ultra thin. Apply to section titles and popup page titles.)</li>
+        <li><code>h3.h-title</code> (secondary font, content subject titles)</li>
+        <li><code>h4.h-subtitle</code> (secondary font, content subtitles)</li>
+        <li><code>p.h-subtitle2</code> (primary font, uppercase, ultra thin. Content subtitles version 2)</li>
+        <li><code>&lt;legend&gt;</code> (the form fieldset title matches the styling of <code>.h-subtitle2</code>)</li>
+
+    </ul>
+</p>
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+
+        <h1 class="page-header">H1 -Page Header/Title </h1>
+        <hr/>
+        <h1 class="banner">H1 -Large Banner</h1>
+        <hr/>
+        <h2>H2 -Section Title, popup page title</h2>
+        <hr/>
+        <h3 class="h-title">H3 -Content Subject Title</h3>
+        <hr/>
+        <h4 class="h-subtitle">H4 -Content Subtitle</h4>
+        <hr/>
+        <p class="h-subtitle2">P -Content Subtitle2</p>
+        <hr/>
+        <legend>Legend -Form Fieldset Title</legend>
+        <hr/>
+
+        <h1>h1 Bootstrap Heading
+            <small>Secondary text</small>
+        </h1>
+
+        <p class="h1">p.h1 Bootstrap Heading
+            <small>Secondary text</small>
+        </p>
+        <hr/>
+
+        <p class="h2">p.h2 Bootstrap Heading
+            <small>Secondary text</small>
+        </p>
+        <hr/>
+        <h3>h3. Bootstrap Heading
+            <small>Secondary text</small>
+        </h3>
+
+        <p class="h3">p.h3 Bootstrap Heading
+            <small>Secondary text</small>
+        </p>
+        <hr/>
+        <h5>h4. Bootstrap Heading
+            <small>Secondary text</small>
+        </h5>
+
+        <p class="h4">p.h4 Bootstrap Heading
+            <small>Secondary text</small>
+        </p>
+        <hr/>
+        <h5>h5. Bootstrap Heading
+            <small>Secondary text</small>
+        </h5>
+
+        <p class="h5">p.h5 Bootstrap Heading
+            <small>Secondary text</small>
+        </p>
+        <hr/>
+        <h6>h6. Bootstrap Heading
+            <small>Secondary text</small>
+        </h6>
+        <hr/>
+        <p class="h6">p.h6 Bootstrap Heading
+            <small>Secondary text</small>
+        </p>
+        <hr/>
+        <h3>Code</h3>
+<pre class="margin-left">
+        <div hljs class="hljs">
+
+<h1 class="page-header">H1 -Page Header/Title </h1>
+
+<h1 class="banner">H1 -Large Banner</h1>
+
+<h2>H2 -Section Title, popup page title</h2>
+
+<h3 class="h-title">H3 -Content Subject Title</h3>
+
+<h4 class="h-subtitle">H4 -Content Subtitle</h4>
+
+<p class="h-subtitle2">P -Content Subtitle2</p>
+
+<legend>Legend - Form Fieldset Title</legend>
+
+<h1>h1 Bootstrap Heading <small>Secondary text</small></h1>
+<p class="h1">p.h1 Bootstrap Heading <small>Secondary text</small></p>
+
+<h2>h2 Bootstrap Heading <small>Secondary text</small></h2>
+<p class="h-title">p.h2 Bootstrap Heading <small>Secondary text</small></p>
+
+<h3>h3. Bootstrap Heading <small>Secondary text</small></h3>
+<p class="h3">p.h3 Bootstrap Heading <small>Secondary text</small></p>
+
+<h5>h4. Bootstrap Heading <small>Secondary text</small></h5>
+<p class="h4">p.h4 Bootstrap Heading <small>Secondary text</small></p>
+
+<h5>h5. Bootstrap Heading <small>Secondary text</small></h5>
+<p class="h5">p.h5 Bootstrap Heading <small>Secondary text</small></p>
+
+<h6>h6. Bootstrap Heading <small>Secondary text</small></h6>
+<p class="h6">p.h6 Bootstrap Heading <small>Secondary text</small></p>
+
+</div>
+</pre>
+        </div>
+    </div>
+</div>
+
+
+<h3 class="h-title  anchor" id="type-addresses">Addresses</h3>
+
+<p>Present contact information for the nearest ancestor or the entire body of work. Preserve formatting by ending all
+    lines with <code>&lt;br&gt;</code>.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <address>
+            <strong>Twitter, Inc.</strong><br>
+            795 Folsom Ave, Suite 600<br>
+            San Francisco, CA 94107<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
+        <address>
+            <strong>Full Name</strong><br>
+            <a href="mailto:#">first.last@example.com</a>
+        </address>
+        <hr/>
+        <h3>Code</h3>
+<pre class="margin-left">
+<div hljs class="hljs" language="html">
+<address>
+  <strong>Twitter, Inc.</strong><br>
+  795 Folsom Ave, Suite 600<br>
+  San Francisco, CA 94107<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+
+<address>
+  <strong>Full Name</strong><br>
+  <a href="mailto:#">first.last@example.com</a>
+</address></div>
+</pre>
+    </div>
+</div>
+
+
+<h3 class="h-subtitle">Blockquote options</h3>
+
+<p>Style and content changes for simple variations on a standard <code>&lt;blockquote&gt;</code>.</p>
+
+<h3>Naming a source</h3>
+
+<p>Add a <code>&lt;footer&gt;</code> for identifying the source. Wrap the name of the source work in <code>
+    &lt;cite&gt;</code>.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <blockquote>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        </blockquote>
+        <hr/>
+        <h3>Code</h3>
+<pre class="margin-left">
+<div hljs class="hljs" language="html">
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote></div>
+</pre>
+    </div>
+</div>
+
+<h2>Alternate displays</h3>
+
+<p>Add <code>.blockquote-reverse</code> for a blockquote with right-aligned content.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <blockquote class="blockquote-reverse">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        </blockquote>
+        <hr/>
+        <h3>Code</h3>
+<pre class="margin-left">
+<div hljs class="hljs" language="html">
+<blockquote class="blockquote-reverse">
+  ...
+</blockquote></div>
+</pre>
+    </div>
+</div>
+
+
+<h3 class="h-subtitle">Inline</h3>
+
+<p>Place all list items on a single line with <code>display: inline-block;</code> and some light padding.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ul class="list-inline">
+            <li>Lorem ipsum</li>
+            <li>Phasellus iaculis</li>
+            <li>Nulla volutpat</li>
+        </ul>
+        <hr/>
+        <h3>Code</h3>
+<pre class="margin-left">
+<div hljs class="hljs" language="html">
+<ul class="list-inline">
+  <li>...</li>
+</ul></div>
+</pre>
+    </div>
+</div>
+
+<h3 class="h-subtitle">Description</h3>
+
+<p>A list of terms with their associated descriptions.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <dl>
+            <dt>Description lists</dt>
+            <dd>A description list is perfect for defining terms.</dd>
+            <dt>Euismod</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+            <dt>Malesuada porta</dt>
+            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+        </dl>
+        <hr/>
+        <h3>Code</h3>
+<pre class="margin-left">
+<div hljs class="hljs" language="html">
+<dl>
+  <dt>...</dt>
+  <dd>...</dd>
+</dl></div>
+</pre>
+    </div>
+</div>
+
+<h3>Horizontal description</h3>
+
+<p>Make terms and descriptions in <code>&lt;dl&gt;</code> line up side-by-side. Starts off stacked like default <code>
+    &lt;dl&gt;</code>s, but when the navbar expands, so do these.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Description lists</dt>
+            <dd>A description list is perfect for defining terms.</dd>
+            <dt>Euismod</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+            <dt>Malesuada porta</dt>
+            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+            <dt>Felis euismod semper eget lacinia</dt>
+            <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                amet
+                risus.
+            </dd>
+        </dl>
+        <hr/>
+        <h3>Code</h3>
+<pre class="margin-left"
+<div hljs class="hljs" language="html">
+<dl class="dl-horizontal">
+  <dt>...</dt>
+  <dd>...</dd>
+</dl></div>
+</pre>
+    </div>
+</div>
+
+<blockquote>
+    <h5>Auto-truncating</h5>
+
+    <p>Horizontal description lists will truncate terms that are too long to fit in the left column with <code>text-overflow</code>.
+        In narrower viewports, they will change to the default stacked layout.</p>
+</blockquote>
+
+
+<h3 class="h-title  anchor" id="code-inline">Inline code</h3>
+
+<p>Wrap inline snippets of code with <code>&lt;code&gt;</code>.</p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+        <hr/>
+        <h3>Code</h3>
+<pre class="margin-left"
+<div hljs class="hljs" language="html">
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.</div>
+</pre>
+    </div>
+</div>

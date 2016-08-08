@@ -1,0 +1,89 @@
+<div class="panel panel-default">
+     <div class="panel-heading">
+         <div class="row vertical-align">
+             <div class="col-sm-5">
+                 <h4>
+                     {{ user.insurance.trading_partner_name }}
+                     <small>{{ ' #' + user.insurance.member_id }}</small>
+                 </h4>
+             </div>
+             <div class="col-sm-7 text-right">
+                     <button class="btn btn-default btn-small " ng-click="onRemoveClick()">
+                         Remove <i class="fa fa-close"></i>
+                     </button>
+
+                     <button class="btn btn-default btn-small cursor-pointer"
+                        ng-click="onEditClick()">
+                         Edit <i class="fa fa-pencil"></i>
+                     </button>
+
+                     <button class="btn btn-default btn-small" ng-click="reloadEligibility()">
+                         Refresh <i class="fa fa-fw fa-refresh"></i>
+                     </button>
+             </div>
+         </div>
+    </div>
+    <div class="panel-body eligibility-section">
+        <div class="row">
+            <div class="col-xs-12">
+                <dl class="row coverage-detail">
+                    <dt class="col-xs-4">Name</dt>
+                    <dd class="col-xs-8">{{ user.first_name }} {{ user.last_name }}</dd>
+                </dl>
+                <dl class="row coverage-detail">
+                    <dt class="col-xs-4">Date of Birth</dt>
+                    <dd class="col-xs-8">{{ user.birth_date | formatDate: 'MMMM D, YYYY': true }}</dd>
+                </dl>
+                <dl class="row coverage-detail">
+                    <dt class="col-xs-4">Gender</dt>
+                    <dd class="col-xs-8">{{ user.gender | titlecase }}</dd>
+                </dl>
+                <dl class="row coverage-detail">
+                    <dt class="col-xs-4">Subscriber ID</dt>
+                    <dd class="col-xs-8">{{ user.insurance.member_id }}</dd>
+                </dl>
+                <dl class="row coverage-detail" ng-show="data.insurance.payer_name">
+                    <dt class="col-xs-4">Insurance Payer</dt>
+                    <dd class="col-xs-8">
+                        <span ng-if="!pending">{{ data.insurance.payer_name | titlecase }}</span>
+                        <span ng-if="pending" class="pending">pending</span>
+                    </dd>
+                </dl>
+                <dl class="row coverage-detail" ng-show="data.insurance.coverage.group_description">
+                    <dt class="col-xs-4">Group Plan</dt>
+                    <dd class="col-xs-8">
+                        <span ng-if="!pending">{{ data.insurance.coverage.group_description | titlecase }}</span>
+                        <span ng-if="pending" class="pending">pending</span>
+                    </dd>
+                </dl>
+                <dl class="row coverage-detail" ng-show="data.insurance.coverage.group_number">
+                    <dt class="col-xs-4">Group Number</dt>
+                    <dd class="col-xs-8">
+                        <span ng-if="!pending">{{ data.insurance.coverage.group_number }}</span>
+                        <span ng-if="pending" class="pending">pending</span>
+                    </dd>
+                </dl>
+                <dl class="row coverage-detail" ng-show="data.insurance.coverage.level">
+                    <dt class="col-xs-4">Coverage Level</dt>
+                    <dd class="col-xs-8">
+                        <span ng-if="!pending">{{ data.insurance.coverage.level | removeUnderscores | titlecase }}</span>
+                        <span ng-if="pending" class="pending">pending</span>
+                    </dd>
+                </dl>
+                <dl class="row coverage-detail">
+                    <dt class="col-xs-4">Coverage Active?</dt>
+                    <dd class="col-xs-8">
+                        <span ng-if="pending" class="pending">pending</span>
+                        <span title="Coverage Active"
+                              class="pokit-icon pd-check text-success"
+                              ng-if="!pending && data.insurance.coverage.active == true"></span>
+                        <span ng-if="!pending && data.insurance.coverage.active == true">&nbsp;&nbsp;Active</span>
+                        <span title="Coverage Active" class="icon icon-error"
+                              ng-if="!pending && data.insurance.coverage.active == false"></span>
+                        <span ng-if="!pending && data.insurance.coverage.active == false">&nbsp;&nbsp;Inactive</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

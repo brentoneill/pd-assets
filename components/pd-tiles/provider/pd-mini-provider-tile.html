@@ -1,0 +1,12 @@
+<div class="pd-mini-provider-tile">
+    <div class="media">
+        <div class="media-left">
+            <pd-profile-img entity="provider"></pd-profile-img>
+        </div>
+        <div class="media-body">
+            <pd-provider-name></pd-provider-name>
+            <pd-specialty-list ng-if="showSpecialties && provider.specialties.length > 0"></pd-specialty-list>
+            <div class="text-small text-muted" ng-if="provider.gender">{{ provider.gender | titlecase }}</div>
+        </div>
+    </div>
+</div>

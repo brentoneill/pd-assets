@@ -1,0 +1,182 @@
+/*------------------------------------*\
+  #PD-WORKFLOW
+
+    - Styles for all components in the pd-workflow module
+
+\*------------------------------------*/
+
+
+/**** nav-steps used in some multi-step flows *****/
+.nav-steps.horizontal {
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+
+    li {
+        margin: 0;
+        padding: 0;
+        color: @gray-lighter;
+        font-size: @font-size-base;
+        position: relative;
+
+        &.active {
+            color: @brand-success;
+            span {
+                &:before { transform: scaleX(1); }
+            }
+        }
+
+        span {
+            position: relative;
+            display: block;
+            padding-bottom: @padding-small-vertical;
+            border-bottom: 4px solid @gray-lighter;
+
+            &:before {
+                content: '';
+                width: 100%;
+                height: 4px;
+                position:absolute;
+                bottom: -4px;
+                left: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+                background-color: @brand-success;
+            }
+
+            &:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                bottom: -4px;
+                right: 0;
+                height: 4px;
+                width: 2px;
+                background-color: @gray-lightest;
+            }
+        }
+
+        i {
+            display: inline-block;
+            font-size: 1.8em;
+            font-family: @font-family-secondary;
+            padding: 0 .2em 0 .2em;
+            font-style: normal;
+        }
+        b {
+            display: inline-block;
+            font-family: @font-family-secondary;
+            font-weight: normal;
+            line-height: 1.2;
+            max-width: 200px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            vertical-align: sub;
+        }
+    }
+}
+
+.nav-steps.vertical {
+    list-style: none;
+    margin: 0 0 1em 1em;
+    padding: 0;
+    border-left: 1px solid @brand-primary;
+
+    a {
+        color: @text-color;
+        text-decoration: none;
+        &:hover { color: @link-color;}
+    }
+
+    li {
+        margin: 2em 0;
+        padding: 0;
+        position: relative;
+        &.active { color: @link-color;}
+
+        i {
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 22px;
+            margin: 0px 10px 0px -11px;
+            height: 22px;
+            width: 22px;
+            line-height: 20px;
+            font-size: 11px;
+            text-align: center;
+            font-style: normal;
+            background-color: #fff;
+            color: #fff;
+            border: 1px solid @brand-primary;
+        }
+
+        i.filled {
+            background-color: @brand-primary;
+            color: #fff;
+        }
+    }
+}
+
+
+// Styles for the workflow hud
+.pd-workflow-hud {
+
+    .panel-body { position: relative; }
+
+    .pd-workflow-hud-close {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+    }
+
+    .pd-provider-tile {
+        min-height: initial;
+        margin-bottom: @padding-base-horizontal;
+    }
+
+    .pd-profile-img {
+        padding-right: 5px;
+        .img-profile {
+            max-height: 70px;
+            max-width: 70px;
+        }
+    }
+
+    button {
+        border-radius: @border-radius-base;
+        z-index: @zindex-navbar;
+        transition: background-color .3s ease-out;
+        &:hover { background-color: @gray-lightest; }
+    }
+
+    .pd-location-tile {
+        p.h5 {
+            margin-top: .1em;
+        }
+        margin-bottom: 0;
+    }
+}
+
+.col-md-5 {
+    .pd-workflow-hud {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: @screen-md) {
+    .pd-workflow-hud.slide-out {
+        position: absolute;
+        left: 0;
+        top: -40px;
+        width: 100%;
+        min-height: 450px;
+        transform: translateX(150%);
+        transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1);
+
+        &.active { transform: translateX(0); }
+        .pd-workflow-hud-close { display: block; }
+    }
+}

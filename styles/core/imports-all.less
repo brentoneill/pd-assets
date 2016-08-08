@@ -1,0 +1,120 @@
+/*------------------------------------*\
+  #IMPORTS ALL!
+
+    - This file is our top level import for all styles
+    - Cascade order goes bootstrap > pd-assets components >
+                            pd-assets styles > page-specific styles > custom color overrides
+
+\*------------------------------------*/
+
+
+// variables.less is imported in the .less file within the
+// application instance before this file is imported
+
+// BOOTSTRAP STYLES
+@import '../../vendor/bootstrap/less/variables.less';
+@import 'variables';
+@import '../../vendor/bootstrap/less/mixins.less';
+
+// PD Mixins
+// @import 'pd-mixins';
+
+// Reset and print
+@import "../../vendor/bootstrap/less/normalize.less";
+@import "../../vendor/bootstrap/less/print.less";
+
+// Core BOOTSTRAP CSS
+@import "../../vendor/bootstrap/less/scaffolding.less";
+@import "../../vendor/bootstrap/less/type.less";
+@import "../../vendor/bootstrap/less/code.less";
+@import "../../vendor/bootstrap/less/grid.less";
+@import "../../vendor/bootstrap/less/tables.less";
+@import "../../vendor/bootstrap/less/forms.less";
+@import "../../vendor/bootstrap/less/badges.less";
+@import "../../vendor/bootstrap/less/buttons.less";
+@import "../../vendor/bootstrap/less/breadcrumbs.less";
+@import "../../vendor/bootstrap/less/component-animations.less";
+@import "../../vendor/bootstrap/less/dropdowns.less";
+@import "../../vendor/bootstrap/less/button-groups.less";
+@import "../../vendor/bootstrap/less/input-groups.less";
+@import "../../vendor/bootstrap/less/labels.less";
+@import "../../vendor/bootstrap/less/media.less";
+@import "../../vendor/bootstrap/less/navs.less";
+@import "../../vendor/bootstrap/less/navbar.less";
+@import "../../vendor/bootstrap/less/alerts.less";
+@import "../../vendor/bootstrap/less/progress-bars.less";
+@import "../../vendor/bootstrap/less/pagination.less";
+@import "../../vendor/bootstrap/less/pager.less";
+@import "../../vendor/bootstrap/less/panels.less";
+@import "../../vendor/bootstrap/less/popovers.less";
+@import "../../vendor/bootstrap/less/utilities.less";
+@import "../../vendor/bootstrap/less/carousel.less";
+@import "../../vendor/bootstrap/less/glyphicons.less";
+@import "../../vendor/bootstrap/less/responsive-utilities.less";
+
+// END BOOTSTRAP STYLES
+
+// 3RD PARTY STYLES
+// loading bar that appears at top of page on XHR requests
+//// overrides are found in components/less/loading-bar.less
+@import (less) "../../vendor/angular-loading-bar/build/loading-bar.css";
+@import (less) "../../vendor/font-awesome/css/font-awesome.css";
+@import (less) "../../vendor/angular-bootstrap-colorpicker/css/colorpicker.css";
+@import (less) "../../vendor/angular-tablesort/tablesort.css";
+
+
+// END 3RD PARTY STYLES
+// Styles for components (pd-assets)
+@import '../../components/pd-drawer-nav/pd-drawer-nav.less';
+@import '../../components/pd-header-nav/pd-header-nav.less';
+@import '../../components/pd-toast/pd-toast.less';
+@import '../../components/pd-select/pd-select.less';
+@import '../../components/pd-facebook/pd-facebook.less';
+@import '../../components/pd-form/pd-form.less';
+@import '../../components/pd-confirm/pd-confirm.less';
+@import '../../components/pd-workflow/pd-workflow.less';
+@import '../../components/pd-tiles/pd-tiles.less';
+@import '../../components/pd-pokit/pd-pokit.less';
+@import '../../components/pd-loader/pd-loader.less';
+@import '../../components/pd-spinner/pd-spinner.less';
+@import '../../components/pd-resource-grid/pd-resource-grid.less';
+@import '../../components/pd-activity-card/pd-activity-card.less';
+@import '../../components/pd-image-crop/pd-image-crop.less';
+@import '../../components/pd-color-picker/pd-color-picker.less';
+@import '../../components/pd-overlay/pd-overlay.less';
+@import '../../components/pd-insurance-widgets/pd-insurance-widgets.less';
+
+// Styles for global elements
+@import 'animations';
+@import 'layout';
+@import 'bootstrap-overrides';
+@import 'bs-timepicker-overrides';
+@import 'badge';
+@import 'button';
+@import 'carousel';
+@import 'font';
+@import 'form';
+@import 'footer';
+@import 'image';
+@import 'label';
+@import 'link';
+@import 'list';
+@import 'loading-bar';
+@import 'nav';
+@import 'panel';
+@import 'pd-icons';
+@import 'table';
+@import 'utilities';
+
+// Styles for documentation site
+@import 'docs';
+
+// Module specific styles
+@import 'plmp-modules/admin';
+@import 'plmp-modules/landing';
+@import 'plmp-modules/settings';
+@import 'plmp-modules/tour';
+@import 'plmp-modules/support';
+
+// Import the custom color overrides. ALWAYS LAST!
+@import 'PLMP-custom-color-overrides';

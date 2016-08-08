@@ -1,0 +1,48 @@
+/*------------------------------------*\
+  #PD-POKIT
+
+    - Styles for all components in the pd-pokit module
+
+\*------------------------------------*/
+
+
+.pd-pokit-btn-wrapper {
+    text-align: right;
+}
+
+.pokit-btn {
+    display: block;
+    min-width: 60px;
+    height: 25px;
+    text-align: right;
+    .pokit-btn-text {
+        display: inline-block;
+        min-width: 50px;
+        margin-left: 6px;
+        font-size: 1em;
+        line-height: 1.68;
+        color: @gray-dark;
+        text-align: left;
+        vertical-align: top;
+        transition: all .5s ease;
+    }
+}
+
+.pokit-checked,
+.pokit-check-box {
+    display: inline-block;
+    width: 21px;
+    height: 20px;
+    margin-right: 0;
+    vertical-align: middle;
+    background-image: url(https://plmp-assets-prod.s3.amazonaws.com/_default_assets/images/sprite-general-icons.png);
+    background-repeat: no-repeat;
+}
+
+.pokit-check-box {
+    background-position: 0 -260px;
+}
+
+.pokit-checked {
+    background-position: 0 -280px;
+}

@@ -1,0 +1,173 @@
+.navbar {
+    margin-bottom: 0;
+    font-family: @font-family-secondary;
+}
+
+.navbar-default {
+    background-color: #fff;
+    border-top-color: rgba(0, 0, 0, .0);
+    border-bottom: thin solid @gray-lighter;
+    .nav-user-link {
+        margin-top: -2px;
+        font-family: @font-family-base;
+    }
+    .label-secondary {
+        vertical-align: super;
+    }
+    .container-fluid {
+        padding-right: @grid-gutter-width;
+        padding-left: @grid-gutter-width;
+    }
+}
+
+.navbar-nav > li > a.nav-icon-link {
+    padding-top: @padding-base-vertical * 2;
+    padding-bottom: @padding-small-vertical * 2;
+}
+
+.nav-header {
+    padding: @padding-small-vertical @padding-small-horizontal;
+    text-transform: uppercase;
+}
+
+ul.navbar-tabs {
+    height: @navbar-height;
+    margin-right: 50px;
+    margin-bottom: 0;
+    margin-left: 50px;
+
+    li {
+        float: left;
+        width: 32%;
+        height: 100%;
+        border-bottom: 3px solid transparent;
+        transition: border-color .2s ease-out;
+
+        &.active {
+            border-color: @gray-light;
+        }
+
+        &:hover {
+            border-color: lighten(@gray-light, 15%);
+            &.active {
+                border-color: @gray-light;
+            }
+        }
+
+        a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            padding-top: @padding-large-horizontal;
+            font-size: @font-size-base;
+            border-bottom: 3px solid transparent;
+
+            &:focus,
+            &:active,
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+/*
+.pd-tabset {
+    .nav-tabs {
+        li > a {
+            background-color: @gray-lightest; // variable
+            font-size: @font-size-small;
+            margin-right: @padding-base-vertical;
+            text-transform: uppercase;
+            &:hover {
+                background-color: @white;
+            }
+        }
+        li.active > a {
+            background-color: @white;
+        }
+    }
+}
+*/
+
+.side-nav {
+    li p {
+        margin-top: @padding-base-vertical;
+        margin-bottom: @padding-base-vertical;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 839px) {
+    .side-nav {
+        margin-bottom: @padding-large-vertical;
+    }
+    .side-nav .nav .nav > li {
+        display: inline-block;
+        padding: 5px;
+        margin-right: @padding-small-vertical;
+        margin-bottom: @padding-small-vertical;
+        font-weight: normal;
+        text-align: center;
+        text-transform: uppercase;
+        text-transform: none;
+        white-space: nowrap;
+        vertical-align: middle;
+        border-color: #dcdbd8;
+        border-radius: @border-radius-base;
+        -webkit-transition: all .15s ease-out;
+                transition: all .15s ease-out;
+        a {
+            background-color: @white;
+            -webkit-transition: all .15s ease-out;
+                    transition: all .15s ease-out;
+            &:hover {
+                background-color: @gray-lighter;
+            }
+        }
+    }
+}
+
+.side-nav {
+    .nav .nav {
+        li {
+            margin-bottom: @padding-base-vertical;
+        }
+
+        li > a {
+            padding: @padding-small-vertical @padding-small-horizontal;
+            color: @text-color;
+            border-radius: @border-radius-base;
+            &:focus,
+            &:active,
+            &:hover,
+            &.active {
+                color: @link-color;
+                background-color: inherit;
+            }
+        }
+    }
+}
+
+.menu-collapsing {
+    ul {
+        .box-shadow(0 1px 1px rgba(0,0,0,.15));
+
+        background-color: @white;
+        border: thin solid @gray-lighter;
+        border-radius: @border-radius-base;
+        li {
+            a {
+                transition: all .15s ease-in-out;
+                &:hover {
+                    background-color: @gray-lightest;
+                }
+            }
+        }
+    }
+}

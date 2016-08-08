@@ -1,0 +1,23 @@
+<div class="pd-appointment-slots-tile">
+    <pd-schedule-control-tile ng-if="!hideControls"></pd-schedule-control-tile>
+    <div class="schedule">
+        <div class="schedule-columns-wrapper relative">
+            <div pd-loader="{ promise: apptPromise, backdrop: true, templateUrl: 'pd-loader/pd-loader-spinner.html' }"></div>
+            <!-- <h4 class="text-muted text-center" ng-show="!showGrid">
+                No appointments available
+            </h4> -->
+            <div class="schedule-column text-center mbl no-select" ng-repeat="day in weekdays">
+                <p ng-repeat="appt in appointments[day.date]">
+                    <a ng-if="!disableApptLinks"
+                       class="schedule-time cursor-pointer no-wrap text-link-small"
+                       ng-click="scheduleAppointment(appt)">
+                        {{ appt.startDateDisplay }}
+                    </a>
+                    <span class="schedule-time no-wrap" ng-if="appt.start_date && appt.end_date && disableApptLinks">
+                        {{ appt.startDateDisplay }}
+                    </span>
+                </p>
+            </div> <!-- / .schedule-columns -->
+        </div> <!-- / .schedule-columns-wrapper -->
+    </div>
+</div> <!-- / .tile-appttimes -->

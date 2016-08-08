@@ -1,0 +1,84 @@
+<div class="drawer">
+
+    <div class="row-fluid clearfix">
+        <div class="col-xs-12 text-center">
+            <img class="logo" ng-src="{{ app.theme.logo.og || 'assets/images/logo.png' }}" alt="{{ app.name }}"/>
+        </div>
+    </div>
+
+    <!-- Menu items to show if logged IN -->
+    <div class="drawer-top" ng-if="user">
+
+        <div class="hidden-md hidden-lg">
+            <div class="avatar default" ng-if="!user.profile_image"></div>
+            <img class="avatar" ng-if="user.profile_image" ng-src="{{ user.profile_image.sm }}" alt=""/>
+            <span class="text-muted">{{ user.first_name }} {{ user.last_name }}</span>
+        </div>
+
+        <ul ng-repeat="section in drawerConfig.loggedIn.navSections">
+            <span ng-if="section.title" class="text-uppercase text-muted no-wrap block mbs">{{ section.title }}</span>
+            <li ng-repeat="item in section.menuItems" ng-if="item.enabled" ui-sref-active="active">
+                <a href="#"
+                   class="drawer-link"
+                   ui-sref="{{::item.ui_sref}}"
+                   ng-click="closeDrawer()"
+                   ng-class="{ 'clearfix': item.label }">
+                    {{ :: item.title }}
+                    <span ng-show="item.label" class="label label-warning badge pull-right">
+                        {{ :: item.label }}
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <br/>
+        <button class="btn btn-default" ui-sref="app.consumer.auth.logout" ng-click="closeDrawer()">
+            Log Out
+        </button>
+    </div> <!-- /logged in menu items -->
+
+    <!-- Menu items to show if logged OUT -->
+    <div ng-if="!user">
+        <ul ng-repeat="section in drawerConfig.loggedOut.navSections">
+            <li ng-repeat="item in section.menuItems" ng-if="item.enabled">
+                <a href="#"
+                   class="drawer-link h4"
+                   ui-sref="{{::item.ui_sref}}"
+                   ng-click="closeDrawer()"
+                   ng-class="{ 'clearfix': item.label }">
+                    {{ :: item.title }}
+                </a>
+            </li>
+        </ul>
+    </div> <!-- /logged out menu items -->
+
+    <!-- Always show footer whether loggedin or loggedout -->
+    <!-- <div class="drawer-footer hidden-md hidden-lg">
+        <hr/>
+
+        <div class="row-fluid mbl">
+            <ul class="list-inline text-center man">
+                <li ng-repeat="link in footerConfig.socialLinks">
+                    <a class="drawer-link" href="{{ :: link.href }}" target="_blank">
+                        <i class="fa fa-fw fa-2x fa-{{ :: link.icon }}"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="list-unstyled text-right" ng-if="footerConfig.footerLinks">
+            <li class="mbs" ng-repeat="link in footerConfig.footerNav">
+                <a class="text-link" ng-click="closeDrawer()" ui-sref="{{ :: link.ui_sref }}">
+                    <small>{{ :: link.title }}</small>
+                </a>
+            </li>
+            <li class="mbs" ng-repeat="link in footerConfig.footerLinks">
+                <a class="text-link" ng-click="closeDrawer()" href="{{ link.href }}">
+                    <small>{{ :: link.title }}</small>
+                </a>
+            </li>
+        </ul>
+        <p class="text-center text-xsmall phs">{{ '©2016 ' + currentApp.name + '. All rights reserved.' }}</p>
+    </div> -->
+     <!-- /footer stuff -->
+
+</div>

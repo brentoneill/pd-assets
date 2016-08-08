@@ -1,0 +1,61 @@
+<div class="pd-confirm" style="display: block;" id="confirm-img-crop" ng-show="editing">
+    <div class="pd-confirm-overlay"></div>
+    <div class="pd-confirm-content pd-content-default pd-confirm--animate-in" style="max-width: {{ previewContainerWidth + 80 }}px;">
+        <h3 class="pd-confirm-title">{{ windowTitle || 'Change profile image' }}</h3>
+
+        <div class="image-preview">
+            <p>{{ windowDescription|| 'Drag and zoom to position your larger image.' }}</p>
+
+            <div class="cropit-image-preview-container" style="width: {{ previewContainerWidth }}px;">
+                <div class="cropit-image-preview" ng-class="{'circle': circlePreview}"></div>
+            </div>
+
+            <input type="range" class="cropit-image-zoom-input"/>
+
+            <p>Zoom level</p>
+            <a class="btn btn-default" ng-click="cancel()">Cancel</a>
+            <a class="btn btn-primary"
+               ng-class="{'disabled': !profileImg, 'uploading': uploading == true}"
+               ng-click="uploadPhoto(); showDetails=false"
+               ng-disabled="uploading == true">
+                <i class="dark-loader loader-s"></i> Select Image
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="img-upload-container" ng-hide="editing">
+    <div class="edit-image-overlay">
+        <div class="edit-image-inner text-center">
+            <div class="btn btn-default btn-sm outline"  ng-click="showDetails = ! showDetails">Edit</div>
+            <div class="text-center image-edit-details animate-show-fade" ng-show="showDetails">
+                <a class="image-edit cursor-pointer text-link-small btn-link"
+                   title="Update image">Update image</a>
+
+                <input class="cropit-image-input file-select pull-left"
+                       type="file"
+                       ngf-select="onFileSelect($files)"
+                       name="file"
+                       ng-model="file"
+                       data-multiple="false"
+                       ng-hide="true"
+                       accept="image/*"/>
+
+                <a class="btn-link text-link-small cursor-pointer"
+                   ng-click="promptDeleteImage()"
+                   title="Delete image">Delete image</a>
+            </div>
+        </div>
+
+    </div>
+
+    <img class="{{ imgClasses }} img-profile"
+         ng-class="{'img-circle': circlePreview}"
+         ng-show="imgData[imgPreviewSize]"
+         ng-src="{{ imgData[imgPreviewSize] }}"/>
+
+    <div ng-class="{'img-circle': circlePreview}" class="img-profile img-profile-default img-profile-{{ defaultIcon || 'consumer' }}" ng-hide="imgData.md"></div>
+
+    <p class="small text-center img-upload-text"></p>
+</div>

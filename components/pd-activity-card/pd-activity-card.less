@@ -1,0 +1,80 @@
+/*------------------------------------*\
+  #PD-ACTIVITY-CARD
+
+    - Styles for all the activity cards
+
+\*------------------------------------*/
+
+
+
+.panel-activity {
+    position: relative;
+
+    .img-profile {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .pd-loader-spinner { margin-top: 20%; }
+
+    .card-expander {
+        display: block;
+        margin: 4px auto;
+        text-align: center;
+        min-height: 20px;
+        &:after {
+            content: '';
+            display: block;
+            border-top: 1px solid @panel-default-border;
+            border-bottom: 1px solid @panel-default-border;
+            height: 5px;
+        }
+        .btn {
+           min-width: 40px;
+           padding: 0 1em .5em 1em;
+           margin: 0 auto;
+        }
+        &.expanded {
+            &:after {
+                content: none;
+                border-top: none;
+                border-bottom: none;
+            }
+        }
+    }
+    .panel-body {
+        padding-bottom: 0;
+    }
+}
+
+
+.pd-appointment-tile,
+.pd-activity-card,
+.panel-loader {
+    &.panel,
+    .panel {
+         .pd-loader-spinner { margin-top: 25%; }
+    }
+}
+
+.pd-eligibility-tabs {
+    position: relative;
+    .pd-loader-spinner {
+        margin-top: 5%;
+    }
+}
+
+.action-buttons {
+
+    .btn {
+        margin: .2em;
+    }
+    .btn-group {
+        margin: .2em .5em;
+    }
+}
+
+
+.pd-appointment-info td.tag {
+    min-width: 100px;
+}

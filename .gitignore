@@ -1,0 +1,8 @@
+# ignore build and dev dependencies found in node_modules
+node_modules
+
+# ignore the generate docs folder
+docs
+
+# ignore the generated dist folder
+dist

@@ -1,0 +1,81 @@
+@ngdoc overview
+@name colors
+@description
+
+<h1 class="page-header" id="colors">Branding Colors</h1>
+<h3><font size="4">Sections</font></h3>
+
+<p>Default background color for the body is the lighter gray color defined as
+    <code>@gray-lightest</code>. Other than
+<code>.bg-white</code> used mostly on top nav bar, there are also the following
+    background classes: </p>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+      <div class="section bg-gray-lightest">
+        <code>.bg-gray-lightest</code>
+        <p> Body Default Background Color </p>
+      </div>
+
+      <div class="section bg-gray-lighter">
+        <code>.bg-gray-lighter</code>
+      </div>
+
+      <div class="section bg-gray-light">
+          <code>.bg-gray-light</code>
+          <p>Footer Background Color </p>
+      </div>
+
+      <div class="section bg-gray-dark">
+          <code>.bg-gray-dark</code>
+      </div>
+
+      <div class="section bg-secondary">
+        <code>.bg-secondary</code>
+      </div>
+
+    </div>
+</div>
+</div>
+<p class="h-title anchor" id="panels">Content Panels</p>
+
+<div class="panel panel-default">
+    <code>.panel.panel-default</code>
+    <div class="panel-body">
+      <p><code>.panel-body</code></p>
+    </div>
+</div>
+
+<div class="panel panel-default panel-rounded">
+    <code>.panel.panel-default.panel-rounded</code>
+    <div class="panel-body"><p><code>.panel-body</code></p></div>
+</div>
+
+
+<p>Alert Boxes</p>
+
+<div class="alert alert-default">
+  <code>.alert-default</code>
+  <p>Global alert message text - e.g. the OHP platform API user type notification below the top nav bar.</p>
+</div>
+
+<div class="alert alert-success">
+  <code>.alert-success</code>
+  <p>Use this for form submission success confirmation messages</p>
+</div>
+
+<div class="alert alert-info">
+  <code>.alert-info</code>
+  <p>Use this for the neutral type of messages.</p>
+</div>
+
+<div class="alert alert-warning">
+  <code>.alert-warning</code>
+  <p>Use this for warnings but not necessarily of error/failure types.</p>
+</div>
+
+<div class="alert alert-danger">
+  <code>.alert-danger</code>
+  <p>Use this for any form submission failure messages returned from server.</p>
+</div>

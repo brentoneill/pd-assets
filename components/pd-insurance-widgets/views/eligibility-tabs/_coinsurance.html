@@ -1,0 +1,32 @@
+<div ng-repeat="(coverageLevel, coverageGroup) in coinsurance" class="tabs-coinsurance">
+    <div ng-repeat="(networkLevel, networkGroup) in coverageGroup">
+        <h4>{{ coverageLevel | removeUnderscores | titlecase }} Coverage, {{ networkLevel | removeUnderscores | titlecase }}</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td style="width: 120px;" class="text-bold">Benefit %</td>
+                    <td class="text-bold">Service Types</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(benefitPercent, benefitGroup) in networkGroup">
+                    <td>{{ benefitPercent * 100 + "%" }}</td>
+                    <td>
+                        <ul style="padding-left: 15px; margin: 0;">
+                            <li ng-repeat="coinsurance in benefitGroup">
+                                {{ coinsurance.service_types.join(", ") | removeUnderscores | titlecase }}
+                                <small class="text-muted" ng-if="coinsurance.messages">
+                                    <br/>
+                                    <span ng-repeat="m in coinsurance.messages">
+                                        {{ $last ? m.message : m.message + "; " }}
+                                    </span>
+                                </small>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+    </div>
+</div>
