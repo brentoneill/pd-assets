@@ -27,5 +27,5 @@ angular.module('pdAssets', [
     'pdUtils',
     'pdValues',
     'pdWorkflow',
-    'templates.pd-assets'
+    'templates.pdassets'
 ]);
