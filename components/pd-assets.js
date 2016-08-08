@@ -2,7 +2,6 @@
 
 angular.module('pdAssets', [
     'pdActivityCard',
-    'pdAssetsTemplates',
     'pdCalExport',
     'pdCheckboxesToList',
     'pdColorPicker',
@@ -27,5 +26,6 @@ angular.module('pdAssets', [
     'pdToast',
     'pdUtils',
     'pdValues',
-    'pdWorkflow'
+    'pdWorkflow',
+    'templates.pd-assets'
 ]);

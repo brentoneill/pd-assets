@@ -19,7 +19,6 @@ angular.module('pdAdminApp', [
         'pdWorkflow',
         'pdTiles',
         'pdPokit',
-        'pdInterface',
         'pdResourceGrid',
         'pdImageCrop',
         'pdActivityCard'

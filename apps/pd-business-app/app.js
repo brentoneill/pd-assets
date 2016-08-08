@@ -18,7 +18,8 @@ angular.module('pdBusinessApp', [
         'pdLoading',
         'pdResourceGrid',
         'pdImageCrop',
-        'pdActivityCard'
+        'pdActivityCard',
+        'pdInsuranceWidgets'
     ])
     // set defaults for the toast service
     .value('pdToastDefaults', {

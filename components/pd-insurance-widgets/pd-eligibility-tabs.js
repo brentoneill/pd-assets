@@ -2,9 +2,9 @@
 
 
 angular.module('pdInsuranceWidgets', [
-    'pdServices',
-    'ui.bootstrap.tabs'
-])
+        'pdServices',
+        'ui.bootstrap.tabs'
+    ])
     .service('pdEligibilityService', function($http) {
         var s = {
             eligibilityResponse: null,

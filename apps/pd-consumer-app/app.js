@@ -22,7 +22,8 @@ angular.module('pdConsumerApp', [
         'pdResourceGrid',
         'pdImageCrop',
         'pdActivityCard',
-        'pdScrolling'
+        'pdScrolling',
+        'pdInsuranceWidgets'
     ])
     // set defaults for the toast service
     .value('pdToastDefaults', {

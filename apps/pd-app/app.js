@@ -8,7 +8,7 @@ angular.module('pdApp', [
         'ui.mask',
         'ui.router.grant',
         'ui.bootstrap',
-        'angular-loading-bar',
+        // 'angular-loading-bar',
         'sticky',
         // core services used in all pd apps
         'pdServices',
