@@ -5,4 +5,4 @@ node_modules
 docs
 
 # ignore the generated dist folder
-./dist
+/dist
