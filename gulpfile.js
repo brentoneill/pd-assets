@@ -158,7 +158,7 @@ gulp.task('clean:docs', function(done) {
 gulp.task('templates:docs', function (done) {
     var options = {
         standalone: true,
-        module: 'pdAssetsTemplates'
+        module: 'templates.pdassets'
     };
     return gulp.src(paths.componentTemplates)
         .pipe(htmlmin({
