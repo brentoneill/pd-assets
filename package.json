@@ -43,6 +43,10 @@
   "author": "PokitDok",
   "license": "ISC",
   "dependencies": {
-    "gulp-ngdocs": "https://github.com/brentoneill/gulp-ngdocs.git#pd-assets"
+    "gulp-changed-in-place": "^2.0.3",
+    "gulp-jshint": "^2.0.1",
+    "gulp-ngdocs": "https://github.com/brentoneill/gulp-ngdocs.git#pd-assets",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
   }
 }

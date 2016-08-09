@@ -1,15 +1,15 @@
 # pd-assets
 
-AngularJS SDK used internally at PokitDok. Contains commonly used components, design patterns, and general best practice guides for front end development at PokitDok. While `bower_components` are committed in this repo.
+AngularJS SDK used internally at PokitDok. Contains commonly used components, design patterns, and general best practice guides for front end development at PokitDok.
 
 ## Quick start
 Run the following commands:
 ```bash
 git clone https://gitlab.pokitdok.com/pokitdok/plmp.git
 cd pd-assets
-# install bower on machine if not previously installed
+# install bower on machine, if not previously installed
 sudo npm install -g bower
-# install gulp on machine if not previously installed
+# install gulp on machine, if not previously installed
 sudo npm install -g gulp
 ## install npm deps and bower deps
 npm install
@@ -18,14 +18,54 @@ And you should be all set up!
 
 Now run:
 ```bash
-gulp serve:docs
+gulp docs
 ```
 
 And you should be running the documentation site locally. You can use this documentation site to view all available components, design patterns, and best practices.
+
+
+## Gulp tasks
+
+### `gulp build`
+
 ```bash
-gulp serve:docs
+gulp build
 ```
-watches the component and style directories and refreshes on file change. This allows developers to work on components inside the documentation site before submitting a PR with their new component or component update.
+
+Outputs a `dist` folder at the project root with 4 files:
+
+- `pd-assets.js` - a concatenated file of a pd-assets components. Contains a module called `pdAssets` that can be injected in to an app to take the "whole kitchen sink" approach and include all pd-assets components in your project.
+- `pd-assets-templates.js` - the template cache file that is generated from compiling all the templates for items in the `components` directory. *NOTE: This file is needed for components to find their templates. If not included in your project, you will need to add a template compilation task to your dev/build processes.*
+- `pd-assets.css` - all the CSS generated from the .less files in individual components' style files and the core styles found in `styles/core`
+- `pd-assets-vendor.js` - a concatenated file that contains all the vendor scripts that `pd-assets` relies on.
+
+Include these 4 files to use all of `pd-assets` including the kitchen sink. Should be used by a majority of projects, unless you just need one or two components from pd-assets.
+
+### `gulp docs`
+
+```bash
+gulp docs
+```
+
+Builds, serves and watches the apps, components, and styles directories for changes and refreshes on file change. This allows developers to work on components inside the documentation site before submitting a PR with their new component or component update.
+
+
+### `gulp less:build`
+
+```bash
+gulp less
+```
+
+Runs the task that compiles all less files down to a single css file and outputs that file to the `dist` folder.
+
+## `gulp templates:components`
+
+```bash
+gulp templates:components
+```
+
+Runs the task that compiles all template (.html) files in the `components` directory in to a single .js template cache file in the `dist` folder under a module named `templates.pdassets` which is injected as a dependency in to the second tier in the app hierarchy, i.e. `pd-business-app` or `pd-consumer-app`.
+
 
 ## Directory structure
 
@@ -74,15 +114,47 @@ pd-assets
 
 ```
 
-### vendor
+### apps
 
-Inside of `bower_components` you will find all of the third party libraries and frameworks that we use at PokitDok. `bower_components` is not included in the `.gitignore` so that when you pull the submodule, no `bower install` is needed. To add a dependency, run the following command:
+The apps folder contains boilerplate for PokitDok applications. The top tier in the application hierarchy is `pd-app`. The next tier in the application hierarchy would be the `pd-consumer-app`, `pd-business-app`, and `pd-admin-app`.
 
+- `pd-app` is the top level Angular app that contains boilerplate for user Session management, http request/response client side configuration, AngularJS top level app settings, app bootstrapping loader configs, and a list of dependencies that all front end applications require.
+
+- `pd-admin-app` is used with all applications that will use the admin layout (fixed top bar, left side nav and right side content panel).
+
+- `pd-business-app` is used with all applications that want a Business specific layout and is currently used for the Business side of PLMP.
+
+- `pd-consumer-app` is used with all applications that want a Consumer specific layout and is currently used for the Consumer side of PLMP.
+
+### components
+
+The `components` directory holds all of the UI components that make up `pd-assets`. As you will notice, all component names are prefixed with `pd` protect the namespace and prevent conflicts. These folder names should match the module name, i.e. `pd-activity-card` translates to: `angular.module('pdActivityCard')`. Each of these these component directories will contain the template (.html), javascript (.js), and style (.less) files that are required for that module. These template and style files are compiled via a Gulp task to compile down to a single template file and a single less file.
+
+### docs
+
+Documentation is important! That's why we have set up a documentation generation workflow à la ngDoc (https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation), a wonderful Dgeni (https://github.com/angular/dgeni) package developed by the Angular core team.
+
+The documentation is generated using a Gulp task found in `gulpfile.js` which is in the root of the repo. To generate and serve your documentation site locally, you will first need to install the Gulp plugins that generate the documentation.
+
+First run:
+
+```bash
+npm install
 ```
-bower install jquery --save
+
+After that runs with no errors, you can now run:
+
+```bash
+gulp docs
 ```
 
-This will install the dependency to the `bower_components` folder and save it as a dependency in the `bower.json` file located in the root of the project directory. If you want to see a list of the currently installed dependencies, check out the `bower.json` file in the root of this repo.
+And you should see a new browser tab open up with the PD Assets documentation site running locally.
+
+### docs-content
+
+The content folder houses some static content pages that are used when building the docs site. They follow the Dgeni documentation spec. These pages must be named `*.ngdoc` so that Gulp task that builds the documentation can parse them correctly.
+
+These `*.ngdoc` files support both Markdown and HTML within the `@description` tag that is required at the top of these documents.
 
 ### images & fonts
 
@@ -100,28 +172,12 @@ The remaining files are individual `.less` files that are split by component, eg
 
 *Note*: Module specific styles should live in a `.less` inside of that individual module and *not* inside of the `./less` folder.
 
-### docs
+### vendor
 
-Documentation is important! That's why we have set up a documentation generation workflow à la ngDoc (https://github.com/angular/angular.js/wiki/Writing-AngularJS-Documentation), a wonderful Dgeni (https://github.com/angular/dgeni) package developed by the Angular core team.
+Inside of `vendor` you will find all of the third party libraries and frameworks that we use at PokitDok. `vendor` is not included in the `.gitignore` so that when you pull the submodule, no `bower install` is needed. To add a dependency, run the following command:
 
-The documentation is generated using a Gulp task found in `gulpfile.js` which is in the root of the repo. To generate and serve your documentation site locally, you will first need to install the Gulp plugins that generate the documentation.
-
-First run:
-
-```bash
-npm install
+```
+bower install jquery --save
 ```
 
-After that runs with no errors, you can now run:
-
-```bash
-gulp build:docs
-```
-
-And you should see a new browser tab open up with the PD Assets documentation site running locally.
-
-### docs-content
-
-The content folder houses some static content pages that are used when building the docs site. They follow the Dgeni documentation spec. These pages must be named `*.ngdoc` so that Gulp task that builds the documentation can parse them correctly.
-
-These `*.ngdoc` files support both Markdown and HTML within the `@description` tag that is required at the top of these documents.
+This will install the dependency to the `vendor` folder and save it as a dependency in the `bower.json` file located in the root of the project directory. If you want to see a list of the currently installed dependencies, check out the `bower.json` file in the root of this repo.

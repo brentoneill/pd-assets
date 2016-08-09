@@ -14,12 +14,14 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     templateCache = require('gulp-angular-templatecache'),
     mainBowerFiles = require('gulp-main-bower-files'),
+    changedInPlace = require('gulp-changed-in-place'),
     gulpDocs = require('gulp-ngdocs'),
     gulpFilter = require('gulp-filter'),
     sourcemaps = require('gulp-sourcemaps'),
     runSequence = require('gulp-run-sequence'),
     gulpSequence = require('gulp-sequence');
-
+    jshint = require('gulp-jshint'),
+    stylish = require('jshint-stylish');
 
 // Non gulp related packages
 var del = require('del'),
@@ -27,16 +29,19 @@ var del = require('del'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync').create();
 
-// setup some paths for ease of use
+// Set up some paths for ease of use
 var paths = {
-    jsPD: 'components/**/*.js',
+    jsComponents: 'components/**/*.js',
+    jsApps: 'apps/**/*.js',
     jsVendor: 'vendor/**/*.js',
+    templatesComponents: 'components/**/*.html',
+    templatesApps: 'apps/**/*.html',
+    lessComponents: 'components/**/*.less',
+    lessApps: 'apps/**/*.less',
     stylesImport: 'styles/core/imports-all.less',
-    componentTemplates: 'components/**/*.html',
-    componentLess: 'components/**/*.less',
     fonts: 'fonts/*.*',
     images: 'images/*.*',
-    oldLess: 'less/imports.less',
+    coreLss: 'styles/**/*.less',
     dist: 'dist',
     docs: 'docs',
     docsContent: 'docs-content/**/*.ngdoc ',
@@ -69,7 +74,7 @@ gulp.task('build:docs', ['js:docs', 'less:docs', 'templates:docs', 'vendor:docs'
     return gulpDocs.sections({
             // creates two nav sections
             components: {
-                glob: ['docs-content/components/*.ngdoc', paths.jsPD],
+                glob: ['docs-content/components/*.ngdoc', paths.jsComponents],
                 title: 'Components'
             },
             styles: {
@@ -92,29 +97,34 @@ gulp.task('build:docs', ['js:docs', 'less:docs', 'templates:docs', 'vendor:docs'
         .pipe(browserSync.stream());
 });
 
-// concats all old pdassets styles
-gulp.task('oldLess', function (done) {
-    return gulp.src([paths.oldLess])
-        .pipe(less())
-        .pipe(rename('old-pd-assets.css'))
-        .pipe(gulp.dest(paths.docs + '/css'))
-});
-
 // concats all pd-assets angular modules and moves to docs folder
 gulp.task('js:docs', function (done) {
-    return gulp.src(paths.jsPD)
+    return gulp.src(paths.jsComponents)
         .pipe(concat('pd-assets.js'))
         .pipe(ngAnnotate())
         .pipe(gulp.dest(paths.docs + '/js'));
 });
 
 // concats all pd-assets angular modules and moves to docs folder
-gulp.task('js:build', ['clean:build'], function (done) {
-    return gulp.src(paths.jsPD)
+gulp.task('js:build', function (done) {
+    return gulp.src(paths.jsComponents)
         .pipe(concat('pd-assets.js'))
         .pipe(ngAnnotate())
         .pipe(gulp.dest(paths.dist));
 });
+
+gulp.task('js:lint', function(done) {
+    return gulp.src([paths.jsComponents, paths.jsApps])
+    .pipe(plumber({
+            errorHandler: function (err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
+        .pipe(changedInPlace())
+        .pipe(jshint())
+        .pipe(jshint.reporter(stylish));
+})
 
 // concats all pd-assets less files then converts to css
 gulp.task('less:docs', function (done) {
@@ -160,7 +170,7 @@ gulp.task('templates:docs', function (done) {
         standalone: true,
         module: 'templates.pdassets'
     };
-    return gulp.src(paths.componentTemplates)
+    return gulp.src(paths.templatesComponents)
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
@@ -169,12 +179,12 @@ gulp.task('templates:docs', function (done) {
 });
 
 // grabs all pd-assets templates and drops them in docs
-gulp.task('templates:build', function (done) {
+gulp.task('templates:components', function (done) {
     var options = {
         standalone: true,
-        module: 'pdAssetsTemplates'
+        module: 'templates.pdassets'
     };
-    return gulp.src(paths.componentTemplates)
+    return gulp.src(paths.templatesComponents)
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
@@ -235,7 +245,7 @@ gulp.task('reload', function () {
 
 // Builds all less and javascript and dumps in to a dist folder
 gulp.task('build', function(done) {
-    runSequence('clean:build', ['js:build', 'vendor:build', 'less:build', 'templates:build'], done)
+    runSequence('clean:build', ['js:build', 'vendor:build', 'less:build', 'templates:components'], done)
 });
 
 // main task for running doc development
@@ -248,4 +258,10 @@ gulp.task('watch:docs', function () {
     gulp.watch(paths.docsContent, ['build:docs']);
     gulp.watch('**/*.less', ['less:docs']);
     gulp.watch(paths.docs + '/**/*.*', ['reload']);
-})
+});
+
+gulp.task('watch', function() {
+    gulp.watch([ paths.jsComponents, paths.jsApps ], ['js:lint', 'js:build']);
+    gulp.watch([ paths.lessComponents, paths.lessApps], ['less:build']);
+    gulp.watch([ paths.templatesComponents, paths.templatesApps], ['templates:components'])
+});
