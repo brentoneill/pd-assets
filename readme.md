@@ -49,6 +49,14 @@ gulp docs
 
 Builds, serves and watches the apps, components, and styles directories for changes and refreshes on file change. This allows developers to work on components inside the documentation site before submitting a PR with their new component or component update.
 
+### `gulp watch`
+
+```bash
+gulp watch
+```
+
+Watches the apps, components, and styles folders for any changes and runs the appropriate compilation tasks based on the file type that changed.
+
 
 ### `gulp less:build`
 
@@ -58,7 +66,7 @@ gulp less
 
 Runs the task that compiles all less files down to a single css file and outputs that file to the `dist` folder.
 
-## `gulp templates:components`
+### `gulp templates:components`
 
 ```bash
 gulp templates:components
